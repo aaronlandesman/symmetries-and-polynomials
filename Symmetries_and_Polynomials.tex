@@ -74,7 +74,9 @@ $ A_n$ is the only true friend $ S_n$ has.
 \begin{thm}
   Every $ S_n$, for $ n>4$, has exactly 3 normal subgroups $ \{e \}$, $ A_n$ and $ S_n$
 \end{thm}
-There is no deep reason why this theorem is true, it is simply a matter a computing the normal subgroups carefully. This is a recurring phenomenon in group theory, seemingly elementary mathematical objects have very structured symmetric groups, and these then give rise to very beautiful and deep mathematics.
+There is no deep reason why this theorem is true, 
+\todo{dumb objection, but arguably there might be some deep reason like $SL_n$ is simple as an algebraic group and $A_n = SL_n(F_1)$, but of course $F_1$ makes no sense}
+it is simply a matter a computing the normal subgroups carefully. This is a recurring phenomenon in group theory, seemingly elementary mathematical objects have very structured symmetric groups, and these then give rise to very beautiful and deep mathematics.
 
 
 
@@ -94,7 +96,7 @@ By direct computations we can find all the normal subgroups of $ S_4$. We'll nee
   \end{enumerate}
 \end{questions}
 
-We already know 3 subgroups of $ S_4$: $ \{ e \}, A_4, S_4$. Turns out there is exactly one more called the \textbf{Klein 4-group}, denoted $ K_4$.
+We already know 3 normal subgroups of $ S_4$: $ \{ e \}, A_4, S_4$. It turns out there is exactly one more called the \textbf{Klein 4-group}, denoted $ K_4$.
 \begin{questions}[resume]
   \item \begin{enumerate}
     \item What are the possible sizes of subgroups of $ S_4$?
@@ -103,7 +105,7 @@ We already know 3 subgroups of $ S_4$: $ \{ e \}, A_4, S_4$. Turns out there is 
      (You'll need to use the number of elements in each cycle type of $ S_4$ that you've already computed in \ref{ques:s4} Remember that if a normal subgroup contains one element of a certain cycle type then it must contain all the elements with that cycle type.)
   \end{enumerate}
 \end{questions}
-
+\todo{discuss klein 4 group in context of $S_4/A_4$ as symmetries of cube}
 This is the fortunate accident that allows us to solve the quartic. This does not occur for any other $ S_n$.
 
 
@@ -113,7 +115,13 @@ This is the fortunate accident that allows us to solve the quartic. This does no
 
 \newpage
 \subsection{The Cubic and the Quartic}
+\todo{discuss cross ratio as fixed by klein 4, maybe this goes earlier?}
+\todo{possibly discuss recovering the quartic from a degree 2 extension of the cubic}
+\todo{possible bonus exercise on connection to genus 1 curves and associated elliptic curves, 2-torsion?}
+
+
 We'll now return to polynomials and understand our methods using the language of symmetric groups.
+
 
 The symmetry groups $ S_n$ naturally acts on a set of $ n$ variables, but more importantly it also acts on the set of all polynomials in $ n$ variables. For example, the permutation $ (1 \: 3 \: 2)$ sends $ \beta_1 \beta_2^2 +  \beta_3 $ to $ \beta_1 \beta_3^2 +  \beta_2 $. Let us go back to the cubic and quartic and analyze them using this new language.\\
 
