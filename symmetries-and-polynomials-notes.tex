@@ -326,11 +326,27 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	
 	\subsection{Discriminant of the Cubic}
+	One of the most amazing facts about the discriminant is that it can always be written as a polynomial in terms of the coefficients. Let's see it explicitly for cubic.
 	
+	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider cubic
+		\begin{align*}
+			P(x) &= x^3 + px + q
+		\end{align*}
+	and suppose the roots of $ P(x)$ are $ \beta_1, \beta_2, \beta_3$.
 	
-	
-	
-	
+	\begin{exercise}
+		(If you do not know calculus you can ask us.)
+		\begin{enumerate}
+			\item Find the critical points of $ P(x)$, call them $ x_1, x_2$.
+			\item Convince yourself that if $ P(x)$ has repeated roots then $ P(x_1).P(x_2) = 0$.
+			\item Expand $ P(x_1).P(x_2)$.
+		\end{enumerate}
+	\end{exercise}
+	Here's the amazing theorem we won't prove 
+	\begin{theorem}
+		$ P(x_1).P(x_2)$ is precisely the discriminant of the cubic $ P(x)$.
+	\end{theorem}
+	We'll see later on ``why'' the discriminant can be written in terms of the coefficients $ P(x)$.
 	
 	\subsection{The Solution}
 		
@@ -338,11 +354,6 @@ In some sense (which we do not explain) this map explains why the counts from
 	There is no unique way to find the roots of the cubic. 
 	We'll choose the method that is motivated by Galois theory. 
 	It'll look extremely mysterious but this is the method that generalizes to show that there is no formula for solving a general fifth degree polynomial. 
-	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider cubic
-		\begin{align*}
-			P(x) &= x^3 + px + q
-		\end{align*}
-	and suppose the roots of $ P(x)$ are $ \beta_1, \beta_2, \beta_3$.
 	
 	\begin{exercise}
 	\label{exercise:coefficients_depressed_cubic}
