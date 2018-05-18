@@ -5,7 +5,11 @@
 %%%%%%%%%%%%%%%%%%%%%
 %   AMS packages    %
 %%%%%%%%%%%%%%%%%%%%%
-\documentclass[12 pt]{amsart}
+% \documentclass[12 pt, reqno]{amsart}
+
+\documentclass[reqno, 12pt, letter]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mdframed}
 
 \usepackage{hyperref}
 \usepackage{etex}
@@ -31,7 +35,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{epigraph}
 \usepackage{csquotes}
-\usepackage[margin=1.5in]{geometry}
+% \usepackage[margin=1.5in]{geometry}
 
 \graphicspath{ {images/} }
 
@@ -188,7 +192,7 @@
 \DeclareMathOperator\Ad{Ad}
 \renewcommand\o{{\rm{O}}}
 
-
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{\tiny{{Hint:} #1\hfill}}}}
 
 
 \setcounter{MaxMatrixCols}{20}
@@ -203,6 +207,7 @@
 \begin{document}
 
 \maketitle
+\todo{Apurva: I changed the documentclass and margin. We can switch if this doesn't look good, I'm just trying it out. Hints can also go in the footnotes, I think you did this in your class last year, that way not everyone sees the hints immediately.}
 
 \section{The Discriminant}
 
@@ -232,7 +237,7 @@
 \end{exercise}
 
 \subsection{The discriminant in general}
-\begin{definition}
+``\begin{definition}
 	\label{definition:discriminant}
 	For $p(x)$ a polynomial of the form $p(x) = (x-r_1)(x-r_2) \cdots (x-r_n)$,
 	define the discriminant $\Delta(p) := \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$.
@@ -313,6 +318,122 @@ In some sense (which we do not explain) this map explains why the counts from
 
 \newpage
 \section{Solving the Cubic}
+
+	
+	
+	
+	
+	
+	\subsection{Discriminant of the Cubic}
+	
+	
+	
+	
+	
+	
+	\subsection{The Solution}
+		
+		
+	There is no unique way to find the roots of the cubic. 
+	We'll choose the method that is motivated by Galois theory. 
+	It'll look extremely mysterious but this is the method that generalizes to show that there is no formula for solving a general fifth degree polynomial. 
+	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider cubic
+		\begin{align*}
+			P(x) &= x^3 + px + q
+		\end{align*}
+	and suppose the roots of $ P(x)$ are $ \beta_1, \beta_2, \beta_3$.
+	
+	\begin{exercise}
+	\label{exercise:coefficients_depressed_cubic}
+		Express $ 0,p,q$ in terms of $ \beta_1$, $ \beta_3$, and $ \beta_3$.
+	\end{exercise}
+
+	\begin{exercise}
+	We need some identities about the \emph{cube roots of unity} before proceeding.
+	\begin{enumerate}
+		\item Find the three roots of the polynomial $ x^3 - 1$.
+		\item Show that if $ \omega $ is a complex root of this equation then the other complex root is $ \omega^2$. Conclude that $ \overline{\omega} = \omega^2$.
+    \item Compute $ \omega + \omega^2$.
+		\item Plot $ \omega$, $\omega^2$ on the complex plane.
+	\end{enumerate}
+  $ \omega$ and $ \omega^2$ (and also 1) are called the \textbf{third roots of unity}.
+	\begin{enumerate}[resume]
+		\item Find the three solutions of $ x^3 = 2$. These are the three \emph{cube roots} of $ 2$.
+	\end{enumerate}
+\end{exercise}
+
+  The method for solving the cubic is somewhat like induction, we reduce the problem to a lower degree one. We need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $ \beta_1, \beta_2, \beta_3$ can be easily recovered. And here they are:
+	
+	\begin{align}
+    \mu_1 &= \beta_1 + \beta_2 \omega + \beta_3 \omega^2 \\
+    \mu_2 &= \beta_1 + \beta_2 \omega^2 + \beta_3 \omega
+  \end{align} 
+			
+	\begin{exercise}
+		Find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$.\hint{Use the previous exercises.}
+	\end{exercise}
+	
+	Our \emph{intermediate constants} are not $ \mu_1$ and $ \mu_2$ but $ \mu_1^3$ and $ \mu_2^3$.
+
+
+	\begin{exercise}
+		$ $ 
+		\begin{enumerate}
+			\item Use the previous exercise to find $ \beta_1. \beta_2.\beta_3$ in terms of $ \mu_1, \mu_2$. Use this to find $ \mu_1^3 + \mu_2^3$ in terms of $ p, q$.
+			\item Find $ \mu_1 .\mu_2$ in terms of $ p,q$.
+			\item Find the coefficients of the quadratic whose roots are $ \mu_1^3$ and $ \mu_2^3$ and solve it. (Do you recognize anyone here?)
+		\end{enumerate}
+	\end{exercise}
+	
+	\begin{mdframed}
+		With all this work done, here's the algorithm for finding the roots of a depressed cubic $ x^3 + px + q$:
+		\begin{enumerate}
+			\item Find $ \mu_1^3$ and $ \mu_2^3$ by solving the quadratic you found in the previous exercise. 
+			\item This unfortunately does not determine $ \mu_1$ and $ \mu_2$ uniquely. Pick $ \mu_1$ as any of the three \emph{cube roots} of one of the roots and use Part 2 of the previous problem to find $ \mu_2$.
+			\item Use the previous exercise to find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. 
+			\item Feel happy about yourself.
+		\end{enumerate}
+	\end{mdframed}
+	
+	\begin{exercise}
+		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
+	\end{exercise}
+	
+	\begin{exercise}
+		Use your newfound superpower to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
+	\end{exercise}
+	
+	What if your cubic is happy and not depressed? Suppose the polynomial $ P(x) = x^3 + ax^2 + bx + c$ has roots $ \beta_1, \beta_2, \beta_3$. 
+	\begin{exercise} $ $
+		\begin{enumerate}
+			\item Find the coefficient of the polynomial whose roots are $ \beta_1 + k, \beta_2 + k, \beta_3 + k$.
+			\item Find a $ k$ such that the coefficient of $ x^2$ vanishes. Notice that such a $ k$ only depends on the original coefficients $ a,b,c,d$.
+			\item Do you see it now?
+		\end{enumerate}
+	\end{exercise}
+	
+	
+	
+	
+	
+	
+	\subsection{Optional Exercises}
+	
+		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
+	
+	\begin{exercise} $ $
+		\begin{enumerate}
+			\item Find and plot all the $ n^{th}$ roots of unity. 
+			\item Which of these are primitive? How many primitive roots are there?
+		\end{enumerate}
+		If $ \zeta_1, \cdots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial $ \Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)$ is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
+		\begin{enumerate}[resume]
+			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$.
+			\item Find the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
+			\item Factorize $ x^n - 1$ using cyclotomic polynomial\textbf{s}.
+		\end{enumerate}
+	\end{exercise}
+	
 
 \newpage
 \section{Symmetry Groups}
