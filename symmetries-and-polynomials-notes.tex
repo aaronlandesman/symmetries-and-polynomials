@@ -206,16 +206,124 @@
 
 \section{The Discriminant}
 
+\subsection{Quadratic Polynomials}
+\begin{definition}[Quadratic discriminant]
+	\label{definition:quadratic-discriminant}
+	Let $p(x) = x^2 + bx + c$ be a polynomial with $b$ and $c$ real numbers.
+	The discriminant $\Delta(p)$ is by definition $b^2 - 4c$.
+\end{definition}
+\begin{exercise}
+	\label{exercise:}
+	If the polynomial $p(x) = x^2 + bx + c$ has roots $\alpha$ and $\beta$, express $b$ and $c$
+	in terms of $\alpha$ and $\beta$.
+\end{exercise}
+\begin{exercise}
+	\label{exercise:quadratic-roots}
+	What does the sign of the discriminant (i.e., whether $\Delta(p) > 0, < 0$ or $=0$) 
+	tell you about the roots $\alpha$ and $\beta$?
+	{\it Hint:} If the discriminant is $>0$ show that the roots are real, if it is equal
+	to $0$, show they are the same, if it is less than $0$, show they are complex numbers
+	which are not real.
+\end{exercise}
+\begin{exercise}
+	\label{exercise:quadratic-discriminant-in-roots}
+	Express the discriminant of the polynomial $p(x) = x^2 + bx + c$ in terms of
+	the roots $\alpha, \beta$.
+\end{exercise}
+
+\subsection{The discriminant in general}
+\begin{definition}
+	\label{definition:discriminant}
+	For $p(x)$ a polynomial of the form $p(x) = (x-r_1)(x-r_2) \cdots (x-r_n)$,
+	define the discriminant $\Delta(p) := \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$.
+\end{definition}
+\begin{exercise}
+	\label{exercise:}
+	Verify that for $p(x)$ of degree $2$, the definition of the discriminant
+	of a general polynomial from \autoref{definition:discriminant} agrees with
+	that of a quadratic polynomial given in \autoref{definition:quadratic-discriminant}.
+	{\it Hint:} Use \autoref{exercise:quadratic-discriminant-in-roots}.
+\end{exercise}
+The following exercise shows that the discriminant measures, in a precise sense, how far apart
+the roots of a polynomial are.
+\begin{exercise}
+	\label{exercise:}
+	Show that for $p$ a polynomial, $\Delta(p) = 0$ if and only if $p$ has a repeated root.
+\end{exercise}
+\subsection{Cubic discriminants}
+\begin{exercise}
+	\label{exercise:real-root-cubic}
+	Show that a cubic polynomial with real coefficients $p(x) = x^3 + ax + bx + c$
+	always has a real root.
+	{\it Hint:} Graph the cubic and show it intersects the line $p(x) = 0$.
+\end{exercise}
+\begin{exercise}
+	\label{exercise:}
+	Using \autoref{exercise:real-root-cubic}, show that a cubic polynomial either has
+	$3$ real roots or $2$ complex conjugates roots (of the form $a + bi, a-bi$ for $a,b$ real numbers) and one real root. 
+	{\it Hint:} Factor out the real root, and use your understanding of quadratic polynomials.
+\end{exercise}
+\begin{exercise}
+	\label{exercise:discriminant-cubic-sign}
+	For $p(x) = x^3 + ax^2 + bx + c$ a cubic polynomial with real coefficients, show $\Delta(p) = 0$ if and only 
+	if there is a repeated root, $\Delta(p) > 0$ if and only if $p$ has three distinct real roots, and $\Delta(p) < 0$ if and only if $p$ has two complex conjugate roots and one real root.
+	Compare your answer to \autoref{exercise:quadratic-roots}.
+\end{exercise}
+
+\todo{aaron: i didn't discuss the formula for the cubic discriminant, but i think this is already perhaps too much material for one day, i think maybe you can just state it as a fact the formula that the discriminant of $x^3 + ax + b$ is $-4a^3-27b^2$ or whatever it is (and optionally allow them to expand it out but suggest they don't prove it since it seems boring and tedious) }
+
+{\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
+
+\subsection{Counting polynomials of discriminant $0$}
+\begin{exercise}[Challenge 1]
+	\label{exercise:repeated-roots}
+	Let $p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
+	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
+	also considered as a number in $\bz/p$. Show there are $p^n$ such polynomials, and exactly
+	$p^{n-1}$ of them have discriminant $0$.
+	Conclude that the number of squarefree polynomials of degree $n$ over $\bz/p$ is $p^n - p^{n-1}$.
+	{\it Hint:} Try factoring the polynomials over $\bz/p$, and write each polynomial
+	uniquely as $f(x)g(x)^2$, where $f(x)$ is squarefree. Then count the number
+	of such polynomials for the degree of $f$ fixed inductively.	
+\end{exercise}
+
+\begin{exercise}[Challenge 2]
+	\label{exercise:common-roots}
+	Using a similar method to that of \autoref{exercise:repeated-roots},
+	count the number of pairs of degree $n$ polynomials $(p,q)$ for 
+	$p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $q(x) = x^n + b_{n-1}x^{n-1} + \cdots + b_0$
+	with $a_i \in \bz/p, b_i \in \bz_p$ so that $p$ and $q$ have no common root $\bmod p$.
+\end{exercise}
+\begin{remark}
+	\label{remark:}
+	If you did the two prior exercises \autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} correctly, you may notice a striking similarity
+between the two answers. There is in deed a deeper connection, but the answer lies deep.
+Loosely speaking, if you take a polynomial $p(x)$ with no repeated roots, you can send it
+to the pair of polynomials $(p(x) + p'(x), p(x))$. Here $p'(x)$ denotes the derivative of $p(x)$.
+If $p(x) = \sum_i a_ix^i$ then $p'(x) = \sum_i  i \cdot a_i x^{i-1}$.
+The diligent reader will check that this is a map from the space of polynomials with no repeated roots to the
+space of pairs of polynomials with no repeated roots.
+In some sense (which we do not explain) this map explains why the counts from 
+\autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} are so similar.
+\end{remark}
+
+
+
+
+
+\newpage
 \section{Solving the Cubic}
 
+\newpage
 \section{Symmetry Groups}
 
+\newpage
 \section{The Galois Correspondence}
 
+\newpage
 \section{Solving the Quartic}
 
 \bibliographystyle{alpha}
-\bibliography{/home/aaron/Dropbox/master}
 
 \end{document}
 
