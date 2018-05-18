@@ -429,6 +429,20 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	
 	
+	
+	\subsection{Quartic}
+		A similar inductive technique works for the quartic. Suppose we're trying to find the roots $ \lambda_1, \lambda_2, \lambda_3, \lambda_4$ of a quartic \begin{align*}
+			P(x) &= x^4 + ax^3 + bx^2 + cx + d
+		\end{align*}
+		then the strategy is to find 3 \emph{intermediate variable} $ \tau_1, \tau_2, \tau_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\lambda_i's$ can recovered from the $ \tau_i's$ `easily'. Such variables indeed exist:
+			\begin{align*}
+				\tau_1 &:= \lambda_1 \lambda_2 + \lambda_3 \lambda_4 \\
+				\tau_2 &:= \lambda_1 \lambda_3 + \lambda_2 \lambda_4 \\
+				\tau_3 &:= \lambda_2 \lambda_3 + \lambda_1 \lambda_4 
+			\end{align*}
+		We'll see later some rationale behind these.
+	
+	
 	\subsection{Optional Exercises}
 	
 		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
@@ -554,8 +568,102 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 	one can show there are $5$ cubes which can be inscribed in a dodecahedron, and the rotations permute these cubes.
 \end{exercise}
 
+
+
+
 \newpage
 \section{The Galois Correspondence}
+	
+	
+	
+	
+	
+	
+	
+	\subsection{Symmetric Polynomials}	
+	
+	Let $$ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$$ be a polynomial with roots (possibly repeated) $ \gamma_1, \gamma_2, \dots, \gamma_n$.
+	
+	\begin{exercise}
+		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ \gamma_i$.
+	\end{exercise}
+	Note that each $ a_i$ is a polynomial in the roots $ \gamma_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
+
+	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. A polynomial $Q(\gamma_1, \gamma_2, \dots, \gamma_n)$ is said to be symmetric if for all $\sigma \in S_n $, 
+		\begin{align*}
+			\sigma.Q(\gamma_1, \gamma_2, \dots, \gamma_n) = Q(\gamma_{\sigma(1)}, \gamma_{\sigma(2)}, \dots, \gamma_{\sigma(n)})
+		\end{align*}
+	
+	\begin{exercise}
+		Verify that the elementary symmetric polynomials are symmetric.
+	\end{exercise}
+	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem.
+	\begin{theorem}
+		Every symmetric polynomial is itself a polynomial in the elementary symmetric polynomials.
+	\end{theorem}
+	\begin{corollary}
+		Any symmetric polynomial $ Q(\gamma_1, \gamma_2, \dots, \gamma_n)$ in the roots $ \gamma_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in the coefficients $ a_i$ of the polynomial of $ P(x)$.
+	\end{corollary}
+	
+	We've already encountered several examples of this:
+	\begin{exercise} This exercise justifies why the intermediate variables for a cubic satisfy a quadratic polynomial, whose coefficients are polynomials in the original polynomial.
+		\begin{enumerate}
+			\item Verify that for any polynomial $ P(x)$ the discriminant $ \Delta_P$ is symmetric, and hence it can be expressed as in terms of the coefficients!
+			\item Verify that if $ P(x)$ is a cubic then $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ as defined in (??) are both symmetric. 
+			\item For the same $ P(x)$ also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric, hence we could not use $ \mu_1, \mu_2$ as our intermediate variables.
+		\end{enumerate}
+	\end{exercise}
+	
+	\begin{exercise}
+		This exercise justifies why the intermediate variables for a quartic satisfy a cubic polynomial, whose coefficients are polynomials in the original polynomial.		\begin{enumerate}
+			\item Verify that if $ P(x)$ is a quartic then $ \tau_1 + \tau_2 + \tau_3$, $ \tau_1 \tau_2 + \tau_1 \tau_3 + \tau_2 \tau_3$, and $ \tau_1 \tau_2 \tau_3$ are symmetric in $ \lambda_i$. 
+			\item Conclude that the coefficients of $ (x-\tau_1)(x-\tau_2)(x-\tau_3)$ can be expressed in terms of the coefficients of $ P(x)$.
+		\end{enumerate}
+		The fact that the roots $ \lambda_i$ can be recovered from the variables $ \tau_i$ is an exercise in algebraic manipulation.
+	\end{exercise}
+	
+	Hopefully now you're convinced that there was some method in choosing the intermediate variables. Which brings us to the question: How did we know such variables existed?
+	
+	
+	
+	
+	
+	
+	\subsection{Fixed points}
+		A set of polynomials $ V = \{ Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) \}_i$ is said to be fixed point-wise by an element $ \sigma \in S_n$ if 
+			\begin{align*}
+				\sigma.Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) = Q_i(\gamma_{\sigma(1)}, \gamma_{\sigma(2)}, \dots, \gamma_{\sigma(n)})
+			\end{align*}
+		for every $ Q_i \in V$. By this definition, the set of symmetric polynomials is fixed by the every element of $ S_n$. 
+		
+		\begin{exercise}
+			For a set of polynomials $ V = \{ Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) \}$, prove that the subset of elements of $ S_n$ that fix $ Q$ point-wise, is itself a group (and hence a subgroup of $ S_n$). Such a subgroup is called the \textbf{stabilizer} of $ V$.
+		\end{exercise}
+		
+		\begin{exercise} Let $ P(x)$ be a cubic polynomial. 
+			\begin{enumerate}
+				\item Find $ \omega . \mu_1$ and $ \omega^2. \mu_1$. Similarly for $ \mu_2$.
+				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$ point-wise. What do the elements not in this subgroup do to it? 
+				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1, \mu_2 \}$ point-wise.
+			\end{enumerate}
+		\end{exercise}
+		
+		\begin{exercise}
+			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \tau_1,  \tau_2, \tau_3 \}$ point-wise.
+		\end{exercise}
+		
+		Hopefully now you see some vague pattern:\\
+		Subgroups of $ S_n$ are the stabilizers of the set of intermediate variables. Which begs the question: For higher degree polynomials 1) What are the possible intermediate variables? 2) Can every subgroup of $ S_n$ be a stabilizer of some set of intermediate variables?
+		
+		Turns out we can answer the second question in the language of group theory.
+		
+		
+		
+		
+		\subsection{Optional Problems}
+		Problems about the proof of fundamental theorem of symmetric polynomials.
+
+
 
 \newpage
 \section{Solving the Quartic}
