@@ -193,6 +193,7 @@
 \DeclareMathOperator\Ad{Ad}
 \renewcommand\o{{\rm{O}}}
 
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{\tiny{{Hint:} #1\hfill}}}}
 
 
@@ -208,7 +209,6 @@
 \begin{document}
 
 \maketitle
-\todo{Apurva: I changed the documentclass and margin. We can switch if this doesn't look good, I'm just trying it out. Hints can also go in the footnotes, I think you did this in your class last year, that way not everyone sees the hints immediately.}
 
 \section{The Discriminant}
 
@@ -238,7 +238,7 @@
 \end{exercise}
 
 \subsection{The discriminant in general}
-``\begin{definition}
+\begin{definition}
 	\label{definition:discriminant}
 	For $p(x)$ a polynomial of the form $p(x) = (x-r_1)(x-r_2) \cdots (x-r_n)$,
 	define the discriminant $\Delta(p) := \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$.
@@ -326,9 +326,9 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	
 	\subsection{Discriminant of the Cubic}
-	One of the most amazing facts about the discriminant is that it can always be written as a polynomial in terms of the coefficients. Let's see it explicitly for cubic.
+	One of the most amazing facts about the discriminant is that it can always be written as a polynomial in terms of the coefficients. We'll see this later in details, for now let's see an example.
 	
-	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider cubic
+	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider
 		\begin{align*}
 			P(x) &= x^3 + px + q
 		\end{align*}
@@ -338,29 +338,30 @@ In some sense (which we do not explain) this map explains why the counts from
 		(If you do not know calculus you can ask us.)
 		\begin{enumerate}
 			\item Find the critical points of $ P(x)$, call them $ x_1, x_2$.
-			\item Convince yourself that if $ P(x)$ has repeated roots then $ P(x_1).P(x_2) = 0$.
+			\item Convince yourself that if $ P(x)$ has repeated roots if and only if all 3 roots and $ x_1 $ and $ x_2$ are real and $ P(x_1).P(x_2) = 0$.
 			\item Expand $ P(x_1).P(x_2)$.
 		\end{enumerate}
 	\end{exercise}
 	Here's the amazing theorem we won't prove 
 	\begin{theorem}
-		$ P(x_1).P(x_2)$ is precisely the discriminant of the cubic $ P(x)$.
+		The discriminant of the cubic $ P(x)$ is $ -27P(x_1).P(x_2)$.
 	\end{theorem}
-	We'll see later on ``why'' the discriminant can be written in terms of the coefficients $ P(x)$.
+	The proof of this is too cumbersome and is just some large algebraic manipulations.
 	
-	\subsection{The Solution}
-		
-		
+	
+	\subsection{Solving the Cubic}
+	
 	There is no unique way to find the roots of the cubic. 
 	We'll choose the method that is motivated by Galois theory. 
 	It'll look extremely mysterious but this is the method that generalizes to show that there is no formula for solving a general fifth degree polynomial. 
 	
 	\begin{exercise}
 	\label{exercise:coefficients_depressed_cubic}
-		Express $ 0,p,q$ in terms of $ \beta_1$, $ \beta_3$, and $ \beta_3$.
+		Express the coefficients of $ P(x)$ in terms of $ \beta_1$, $ \beta_3$, and $ \beta_3$.
 	\end{exercise}
 
 	\begin{exercise}
+	\label{exercise:cube_roots_of_unity}
 	We need some identities about the \emph{cube roots of unity} before proceeding.
 	\begin{enumerate}
 		\item Find the three roots of the polynomial $ x^3 - 1$.
@@ -377,23 +378,29 @@ In some sense (which we do not explain) this map explains why the counts from
   The method for solving the cubic is somewhat like induction, we reduce the problem to a lower degree one. We need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $ \beta_1, \beta_2, \beta_3$ can be easily recovered. And here they are:
 	
 	\begin{align}
+		\label{equation:intermediate_variables_cubic}
+		\begin{split}
     \mu_1 &= \beta_1 + \beta_2 \omega + \beta_3 \omega^2 \\
     \mu_2 &= \beta_1 + \beta_2 \omega^2 + \beta_3 \omega
+	\end{split}
   \end{align} 
-			
-	\begin{exercise}
-		Find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$.\hint{Use the previous exercises.}
-	\end{exercise}
-	
 	Our \emph{intermediate constants} are not $ \mu_1$ and $ \mu_2$ but $ \mu_1^3$ and $ \mu_2^3$.
 
 
 	\begin{exercise}
+		\label{exercise:intermediate_variables_cubic_1}
+		Find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. \hint{Find $ \beta_1 + \beta_2$, $ \omega \beta_1 + \omega^2 \beta_2$, $ \omega^2 \beta_1 + \omega \beta_2$. }
+	\end{exercise}
+	
+
+
+	\begin{exercise}
+		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Use the previous exercise to find $ \beta_1. \beta_2.\beta_3$ in terms of $ \mu_1, \mu_2$. Use this to find $ \mu_1^3 + \mu_2^3$ in terms of $ p, q$.
+			\item Use the previous exercise to find $ \beta_1. \beta_2.\beta_3$ in terms of $ \mu_1, \mu_2$. Use this to find $ \mu_1^3 + \mu_2^3$ in terms of $ p, q$.\hint{First expand $ \beta_2. \beta_3$.}
 			\item Find $ \mu_1 .\mu_2$ in terms of $ p,q$.
-			\item Find the coefficients of the quadratic whose roots are $ \mu_1^3$ and $ \mu_2^3$ and solve it. (Do you recognize anyone here?)
+			\item Find the coefficients of the quadratic whose roots are $ \mu_1^3$ and $ \mu_2^3$ and solve it. (Do you recognize anyone?)
 		\end{enumerate}
 	\end{exercise}
 	
@@ -401,26 +408,26 @@ In some sense (which we do not explain) this map explains why the counts from
 		With all this work done, here's the algorithm for finding the roots of a depressed cubic $ x^3 + px + q$:
 		\begin{enumerate}
 			\item Find $ \mu_1^3$ and $ \mu_2^3$ by solving the quadratic you found in the previous exercise. 
-			\item This unfortunately does not determine $ \mu_1$ and $ \mu_2$ uniquely. Pick $ \mu_1$ as any of the three \emph{cube roots} of one of the roots and use Part 2 of the previous problem to find $ \mu_2$.
-			\item Use the previous exercise to find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. 
+			\item This does not determine $ \mu_1$ and $ \mu_2$ uniquely. Pick $ \mu_1$ as any of the three \emph{cube roots} of $ \mu_1^3$ and use Part 2 of \autoref{exercise:intermediate_variables_cubic_2} to find $ \mu_2$.
+			\item Use \autoref{exercise:intermediate_variables_cubic_1} to find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. 
 			\item Feel happy about yourself.
 		\end{enumerate}
 	\end{mdframed}
-	
+		\begin{exercise}
+			Use your newfound superpower to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
+		\end{exercise}
+		
 	\begin{exercise}
 		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
 	\end{exercise}
 	
-	\begin{exercise}
-		Use your newfound superpower to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
-	\end{exercise}
+
 	
-	What if your cubic is happy and not depressed? Suppose the polynomial $ P(x) = x^3 + ax^2 + bx + c$ has roots $ \beta_1, \beta_2, \beta_3$. 
-	\begin{exercise} $ $
+	\begin{exercise} 	What if your cubic is happy and not depressed? Suppose the polynomial $ P(x) = x^3 + ax^2 + bx + c$ has roots $ \beta_1, \beta_2, \beta_3$. 
 		\begin{enumerate}
 			\item Find the coefficient of the polynomial whose roots are $ \beta_1 + k, \beta_2 + k, \beta_3 + k$.
 			\item Find a $ k$ such that the coefficient of $ x^2$ vanishes. Notice that such a $ k$ only depends on the original coefficients $ a,b,c,d$.
-			\item Do you see it now?
+			\item Do you see it?
 		\end{enumerate}
 	\end{exercise}
 	
@@ -431,21 +438,32 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	
 	\subsection{Quartic}
-		A similar inductive technique works for the quartic. Suppose we're trying to find the roots $ \lambda_1, \lambda_2, \lambda_3, \lambda_4$ of a quartic \begin{align*}
-			P(x) &= x^4 + ax^3 + bx^2 + cx + d
+		A similar inductive technique works for the quartic, however the method is too tedious to do by hand. Suppose we're trying to find the roots $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$ of a quartic \begin{align*}
+			P(x) &= x^4 + a_3x^3 + a_2x^2 + a_1x + a_0
 		\end{align*}
-		then the strategy is to find 3 \emph{intermediate variable} $ \tau_1, \tau_2, \tau_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\lambda_i's$ can recovered from the $ \tau_i's$ `easily'. Such variables indeed exist:
-			\begin{align*}
-				\tau_1 &:= \lambda_1 \lambda_2 + \lambda_3 \lambda_4 \\
-				\tau_2 &:= \lambda_1 \lambda_3 + \lambda_2 \lambda_4 \\
-				\tau_3 &:= \lambda_2 \lambda_3 + \lambda_1 \lambda_4 
-			\end{align*}
-		We'll see later some rationale behind these.
-	
+		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\gamma_i's$ can recovered from the $ \lambda_i's$ `easily'. Such variables indeed exist:
+			\begin{align}
+				\label{equation:intermediate_variables_quartic}
+				\begin{split}
+					\lambda_1 &:= \gamma_1 \gamma_2 + \gamma_3 \gamma_4 \\
+					\lambda_2 &:= \gamma_1 \gamma_3 + \gamma_2 \gamma_4 \\
+					\lambda_3 &:= \gamma_2 \gamma_3 + \gamma_1 \gamma_4 
+				\end{split}
+			\end{align}
+		
+		Here's how you recover the $ \gamma_i$ from the $ \lambda_i$.
+		\begin{exercise}$ $
+			\begin{enumerate}
+				\item Convice yourself that $ \gamma_1 \gamma_2$ and $\gamma_3 \gamma_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ \gamma_i \gamma_j$.
+				\item Figure out a way to recover $ \gamma_i$ if you know all the $ \gamma_i \gamma_j$.
+			\end{enumerate}
+		\end{exercise}
+		
+		We'll later see why the $ \lambda_i$ satisfy a cubic with coefficients which can be written in terms of the $ a_i$.
 	
 	\subsection{Optional Exercises}
 	
-		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
+	Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
 	
 	\begin{exercise} $ $
 		\begin{enumerate}
@@ -454,7 +472,7 @@ In some sense (which we do not explain) this map explains why the counts from
 		\end{enumerate}
 		If $ \zeta_1, \cdots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial $ \Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)$ is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
 		\begin{enumerate}[resume]
-			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$.
+			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
 			\item Find the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
 			\item Factorize $ x^n - 1$ using cyclotomic polynomial\textbf{s}.
 		\end{enumerate}
@@ -582,47 +600,54 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 	
 	\subsection{Symmetric Polynomials}	
 	
-	Let $$ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$$ be a polynomial with roots (possibly repeated) $ \gamma_1, \gamma_2, \dots, \gamma_n$.
+	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ \zeta_1, \zeta_2, \dots, \zeta_n$.
 	
 	\begin{exercise}
-		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ \gamma_i$.
+		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ \zeta_i$.
 	\end{exercise}
-	Note that each $ a_i$ is a polynomial in the roots $ \gamma_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
+	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ \zeta_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
 
-	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. A polynomial $Q(\gamma_1, \gamma_2, \dots, \gamma_n)$ is said to be symmetric if for all $\sigma \in S_n $, 
+	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. A polynomial $Q(\zeta_1, \zeta_2, \dots, \zeta_n)$ is said to be symmetric if for all $\sigma \in S_n $, 
 		\begin{align*}
-			\sigma.Q(\gamma_1, \gamma_2, \dots, \gamma_n) = Q(\gamma_{\sigma(1)}, \gamma_{\sigma(2)}, \dots, \gamma_{\sigma(n)})
+			\sigma.Q(\zeta_1, \zeta_2, \dots, \zeta_n) = Q(\zeta_{\sigma(1)}, \zeta_{\sigma(2)}, \dots, \zeta_{\sigma(n)})
 		\end{align*}
 	
 	\begin{exercise}
-		Verify that the elementary symmetric polynomials are symmetric.
+		Convince yourself that the elementary symmetric polynomials are symmetric.
 	\end{exercise}
+	
 	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem.
+	
 	\begin{theorem}
-		Every symmetric polynomial is itself a polynomial in the elementary symmetric polynomials.
+		\label{theorem:fundamental_theorem_symmetric_polynomials}
+		Any symmetric polynomial $ Q(\zeta_1, \zeta_2, \dots, \zeta_n)$ can be expressed as a polynomial in the coefficients $ a_i$.
 	\end{theorem}
-	\begin{corollary}
-		Any symmetric polynomial $ Q(\gamma_1, \gamma_2, \dots, \gamma_n)$ in the roots $ \gamma_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in the coefficients $ a_i$ of the polynomial of $ P(x)$.
-	\end{corollary}
+	For example, \begin{align*}
+		\zeta_1^2 + \zeta_2^2 + \dots + \zeta_n^2 
+		&= (\zeta_1 + \zeta_2 + \dots + \zeta_n)^2 - 2.\zeta_1 \zeta_2 \dots \zeta_n \\
+		&= a_{n-1}^2 - 2.(-1)^n a_0
+	\end{align*}
 	
 	We've already encountered several examples of this:
+	\begin{exercise}
+		Verify that for any polynomial $ P(x)$ the discriminant $ \Delta(P)$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$!
+	\end{exercise}
+	
 	\begin{exercise} This exercise justifies why the intermediate variables for a cubic satisfy a quadratic polynomial, whose coefficients are polynomials in the original polynomial.
 		\begin{enumerate}
-			\item Verify that for any polynomial $ P(x)$ the discriminant $ \Delta_P$ is symmetric, and hence it can be expressed as in terms of the coefficients!
-			\item Verify that if $ P(x)$ is a cubic then $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ as defined in (??) are both symmetric. 
-			\item For the same $ P(x)$ also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric, hence we could not use $ \mu_1, \mu_2$ as our intermediate variables.
+			\item Verify that if $ P(x)$ is a cubic then $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ as defined in \autoref{equation:intermediate_variables_cubic} are both symmetric. 
+			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric. This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
 		\end{enumerate}
 	\end{exercise}
 	
 	\begin{exercise}
 		This exercise justifies why the intermediate variables for a quartic satisfy a cubic polynomial, whose coefficients are polynomials in the original polynomial.		\begin{enumerate}
-			\item Verify that if $ P(x)$ is a quartic then $ \tau_1 + \tau_2 + \tau_3$, $ \tau_1 \tau_2 + \tau_1 \tau_3 + \tau_2 \tau_3$, and $ \tau_1 \tau_2 \tau_3$ are symmetric in $ \lambda_i$. 
-			\item Conclude that the coefficients of $ (x-\tau_1)(x-\tau_2)(x-\tau_3)$ can be expressed in terms of the coefficients of $ P(x)$.
+			\item Verify that if $ P(x)$ is a quartic then $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ as defined in \autoref{equation:intermediate_variables_quartic} are symmetric in $ \gamma_i$. 
+			\item Conclude that the coefficients of $ (x-\lambda_1)(x-\lambda_2)(x-\lambda_3)$ can be expressed in terms of the coefficients of $ P(x)$.
 		\end{enumerate}
-		The fact that the roots $ \lambda_i$ can be recovered from the variables $ \tau_i$ is an exercise in algebraic manipulation.
 	\end{exercise}
 	
-	Hopefully now you're convinced that there was some method in choosing the intermediate variables. Which brings us to the question: How did we know such variables existed?
+	Hopefully now you're convinced that there was some reason behind choosing these intermediate variables. Which brings us to the question: Do such variables exist for all degrees?
 	
 	
 	
@@ -630,26 +655,26 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 	
 	
 	\subsection{Fixed points}
-		A set of polynomials $ V = \{ Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) \}_i$ is said to be fixed point-wise by an element $ \sigma \in S_n$ if 
+		A set of polynomials $ V = \{ Q_i(\zeta_1, \zeta_2, \dots, \zeta_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
 			\begin{align*}
-				\sigma.Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) = Q_i(\gamma_{\sigma(1)}, \gamma_{\sigma(2)}, \dots, \gamma_{\sigma(n)})
+				\sigma.Q_i(\zeta_1, \zeta_2, \dots, \zeta_n) = Q_i(\zeta_{\sigma(1)}, \zeta_{\sigma(2)}, \dots, \zeta_{\sigma(n)})
 			\end{align*}
-		for every $ Q_i \in V$. By this definition, the set of symmetric polynomials is fixed by the every element of $ S_n$. 
+		for every $ Q_i \in V$. By this definition, the set of symmetric polynomials is fixed point-wise by the every element of $ S_n$. 
 		
 		\begin{exercise}
-			For a set of polynomials $ V = \{ Q_i(\gamma_1, \gamma_2, \dots, \gamma_n) \}$, prove that the subset of elements of $ S_n$ that fix $ Q$ point-wise, is itself a group (and hence a subgroup of $ S_n$). Such a subgroup is called the \textbf{stabilizer} of $ V$.
+			For a set of polynomials $ V = \{ Q_i(\zeta_1, \zeta_2, \dots, \zeta_n) \}$, prove that the subset of elements of $ S_n$ that fix $ Q$ point-wise, is itself a group (and hence a subgroup of $ S_n$). Such a subgroup is called the \textbf{stabilizer} of $ V$.
 		\end{exercise}
 		
 		\begin{exercise} Let $ P(x)$ be a cubic polynomial. 
 			\begin{enumerate}
-				\item Find $ \omega . \mu_1$ and $ \omega^2. \mu_1$. Similarly for $ \mu_2$.
-				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$ point-wise. What do the elements not in this subgroup do to it? 
+				\item Compute $ \omega . \mu_1$ and $ \omega^2. \mu_1$. Similarly for $ \mu_2$.
+				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$ point-wise. What do the elements not in this subgroup do to it?\hint{Don't forget that $ \omega^3 = 1$.}
 				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1, \mu_2 \}$ point-wise.
 			\end{enumerate}
 		\end{exercise}
 		
 		\begin{exercise}
-			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \tau_1,  \tau_2, \tau_3 \}$ point-wise.
+			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \lambda_1,  \lambda_2, \lambda_3 \}$ point-wise. Have you seen this subgroup before?
 		\end{exercise}
 		
 		Hopefully now you see some vague pattern:\\
