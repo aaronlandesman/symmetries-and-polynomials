@@ -291,7 +291,9 @@ the roots of a polynomial are.
 
 {\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
 
-\begin{exercise}[Challenge 1] An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
+\begin{exercise}[Challenge 1]
+	\label{exercise:cubic-discriminant}
+	An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
 	\begin{align*}
 		P(x) &= x^3 + px + q
 	\end{align*}
@@ -308,13 +310,15 @@ Assume that not all three roots are the same.
 	\end{fact}
 \end{exercise}
 
-
 \subsection{Counting polynomials of discriminant $0$}
+The following questions are quite tricky, but fun. Only attempt them if you've already solved \autoref{exercise:cubic-discriminant}.
 \begin{exercise}[Challenge 2]
 	\label{exercise:repeated-roots}
 	Let $p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
 	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
-	also considered as a number in $\bz/p$. Show there are $p^n$ such polynomials, and exactly
+	also considered as a number in $\bz/p$. To make sense of discriminant, you may assume that
+	every such polynomial factors uniquely as a product of irreducible polynomials with coefficients in $\bz/p$.
+	Show there are $p^n$ such polynomials, and exactly
 	$p^{n-1}$ of them have discriminant $0$.
 	Conclude that the number of squarefree polynomials of degree $n$ over $\bz/p$ is $p^n - p^{n-1}$.
 	\footnote{{\it Hint:} Try factoring the polynomials over $\bz/p$, and write each polynomial
@@ -341,8 +345,6 @@ space of pairs of polynomials with no repeated roots.
 In some sense (which we do not explain) this map explains why the counts from 
 \autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} are so similar.
 \end{remark}
-
-
 
 
 
@@ -496,15 +498,12 @@ how to solve cubic and quartic equations in future days.
 	Here, we include the {\bf identity automorphism}, denoted $\id$, which fixes every point of the triangle.
 	Write down these automorphisms explicitly (in terms of rotations and reflections).
 \end{exercise}
-\begin{exercise}
-	\label{exercise:aut-is-group}
-	Show that the composition of two automorphisms is again an automorphism.
-	Also, show that every automorphism has an inverse. (That is, if $f: \br^n \ra \br^n$ is a reflection or rotation fixing $X$, show there is
-	another automorphism $g: \br^n \ra \br^n$ fixing $X$ so that the compositions $f \circ g$ and $g \circ f$ fix every point of $X$.)
-\end{exercise}
 \begin{remark}
-	\label{remark:}
-	\autoref{exercise:aut-is-group} is another way of saying that the automorphisms of an object form a group.
+	\label{remark:aut-is-group}
+	Note that the composition of two automorphisms is again an automorphism.
+	Also, automorphism has an inverse, because you can simply ``undo'' the rotation or reflection.
+	This makes the set of automorphisms into what is called a {\bf group}. That is,
+	a group is a set with a composition operation (that is associative), which has an identity and inverses.
 \end{remark}
 \begin{exercise}
 	\label{exercise:r-s}
@@ -524,7 +523,7 @@ how to solve cubic and quartic equations in future days.
 We now generalize from the case of triangles to all polygons.
 \begin{exercise}
 	\label{exercise:}
-	Show that a regular $n$-gon in $\br^2$ has $2n$ automorphisms. This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
+	Show that a regular $n$-gon in $\br^2$ has $2n$ automorphisms.\hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
@@ -573,7 +572,9 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 	Do the same for the octahedron.
 	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
 	This is known as the {\bf Klein-$4$ group,} denoted $K_4$.
+	\hint{To understand the automorphisms of the cube, look at the long diagonals. For the automorphisms of the octahedron, use that it is ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
 \end{exercise}
+
 \begin{exercise}[Challenge 2]
 	\label{exercise:}
 	Determine the number of rotations of the dodecahedron. Do the same for the number of rotations of the icosahedron.
@@ -583,7 +584,11 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 	one can show there are $5$ cubes which can be inscribed in a dodecahedron, and the rotations permute these cubes.
 \end{exercise}
 
-
+\newpage
+\section{Commutators and symmetric polynomials}
+Today has two parts. We will first discuss commutators of groups in order to apply it to solving the cubic and quartic.
+Tomorrow we will explain how these commutators let us solve the cubic and quartic equations.
+Following this, we will discuss symmetric polynomials.
 
 
 \newpage
@@ -708,8 +713,6 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 
 
 
-\newpage
-\section{Solving the Quartic}
 
 
 
