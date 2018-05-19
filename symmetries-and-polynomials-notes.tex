@@ -264,7 +264,7 @@ which are not real.}
 The following exercise shows that the discriminant measures, in a precise sense, how far apart
 the roots of a polynomial are.
 \begin{exercise}
-	\label{exercise:}
+	\label{exercise:discriminant-vanishing}
 	Show that for $p$ a polynomial, $\Delta(p) = 0$ if and only if $p$ has a repeated root.
 \end{exercise}
 \subsection{Cubic discriminants}
@@ -290,6 +290,24 @@ the roots of a polynomial are.
 \todo{aaron: i didn't discuss the formula for the cubic discriminant, but i think this is already perhaps too much material for one day, i think maybe you can just state it as a fact the formula that the discriminant of $x^3 + ax + b$ is $-4a^3-27b^2$ or whatever it is (and optionally allow them to expand it out but suggest they don't prove it since it seems boring and tedious) }
 
 {\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
+
+\begin{exercise} An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
+	\begin{align*}
+		P(x) &= x^3 + px + q
+	\end{align*}
+Assume that not all three roots are the same. 
+	\begin{enumerate}
+		\item By definition, the {\bf critical points} of $P(x)$ (the points at which $ P(x)$ attains it's local max/min if at all) and are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
+		\item Convince yourself that $ P(x)$ has repeated roots if and only if all the roots are real and one of the roots is a critical point. (Draw a graph.)
+		\item Argue that if $ P(x)$ has a repeated root if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
+		\item Expand $ P(x_1) \cdot P(x_2)$.
+	\end{enumerate}
+	Here's a fact we won't prove. It's quite easy but tedious to show this by simply expanding out the definition of the discriminant from yesterday.
+	\begin{fact}
+		The discriminant of the cubic $ P(x)$ is $ -27P(x_1) \cdot P(x_2) = -4p^3 - 27q^2$.
+	\end{fact}
+\end{exercise}
+
 
 \subsection{Counting polynomials of discriminant $0$}
 \begin{exercise}[Challenge 1]
@@ -335,7 +353,6 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	
 	\subsection{Discriminant of the Cubic}
-One of the most amazing facts about the discriminant is that it can always be written as a polynomial in terms of the coefficients. Let's see it explicitly for cubic:
 	
 \todo{aaron: i feel it might be cleaner to put an exercise here reducing to solving the depressed cubic, rather than coming back to it at the end, since the reduction is so easy? i've commented it out below}
 %\begin{exercise}
@@ -346,29 +363,12 @@ One of the most amazing facts about the discriminant is that it can always be wr
 %	Such a cubic is called a {\bf depressed cubic} (meaning the coefficient of $x^2$ is $0$).
 %\end{exercise}
 
-	We'll start with a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0) and come back to the more general cubic later. Consider the cubic
-		\begin{align*}
-			P(x) &= x^3 + px + q
-		\end{align*}
-	and suppose the roots of $ P(x)$ are $\alpha,\beta,\gamma$.
 	
-	\begin{exercise}
-		\begin{enumerate}
 	
 	\subsection{Solving the Cubic}
 	
 
-=======
-			\item By definition, the {\bf critical points} of $P(x)$ are the roots of $3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
-			\item Convince yourself that if $ P(x)$ has repeated roots then $ P(x_1) \cdot P(x_2) = 0$. \todo{aaron: what does $P(x_1).P(x_2)$ mean? does it mean multiply the values? why not say $P(x_1) = 0$ or $P(x_2) = 0$, or $P(x_1) \cdot P(x_2)$?}
-				\todo{aaron: i feel this part of the exercise might be tricky if they haven't seen calculus, i'd be in favor of removing it since it doesnt seem so enlightening}
-			\item Expand $ P(x_1) \cdot P(x_2)$.
-		\end{enumerate}
-	\end{exercise}
-	Here's a fact we won't prove. It's quite easy but tedious to show this by simply expanding out the definition of the discriminant from yesterday.
-	\begin{fact}
-		The discriminant of the cubic $ P(x)$ is $ -27P(x_1).P(x_2)$.
-	\end{fact}
+	
 %	We'll see later on ``why'' the discriminant can be written in terms of the coefficients $ P(x)$.
 	
 	\subsection{The Solution}
@@ -708,6 +708,7 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 		
 		\begin{exercise} Let $ P(x)$ be a cubic polynomial. 
 			\begin{enumerate}
+
 				\item Compute $ \omega \cdot \mu_1$ and $ \omega^2\cdot \mu_1$. Similarly for $ \mu_2$.
 				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$ \todo{what are these polynomials in terms of? are they in terms of the roots? or p and q?}point-wise. What do the elements not in this subgroup do to it?\hint{Don't forget that $ \omega^3 = 1$.}
 				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1, \mu_2 \}$ point-wise.
