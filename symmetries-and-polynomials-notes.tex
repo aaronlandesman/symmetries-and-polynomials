@@ -291,7 +291,7 @@ the roots of a polynomial are.
 
 {\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
 
-\begin{exercise} An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
+\begin{exercise}[Challenge 1] An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
 	\begin{align*}
 		P(x) &= x^3 + px + q
 	\end{align*}
@@ -310,7 +310,7 @@ Assume that not all three roots are the same.
 
 
 \subsection{Counting polynomials of discriminant $0$}
-\begin{exercise}[Challenge 1]
+\begin{exercise}[Challenge 2]
 	\label{exercise:repeated-roots}
 	Let $p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
 	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
@@ -322,7 +322,7 @@ Assume that not all three roots are the same.
 of such polynomials for the degree of $f$ fixed inductively.}
 \end{exercise}
 
-\begin{exercise}[Challenge 2]
+\begin{exercise}[Challenge 3]
 	\label{exercise:common-roots}
 	Using a similar method to that of \autoref{exercise:repeated-roots},
 	count the number of pairs of degree $n$ polynomials $(p,q)$ for 
@@ -348,39 +348,21 @@ In some sense (which we do not explain) this map explains why the counts from
 
 \newpage
 \section{Solving the Cubic}
+	In this section, you will discover a method to solve the cubic, motivated by Galois theory.
+	
+	\begin{exercise}
+		\label{exercise:}
+		Show that if $f(x) = x^3 + ax^2 +bx +c$ is any cubic polynomial with real coefficients, one can apply
+		a change of variables of the form $x = y + c$ (for $c \in \br$)
+		so that $f(y) = y^3 + py^2 + q$.
+		As we've already seen before such a cubic is called a {\bf depressed cubic} (meaning the coefficient of $x^2$ is $0$).
+	\end{exercise}
 
+	From now on we'll work with $P(x) = x^3 + px + q$ with roots $ \beta_1, \beta_2, \beta_3$.
 	
-	
-	
-	\subsection{Discriminant of the Cubic}
-	
-\todo{aaron: i feel it might be cleaner to put an exercise here reducing to solving the depressed cubic, rather than coming back to it at the end, since the reduction is so easy? i've commented it out below}
-%\begin{exercise}
-%	\label{exercise:}
-%	Show that if $f(x) = x^3 + ax^2 +bx +c$ is any cubic polynomial with real coefficients, one can apply
-%	a change of variables of the form $y = x + c$ (for $c \in \br$)
-%	so that $f(y) = y^3 + py^2 + q$.
-%	Such a cubic is called a {\bf depressed cubic} (meaning the coefficient of $x^2$ is $0$).
-%\end{exercise}
-
-	
-	
-	\subsection{Solving the Cubic}
-	
-
-	
-%	We'll see later on ``why'' the discriminant can be written in terms of the coefficients $ P(x)$.
-	
-	\subsection{The Solution}
-%		
-%		
-%	There is no unique way to find the roots of the cubic. 
-%	We'll choose the method that is motivated by Galois theory. 
-%	It'll look extremely mysterious but this is the method that generalizes to show that there is no formula for solving a general fifth degree polynomial. 
-In this section, you will discover a method to solve the cubic, motivated by Galois theory.
 	\begin{exercise}
 	\label{exercise:coefficients_depressed_cubic}
-		Let $P(x) = x^3 + px + q$ with roots $\alpha, \beta,$ and $\gamma$. Express the coefficients of $P(x)$ (namely $ 0,p$, and $q$) in terms of $\alpha$, $\beta$, and $\gamma$.
+	Express the coefficients of $P(x)$ (namely $ 0,p$, and $q$) in terms of $ \beta_1, \beta_2, \beta_3$.
 	\end{exercise}
 
 	\begin{exercise}
@@ -392,11 +374,9 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 			The complex numbers $\omega, \omega^2,$ and $1$ are called the \textbf{cube roots of unity}.
     \item Compute $ \omega + \omega^2$.
 		\item Plot $ \omega$, $\omega^2$ on the complex plane.
-		\item Find the three solutions of $ x^3 = 2$. These are the three \emph{cube roots} of $ 2$.
-			\todo{aaron: why include this last part of the exercise?}
 	\end{enumerate}
 \end{exercise}
-  The method for solving the cubic is somewhat like induction. We reduce the problem of solving the cubic to that of solving the quadratic. For this we need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $\alpha,\beta,\gamma$ can be easily recovered. To this end we define
+  The method for solving the cubic is somewhat like induction. We reduce the problem of solving the cubic to that of solving the quadratic. For this we need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $\beta_1,\beta_2,\beta_3$ can be easily recovered. To this end we define
 	\begin{align}
 		\label{equation:intermediate_variables_cubic}
 		\begin{split}
@@ -409,7 +389,13 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 
 	\begin{exercise}
 		\label{exercise:intermediate_variables_cubic_1}
-		Find $\alpha, \beta$ and $\gamma$ in terms of $ \mu_1,$ and $\mu_2$. \hint{Find $ \beta_1 + \beta_2$, $ \omega \beta_1 + \omega^2 \beta_2$, $ \omega^2 \beta_1 + \omega \beta_2$. }
+		Verify that
+		\begin{align*}
+			\beta_1 = \dfrac{\mu_1 + \mu_2}{3} 
+			\mbox { , } \beta_2 = \dfrac{\omega^2 \mu_1 + \omega \mu_2}{3}
+			\mbox { , } \beta_3 = \dfrac{\omega \mu_1 + \omega^2 \mu_2}{3}
+		\end{align*}
+		are the solutions to \autoref{equation:intermediate_variables_cubic} and $ \beta_1 + \beta_2 + \beta_3 = 0$. (These are in fact unique solutions.)
 	\end{exercise}
 	
 
@@ -418,21 +404,16 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Use the previous exercise to find $\alpha \cdot \beta \cdot \gamma$ in terms of $ \mu_1,$ and $\mu_2$. 
-				\todo{aaron: why not also ask them to find $\alpha \cdot \beta+\alpha \cdot \gamma+\beta\cdot \gamma$? dont they need to also find that to do the next part here?}
-				Use this to find $ \mu_1^3 + \mu_2^3$ in terms of $ p, q$.
-\hint{First expand $\alpha, \beta$.}
-				\todo{aaron: can you even do this without taking a squareroot of q? I found this extremely difficult, it took about 15 minutes}
-			\item Find $ \mu_1 \cdot \mu_2$ in terms of $ p,q$.
-				\todo{aaron: I can't bring myself to do this part or the next, it seems so grungy. Can we maybe give them the answer and ask them to check it?}
-			\item Find the coefficients of the quadratic whose roots are $ \mu_1^3$ and $ \mu_2^3$ and solve it. (Do you recognize anyone \todo{what does this mean?} here?)
+			\item Show that $27\beta_1  \beta_2  \beta_3 = \mu_1^3 + \mu_2^3$. What is this in terms of $ p, q$?
+			\item Show that $ \mu_1 \mu_2 = -3p$.
+			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$. Solve it to find $ \mu_1^3, \mu_2^3$. (Do you recognize anything in the solution?)
 		\end{enumerate}
 	\end{exercise}
 	
 	\begin{mdframed}
 		With all this work done, here's the algorithm for finding the roots of a depressed cubic $ x^3 + px + q$:
 		\begin{enumerate}
-			\item Find $ \mu_1^3$ and $ \mu_2^3$ by solving the quadratic you found in the previous exercise. 
+			\item Find $ \mu_1^3$ and $ \mu_2^3$ as in \autoref{exercise:intermediate_variables_cubic_2}.
 			\item This does not determine $ \mu_1$ and $ \mu_2$ uniquely. Pick $ \mu_1$ as any of the three \emph{cube roots} of $ \mu_1^3$ and use Part 2 of \autoref{exercise:intermediate_variables_cubic_2} to find $ \mu_2$.
 			\item Use \autoref{exercise:intermediate_variables_cubic_1} to find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. 
 			%\item Feel happy about yourself.
@@ -446,26 +427,12 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
 	\end{exercise}
 	
-	\begin{exercise}
-		Use the above algorithm to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
-	\end{exercise}
-	
-	What if your cubic is not depressed? Suppose the polynomial $ P(x) = x^3 + ax^2 + bx + c$ has roots $\alpha,\beta,\gamma$. 
-	\begin{exercise} $ $
-		\begin{enumerate}
-			\item Find the coefficient of the polynomial whose roots are $\alpha+ k, \beta + k, \gamma + k$.
-			\item Find a $ k$ such that the coefficient of $ x^2$ vanishes. Notice that such a $ k$ only depends on the original coefficients $ a,b$ and $c$. \todo{doesn't it only depend on $a$?}
-				\todo{I'd rather put this at the begining in the form i commented out - it seems clearer as a reduction at the beginning than an tack on at the end}
-			\item Do you see it now? \todo{aaron: what does this mean?}
-		\end{enumerate}
-	\end{exercise}
-	
 	\begin{remark}[The idea for solving the quartic]
-		\label{remark:}
+		\label{remark:solving_the_quartic}
 		A similar inductive technique works for the quartic, however the method is too tedious to do by hand. Suppose we're trying to find the roots $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$ of a quartic \begin{align*}
 			P(x) &= x^4 + a_3x^3 + a_2x^2 + a_1x + a_0
 		\end{align*}
-		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\gamma_i's$ can recovered from the $ \lambda_i's$ `easily'. Such variables indeed exist:
+		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\gamma_i's$ can recovered from the $ \lambda_i's$ ``easily''. Such variables indeed exist:
 			\begin{align}
 				\label{equation:intermediate_variables_quartic}
 				\begin{split}
@@ -474,9 +441,11 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 					\lambda_3 &:= \gamma_2 \gamma_3 + \gamma_1 \gamma_4 
 				\end{split}
 			\end{align}
-		
-		Here's how you recover the $ \gamma_i$ from the $ \lambda_i$.
-		\begin{exercise}
+			
+		{\it Your homework is to complete up through \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following challenge questions.}
+			
+		\begin{exercise}[Challenge 1]
+			Here's how you recover the $ \gamma_i$ from the $ \lambda_i$.
 			\begin{enumerate}
 				\item Convice yourself that $ \gamma_1 \gamma_2$ and $\gamma_3 \gamma_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ \gamma_i \gamma_j$.
 				\item Figure out a way to recover $ \gamma_i$ if you know all the $ \gamma_i \gamma_j$.
@@ -484,18 +453,21 @@ In this section, you will discover a method to solve the cubic, motivated by Gal
 		\end{exercise}
 		We'll later see why the $ \lambda_i$ satisfy a cubic with coefficients which can be written in terms of the $ a_i$.
 	\end{remark}
-	\todo{my feeling is that this is a bit much to require for a 2 chili course - it took me about an hour to do the exercises, even having known
-	how to do pretty much all of them before, i think we should make this easier somehow, maybe by telling them the answers to some of the more computational questions?}
-	\subsection{Optional Exercises}
 	
-	Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
 	
-	\begin{exercise} $ $
+	
+	
+	
+	
+	\subsection{Roots of Unity}
+		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
+	
+	\begin{exercise}[Challenge 2] $ $
 		\begin{enumerate}
-			\item Find \todo{aaron: what does ``find`` mean?} and plot all the $ n^{th}$ roots of unity. 
-			\item How many primitive $n$th roots are there? \todo{aaron: what do you want them to express their answer in terms of? the prime factorization of the number?}
+			\item Show that the $ n^{th}$ roots of unity are $ e^{2 \pi i k / n}$ where $ 0 \le k < n$ is a positive integer. Plot them on the complex plane. 
+			\item Show that there are exactly $ \phi(n)$ primitive $ n^{th}$ roots of unity, where $ \phi(n)$ is the number of positive integers less than $ n$ relatively prime to it.
 		\end{enumerate}
-		If $ \zeta_1, \cdots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial $ \Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)$ is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
+		If $ \zeta_1, \dots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial $ \Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)$ is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
 		\begin{enumerate}[resume]
 			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
 			\item Find the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
