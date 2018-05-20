@@ -730,7 +730,8 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 \todo{aaron: i think this section should be reworked, because this is the last day so people won't work on it for homework. also, many people
 likely won't get through all the exercises, and so they likely won't reach your description of the galois correspondence,
 Since i think we want everyone to get to the galois correspondence idea, we should streamline what preceeds it as much as possible, and then possibly
-add some exercises after it in case they get through it quickly}
+add some exercises after it in case they get through it quickly,
+maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	
 	\subsection{Symmetric Polynomials}	
 	
@@ -755,6 +756,7 @@ add some exercises after it in case they get through it quickly}
 		\end{definition}
 		
 	\begin{exercise}
+		\todo{I think we should be very precise by what variables they are symmetric in}
 		Convince yourself that the elementary symmetric polynomials are symmetric.
 	\end{exercise}
 	
@@ -774,29 +776,30 @@ add some exercises after it in case they get through it quickly}
 	
 	We've already encountered several examples of this:
 	\begin{exercise}[\textbf{Discriminant}]
-		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$! (which \emph{justifies} the existence of the formulae $ b^2 - 4c, -4p^3 - 27q^2$.)
+		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$! This justifies the existence of the formulae $ b^2 - 4c, -4p^3 - 27q^2$.
 	\end{exercise}
 	
-	\begin{exercise}[\textbf{Cubic}] Recall that if $ P(x)$ is a cubic then the intermediate variables \begin{align*}
-    \mu_1 &= r_1 + r_2 \omega + r_3 \omega^2 \\
-    \mu_2 &= r_1 + r_2 \omega^2 + r_3 \omega
+	\begin{exercise}[\textbf{Cubic}] Recall that if $ P(x)$ is a cubic then we defined the intermediate variables \begin{align*}
+    \mu_1 &:= r_1 + r_2 \omega + r_3 \omega^2 \\
+    \mu_2 &:= r_1 + r_2 \omega^2 + r_3 \omega
   \end{align*}
 		\begin{enumerate}
 			\item Show that $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ are symmetric. 
-			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric. This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
+				\todo{symmetric in which variables?}
+			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric. \todo{in which variables?} This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
 		\end{enumerate}
 	\end{exercise}
 	
 	\begin{exercise}[\textbf{Quartic}]
 		\label{exercise:quartic-lambda}
-		Recall that if $ P(x)$ is a quartic then the intermediate variables
+		Recall that if $ P(x)$ is a quartic we defined the intermediate variables
 		\begin{align*}
-				\lambda_1 &= r_1 r_2 + r_3 r_4 \\
-				\lambda_2 &= r_1 r_3 + r_2 r_4 \\
-				\lambda_3 &= r_2 r_3 + r_1 r_4 
+				\lambda_1 &:= r_1 r_2 + r_3 r_4 \\
+				\lambda_2 &:= r_1 r_3 + r_2 r_4 \\
+				\lambda_3 &:= r_2 r_3 + r_1 r_4 
 		\end{align*}
 			\begin{enumerate}
-			\item Show that $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ are symmetric in $ r_i$. 
+			\item Show that $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ are symmetric in $r_i$. 
 			\item Conclude that the coefficients of $ (x-\lambda_1)(x-\lambda_2)(x-\lambda_3)$ can be expressed in terms of the coefficients of $ P(x)$.
 		\end{enumerate}
 	\end{exercise}
@@ -809,6 +812,7 @@ add some exercises after it in case they get through it quickly}
 	
 	
 	\subsection{Fixed points}
+	\todo{i think it might be a bit much to include this since people probably then wont get to the galois correpsondence. maybe we can include it after the galois correspondence, or else as an appendix, or as challenge questions?}
 		A set of polynomials $ \mathscr{S} = \{ Q_i(r_1, r_2, \dots, r_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
 			\begin{align*}
 			(\sigma(Q_i))(r_1, r_2, \dots, r_n) = Q_i(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
