@@ -488,7 +488,7 @@ how to solve cubic and quartic equations in future days.
 
 \begin{exercise}
 	\label{exercise:triangle-automorphisms}
-	Show that the an equilateral triangle in $\br^2$ has exactly $6$ automorphisms.
+	Show that an equilateral triangle in $\br^2$ has exactly $6$ automorphisms.
 	Here, we include the {\bf identity automorphism}, denoted $\id$, which fixes every point of the triangle.
 	Write down these automorphisms explicitly (in terms of rotations and reflections).
 \end{exercise}
@@ -510,7 +510,6 @@ how to solve cubic and quartic equations in future days.
 	Show that all $6$ automorphisms from \autoref{exercise:triangle-automorphisms} can be expressed as compositions
 	of the elements $r$ and $s$ defined in \autoref{exercise:r-s}. In this case we say that $r$ and $s$ {\bf generate}
 	the automorphism group of the equilateral triangle.
-	\todo{Apurva: May be give them the 6 elements and ask them to check.}
 \end{exercise}
 
 \subsection{Dihedral Groups}
@@ -525,7 +524,7 @@ We now generalize from the case of triangles to all polygons.
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
 	regular $n$-gon.
-	\todo{Apurva: Again, it's probably better to give them the $ 2n$ elements in terms of $ r,s$.}
+	\todo{Apurva: May be give them the $ 2n$ elements in terms of $ r,s$ and ask them to check? The reflections are a little hard to express in terms of $ rs$.}
 \end{exercise}
 \begin{remark}
 	\label{remark:}
@@ -565,10 +564,16 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 
 {\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
 
+\begin{exercise}[Challenge 0]
+	Inside all automorphisms of the cube, there is a subgroup of rotations. 
+	What is the size of this group? Can you identify this group? 
+\end{exercise}
+
 \begin{exercise}[Challenge 1]
 	\label{exercise:cube}
-	Inside all automorphisms of the cube, there is a subgroup of rotations. Identify that subgroup with $S_4$.
+	Identify the group of automorphims of a cube with $S_4$. What is the subgroup of rotations inside this?
 	Do the same for the octahedron.
+	\todo{Apurva:The rotations of the cube are easy to enumerate, it's a lot of fun to write them down. We can put them as a separate problem before this.}
 %	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
 %	This is known as the {\bf Klein-$4$ group,} denoted $K_4$.
 	\hint{To understand the automorphisms of the cube, look at the long diagonals. For the automorphisms of the octahedron, use that it is ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
@@ -887,9 +892,18 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 			\begin{enumerate}
 				\item If we can solve a general degree $ n$ polynomial by radicals, then we should be able to find a sequence of intermediate variables which satisfy lower degree polynomials. 
 				\emph{This part is not hard if you think about what a solution in terms of radicals means.}
-				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.}
+				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.} [For those who of you who know what Galois theory is about, this is the Galois correspondence for the field extension of the function fields $ \mathbb{C}(a_0,a_1,\dots, a_{n-1}) \subseteq \mathbb{C}(r_0,r_1,\dots, r_{n-1})$ where the $ r_i$ are free variables and the $ a_i$ are the elementary symmetric polynomials in the $ r_i$.]
 				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$. \emph{This is proven by explicit computation of the commutators.}
 			\end{enumerate}
+      
+      The sequence of successive commutators for the Symmetric groups looks as such
+      \begin{align*}
+        \mathbf{S_3}: & S_3 \supset [S_3, S_3] = A_3 \supset [A_3, A_3] = \{ e \} \\
+				\mathbf{S_4}: & S_4 \supset [S_4, S_4] = A_4 \supset [A_4, A_4] = K_4 \supset [K_4, K_4] = \{ e \} \\
+				\mathbf{S_5}: & S_5 \supset [S_5, S_5] = A_5 \supset [A_5, A_5] = A_5
+      \end{align*}
+      
+      
 		
 			Combine all this and you get
 			\begin{theorem}
