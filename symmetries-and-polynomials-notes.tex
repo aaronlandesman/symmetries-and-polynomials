@@ -82,7 +82,7 @@
 \newcommand\br{{\mathbb R}}
 \newcommand\bq{{\mathbb Q}}
 \newcommand\bp{{\mathbb P}}
-\newcommand\CF{{\mathcal F}}
+\newcommand\CF{{\mathscr F}}
 \newcommand\bz{{\mathbb Z}}
 \newcommand\ba{{\mathbb A}}
 \newcommand\bg{{\mathbb G}}
@@ -217,26 +217,22 @@
 
 \maketitle
 
-\todo{Apurva: I changed the documentclass and margin. We can switch if this doesn't look good, I'm just trying it out. Hints can also go in the footnotes, I think you did this in your class last year, that way not everyone sees the hints immediately.
-}
-\todo{aaron: I changed the footnotes to endnotes so we could give a page handout to everyone, which i think is less tempting for people to look at if they dont want to, but feel free to change it back}
-
 \section{The Discriminant}
 
 \subsection{Quadratic Polynomials}
 \begin{definition}[Quadratic discriminant]
 	\label{definition:quadratic-discriminant}
-	Let $p(x) = x^2 + bx + c$ be a polynomial with $b$ and $c$ real numbers.
-	The discriminant $\Delta(p)$ is by definition $b^2 - 4c$.
+	Let $P(x) = x^2 + bx + c$ be a polynomial with $b$ and $c$ real numbers.
+	The discriminant $\Delta(P)$ is by definition $b^2 - 4c$.
 \end{definition}
 \begin{exercise}
 	\label{exercise:}
-	If the polynomial $p(x) = x^2 + bx + c$ has roots $\alpha$ and $\beta$, express $b$ and $c$
+	If the polynomial $P(x) = x^2 + bx + c$ has roots $\alpha$ and $\beta$, express $b$ and $c$
 	in terms of $\alpha$ and $\beta$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:quadratic-roots}
-	What does the sign of the discriminant (i.e., whether $\Delta(p) > 0, < 0$ or $=0$) 
+	What does the sign of the discriminant (i.e., whether $\Delta(P) > 0, < 0$ or $=0$) 
 	tell you about the roots $\alpha$ and $\beta$?
 	\footnote{{\it Hint:} If the discriminant is $>0$ show that the roots are real, if it is equal
 	to $0$, show they are the same, if it is less than $0$, show they are complex numbers
@@ -244,19 +240,19 @@ which are not real.}
 \end{exercise}
 \begin{exercise}
 	\label{exercise:quadratic-discriminant-in-roots}
-	Express the discriminant of the polynomial $p(x) = x^2 + bx + c$ in terms of
+	Express the discriminant of the polynomial $P(x) = x^2 + bx + c$ in terms of
 	the roots $\alpha, \beta$.
 \end{exercise}
 
 \subsection{The discriminant in general}
 \begin{definition}
 	\label{definition:discriminant}
-	For $p(x)$ a polynomial of the form $p(x) = (x-r_1)(x-r_2) \cdots (x-r_n)$,
-	define the discriminant $\Delta(p) := \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$.
+	For $P(x)$ a polynomial of the form $P(x) = (x-r_1)(x-r_2) \cdots (x-r_n)$,
+	define the discriminant $\Delta(P) := \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$.
 \end{definition}
 \begin{exercise}
 	\label{exercise:}
-	Verify that for $p(x)$ of degree $2$, the definition of the discriminant
+	Verify that for $P(x)$ of degree $2$, the definition of the discriminant
 	of a general polynomial from \autoref{definition:discriminant} agrees with
 	that of a quadratic polynomial given in \autoref{definition:quadratic-discriminant}.
 	\footnote{{\it Hint:} Use \autoref{exercise:quadratic-discriminant-in-roots}.}
@@ -265,14 +261,14 @@ The following exercise shows that the discriminant measures, in a precise sense,
 the roots of a polynomial are.
 \begin{exercise}
 	\label{exercise:discriminant-vanishing}
-	Show that for $p$ a polynomial, $\Delta(p) = 0$ if and only if $p$ has a repeated root.
+	Show that for $P$ a polynomial, $\Delta(P) = 0$ if and only if $P$ has a repeated root.
 \end{exercise}
 \subsection{Cubic discriminants}
 \begin{exercise}
 	\label{exercise:real-root-cubic}
-	Show that a cubic polynomial with real coefficients $p(x) = x^3 + ax + bx + c$
+	Show that a cubic polynomial with real coefficients $P(x) = x^3 + ax + bx + c$
 	always has a real root.
-	\footnote{{\it Hint:} Graph the cubic and show it intersects the line $p(x) = 0$.}
+	\footnote{{\it Hint:} Graph the cubic and show it intersects the line $P(x) = 0$.}
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
@@ -282,12 +278,10 @@ the roots of a polynomial are.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:discriminant-cubic-sign}
-	For $p(x) = x^3 + ax^2 + bx + c$ a cubic polynomial with real coefficients, show $\Delta(p) = 0$ if and only 
-	if there is a repeated root, $\Delta(p) > 0$ if and only if $p$ has three distinct real roots, and $\Delta(p) < 0$ if and only if $p$ has two complex conjugate roots and one real root.
+	For $P(x) = x^3 + ax^2 + bx + c$ a cubic polynomial with real coefficients, show $\Delta(P) = 0$ if and only 
+	if there is a repeated root, $\Delta(P) > 0$ if and only if $P$ has three distinct real roots, and $\Delta(P) < 0$ if and only if $P$ has two complex conjugate roots and one real root.
 	Compare your answer to \autoref{exercise:quadratic-roots}.
 \end{exercise}
-
-\todo{aaron: i didn't discuss the formula for the cubic discriminant, but i think this is already perhaps too much material for one day, i think maybe you can just state it as a fact the formula that the discriminant of $x^3 + ax + b$ is $-4a^3-27b^2$ or whatever it is (and optionally allow them to expand it out but suggest they don't prove it since it seems boring and tedious) }
 
 {\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
 
@@ -301,7 +295,7 @@ Assume that not all three roots are the same.
 	\begin{enumerate}
 		\item By definition, the {\bf critical points} of $P(x)$ (the points at which $ P(x)$ attains it's local max/min if at all) and are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
 		\item Convince yourself that $ P(x)$ has repeated roots if and only if all the roots are real and one of the roots is a critical point. (Draw a graph.)
-		\item Argue that if $ P(x)$ has a repeated root if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
+		\item Argue that $ P(x)$ has a repeated root if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
 		\item Expand $ P(x_1) \cdot P(x_2)$.
 	\end{enumerate}
 	Here's a fact we won't prove. It's quite easy but tedious to show this by simply expanding out the definition of the discriminant from yesterday.
@@ -314,7 +308,7 @@ Assume that not all three roots are the same.
 The following questions are quite tricky, but fun. Only attempt them if you've already solved \autoref{exercise:cubic-discriminant}.
 \begin{exercise}[Challenge 2]
 	\label{exercise:repeated-roots}
-	Let $p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
+	Let $P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
 	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
 	also considered as a number in $\bz/p$. To make sense of discriminant, you may assume that
 	every such polynomial factors uniquely as a product of irreducible polynomials with coefficients in $\bz/p$.
@@ -329,17 +323,17 @@ of such polynomials for the degree of $f$ fixed inductively.}
 \begin{exercise}[Challenge 3]
 	\label{exercise:common-roots}
 	Using a similar method to that of \autoref{exercise:repeated-roots},
-	count the number of pairs of degree $n$ polynomials $(p,q)$ for 
-	$p(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $q(x) = x^n + b_{n-1}x^{n-1} + \cdots + b_0$
-	with $a_i \in \bz/p, b_i \in \bz_p$ so that $p$ and $q$ have no common root $\bmod p$.
+	count the number of pairs of degree $n$ polynomials $(P,Q)$ for 
+	$P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $Q(x) = x^n + b_{n-1}x^{n-1} + \cdots + b_0$
+	with $a_i \in \bz/p, b_i \in \bz_p$ so that $P$ and $Q$ have no common root $\bmod p$.
 \end{exercise}
 \begin{remark}
 	\label{remark:}
 	If you did the two prior exercises \autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} correctly, you may notice a striking similarity
 between the two answers. There is in deed a deeper connection, but the answer lies deep.
-Loosely speaking, if you take a polynomial $p(x)$ with no repeated roots, you can send it
-to the pair of polynomials $(p(x) + p'(x), p(x))$. Here $p'(x)$ denotes the derivative of $p(x)$.
-If $p(x) = \sum_i a_ix^i$ then $p'(x) = \sum_i  i \cdot a_i x^{i-1}$.
+Loosely speaking, if you take a polynomial $P(x)$ with no repeated roots, you can send it
+to the pair of polynomials $(P(x) + P'(x), P(x))$. Here $P'(x)$ denotes the derivative of $P(x)$.
+If $P(x) = \sum_i a_ix^i$ then $P'(x) = \sum_i  i \cdot a_i x^{i-1}$.
 The diligent reader will check that this is a map from the space of polynomials with no repeated roots to the
 space of pairs of polynomials with no repeated roots.
 In some sense (which we do not explain) this map explains why the counts from 
@@ -360,11 +354,11 @@ In some sense (which we do not explain) this map explains why the counts from
 		As we've already seen before such a cubic is called a {\bf depressed cubic} (meaning the coefficient of $x^2$ is $0$).
 	\end{exercise}
 
-	From now on we'll work with $P(x) = x^3 + px + q$ with roots $ \beta_1, \beta_2, \beta_3$.
+	From now on we'll work with $P(x) = x^3 + px + q$ with roots $ r_1, r_2, r_3$.
 	
 	\begin{exercise}
 	\label{exercise:coefficients_depressed_cubic}
-	Express the coefficients of $P(x)$ (namely $ 0,p$, and $q$) in terms of $ \beta_1, \beta_2, \beta_3$.
+	Express the coefficients of $P(x)$ (namely $ 0,p$, and $q$) in terms of $ r_1, r_2, r_3$.
 	\end{exercise}
 
 	\begin{exercise}
@@ -378,12 +372,12 @@ In some sense (which we do not explain) this map explains why the counts from
 		\item Plot $ \omega$, $\omega^2$ on the complex plane.
 	\end{enumerate}
 \end{exercise}
-  The method for solving the cubic is somewhat like induction. We reduce the problem of solving the cubic to that of solving the quadratic. For this we need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $\beta_1,\beta_2,\beta_3$ can be easily recovered. To this end we define
+  The method for solving the cubic is somewhat like induction. We reduce the problem of solving the cubic to that of solving the quadratic. For this we need to find \emph{intermediate constants} which satisfy a known \emph{quadratic} and from which $r_1,r_2,r_3$ can be easily recovered. To this end we define
 	\begin{align}
 		\label{equation:intermediate_variables_cubic}
 		\begin{split}
-    \mu_1 &:= \beta_1 + \beta_2 \omega + \beta_3 \omega^2 \\
-    \mu_2 &:= \beta_1 + \beta_2 \omega^2 + \beta_3 \omega
+    \mu_1 &:= r_1 + r_2 \omega + r_3 \omega^2 \\
+    \mu_2 &:= r_1 + r_2 \omega^2 + r_3 \omega
 	\end{split}
   \end{align} 
 	Our \emph{intermediate constants} are not $ \mu_1$ and $ \mu_2$ but $ \mu_1^3$ and $ \mu_2^3$.
@@ -393,11 +387,11 @@ In some sense (which we do not explain) this map explains why the counts from
 		\label{exercise:intermediate_variables_cubic_1}
 		Verify that
 		\begin{align*}
-			\beta_1 = \dfrac{\mu_1 + \mu_2}{3} 
-			\mbox { , } \beta_2 = \dfrac{\omega^2 \mu_1 + \omega \mu_2}{3}
-			\mbox { , } \beta_3 = \dfrac{\omega \mu_1 + \omega^2 \mu_2}{3}
+			r_1 = \dfrac{\mu_1 + \mu_2}{3} 
+			\mbox { , } r_2 = \dfrac{\omega^2 \mu_1 + \omega \mu_2}{3}
+			\mbox { , } r_3 = \dfrac{\omega \mu_1 + \omega^2 \mu_2}{3}
 		\end{align*}
-		are the solutions to \autoref{equation:intermediate_variables_cubic} and $ \beta_1 + \beta_2 + \beta_3 = 0$. (These are in fact unique solutions.)
+		are the solutions to \autoref{equation:intermediate_variables_cubic} and $ r_1 + r_2 + r_3 = 0$. (These are in fact unique solutions.)
 	\end{exercise}
 	
 
@@ -406,7 +400,7 @@ In some sense (which we do not explain) this map explains why the counts from
 		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Show that $27\beta_1  \beta_2  \beta_3 = \mu_1^3 + \mu_2^3$. What is this in terms of $ p, q$?
+			\item Show that $27r_1  r_2  r_3 = \mu_1^3 + \mu_2^3$. What is this in terms of $ p, q$?
 			\item Show that $ \mu_1 \mu_2 = -3p$.
 			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$. Solve it to find $ \mu_1^3, \mu_2^3$. (Do you recognize anything in the solution?)
 		\end{enumerate}
@@ -417,12 +411,12 @@ In some sense (which we do not explain) this map explains why the counts from
 		\begin{enumerate}
 			\item Find $ \mu_1^3$ and $ \mu_2^3$ as in \autoref{exercise:intermediate_variables_cubic_2}.
 			\item This does not determine $ \mu_1$ and $ \mu_2$ uniquely. Pick $ \mu_1$ as any of the three \emph{cube roots} of $ \mu_1^3$ and use Part 2 of \autoref{exercise:intermediate_variables_cubic_2} to find $ \mu_2$.
-			\item Use \autoref{exercise:intermediate_variables_cubic_1} to find $ \beta_1, \beta_2, \beta_3$ in terms of $ \mu_1, \mu_2$. 
+			\item Use \autoref{exercise:intermediate_variables_cubic_1} to find $ r_1, r_2, r_3$ in terms of $ \mu_1, \mu_2$. 
 			%\item Feel happy about yourself.
 		\end{enumerate}
 	\end{mdframed}
 		\begin{exercise}
-			Use your newfound superpower to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
+			Use this method to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
 		\end{exercise}
 		
 	\begin{exercise}
@@ -431,26 +425,26 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 	\begin{remark}[The idea for solving the quartic]
 		\label{remark:solving_the_quartic}
-		A similar inductive technique works for the quartic, however the method is too tedious to do by hand. Suppose we're trying to find the roots $ \gamma_1, \gamma_2, \gamma_3, \gamma_4$ of a quartic \begin{align*}
+		A similar inductive technique works for the quartic, however the method is too tedious to do by hand. Suppose we're trying to find the roots $ r_1, r_2, r_3, r_4$ of a quartic \begin{align*}
 			P(x) &= x^4 + a_3x^3 + a_2x^2 + a_1x + a_0
 		\end{align*}
-		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $\gamma_i's$ can recovered from the $ \lambda_i's$ ``easily''. Such variables indeed exist:
+		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $r_i's$ can recovered from the $ \lambda_i's$ ``easily''. Such variables indeed exist:
 			\begin{align}
 				\label{equation:intermediate_variables_quartic}
 				\begin{split}
-					\lambda_1 &:= \gamma_1 \gamma_2 + \gamma_3 \gamma_4 \\
-					\lambda_2 &:= \gamma_1 \gamma_3 + \gamma_2 \gamma_4 \\
-					\lambda_3 &:= \gamma_2 \gamma_3 + \gamma_1 \gamma_4 
+					\lambda_1 &:= r_1 r_2 + r_3 r_4 \\
+					\lambda_2 &:= r_1 r_3 + r_2 r_4 \\
+					\lambda_3 &:= r_2 r_3 + r_1 r_4 
 				\end{split}
 			\end{align}
 			
 		{\it Your homework is to complete up through \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following challenge questions.}
 			
 		\begin{exercise}[Challenge 1]
-			Here's how you recover the $ \gamma_i$ from the $ \lambda_i$.
+			Here's how you recover the $ r_i$ from the $ \lambda_i$.
 			\begin{enumerate}
-				\item Convice yourself that $ \gamma_1 \gamma_2$ and $\gamma_3 \gamma_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ \gamma_i \gamma_j$.
-				\item Figure out a way to recover $ \gamma_i$ if you know all the $ \gamma_i \gamma_j$.
+				\item Convice yourself that $ r_1 r_2$ and $r_3 r_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ r_i r_j$.
+				\item Figure out a way to recover $ r_i$ if you know all the $ r_i r_j$.
 			\end{enumerate}
 		\end{exercise}
 		We'll later see why the $ \lambda_i$ satisfy a cubic with coefficients which can be written in terms of the $ a_i$.
@@ -516,6 +510,7 @@ how to solve cubic and quartic equations in future days.
 	Show that all $6$ automorphisms from \autoref{exercise:triangle-automorphisms} can be expressed as compositions
 	of the elements $r$ and $s$ defined in \autoref{exercise:r-s}. In this case we say that $r$ and $s$ {\bf generate}
 	the automorphism group of the equilateral triangle.
+	\todo{Apurva: May be give them the 6 elements and ask them to check.}
 \end{exercise}
 
 \subsection{Dihedral Groups}
@@ -523,20 +518,23 @@ how to solve cubic and quartic equations in future days.
 We now generalize from the case of triangles to all polygons.
 \begin{exercise}
 	\label{exercise:}
-	Show that a regular $n$-gon in $\br^2$ has $2n$ automorphisms.\hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
+	A regular $n$-gon in $\br^2$ has $2n$ automorphisms, what are they? \hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
 	regular $n$-gon.
+	\todo{Apurva: Again, it's probably better to give them the $ 2n$ elements in terms of $ r,s$.}
 \end{exercise}
-\begin{exercise}
-	\label{exercise:}
-	Show that $n$ of the $2n$ automorphisms of the regular $n$-gon are rotations.
-	Show that the subset $D_{2n}$ of rotations is closed under composition. In this case we say that the rotations preserving the regular $n$-gon
-	form a {\bf subgroup} of all automorphisms. This subgroup is called {\bf the cyclic group of order $n$}, denoted $C_n$.
-\end{exercise}
+\begin{remark}
+	\label{remark:}
+	Of the $2n$ automorphisms of the regular $n$-gon, $ n$ are rotations. 
+	It is easy to see that the subset of rotations is closed under composition. 
+	In this case we say that the rotations preserving the regular $n$-gon
+	form a {\bf subgroup} of all automorphisms. 
+	This subgroup is called {\bf the cyclic group of order $n$}, denoted $C_n$.
+\end{remark}
 
 \subsection{Symmetric Groups}
 \begin{definition}
@@ -544,6 +542,7 @@ We now generalize from the case of triangles to all polygons.
 	We define the {\bf symmetric group on $n$ elements,} $S_n$ to be the set of bijections $\left\{ 1,2,\ldots, n \right\} \ra \left\{ 1, 2, \ldots, n \right\}$
 \end{definition}
 Strictly speaking, the symmetric group is a little more than just this set. Given two bijections, you can compose them to get a third bijection.
+\todo{Apurva: Reprase? Since you `defined' a group above?}
 \begin{exercise}
 	\label{exercise:}
 	Show that $S_n$ (the symmetric group on $n$ elements) has size $n!$.
@@ -588,7 +587,7 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 \section{Commutators and symmetric polynomials}
 Today we discuss commutators of groups in order to apply it to solving the cubic and quartic.
 Tomorrow we will explain how these commutators let us solve the cubic and quartic equations.
-
+\todo{Apurva: I think this section is hard as we're defining a new concept. (This is the only section where we're doing this.) We can have far fewer problems here (5-6) to let them digest the definition. We can get rid of 4.2 and replace it one problem on $ K_4$ and a simplified version of Challenge Problem 1.}
 \begin{definition}
 	\label{definition:}
 	Let $G$ be a group. The {\bf commutator subgroup} of $G$, denoted $\left[ G,G \right] \subset G$ is the subgroup of $G$ generated
@@ -615,6 +614,7 @@ Tomorrow we will explain how these commutators let us solve the cubic and quarti
 	Let $G = C_3$ (the group of rotations of the triangle). Show that the commutator just the identity automorphism, $\left[ C_n, C_n \right] = \left\{ \id \right\}$.
 	In other words, show that for any $g, h \in C_3$, $ghg^{-1}h^{-1} = \id$.
 	More generally, show that if $G = C_n$, $\left[ C_n, C_n \right] = \left\{ \id \right\}$.
+	\todo{Apurva: we could also add an exercise to show the same for $ K_4$.}
 \end{exercise}
 %\begin{exercise}
 %	\label{exercise:}
@@ -638,6 +638,7 @@ Tomorrow we will explain how these commutators let us solve the cubic and quarti
 \end{exercise}
 
 \subsection{Commutators of $S_4$}
+\todo{Apurva: this entire section is too hard. It's very time consuming to compute compositions of permutations. Which means computing commutators is even harder. This section would go beyond 3 chili. We have to give $A_4 = [S_4,S_4]$ and $ K_4=[A_4,A_4]$ as a fact.}
 
 We next compute commutators of $S_4$.
 To this end, it will be useful to have cycle notation.
@@ -646,8 +647,8 @@ To this end, it will be useful to have cycle notation.
 	\label{exercise:}
 	Define a ``cycle notation'' for elements in $S_n$. See \autoref{figure:cycle-notation} on the next page for a pictorial discription.
 			\begin{figure}[h!]
-				\includegraphics[scale=1.5]{cycle-1.png}	
-				\includegraphics[scale=1.5]{cycle-2.png}	
+				% \includegraphics[scale=1.5]{cycle-1.png}	
+				% \includegraphics[scale=1.5]{cycle-2.png}	
 				\caption{This is a depiction of two elements thought of as elements of $S_8$. The first corresponds the the permutation fixing $2$ and $5$,
 				and sending $1 \mapsto 4, 4 \mapsto 6, 6 \mapsto 8, 8\mapsto 3, 3 \mapsto 7, 7\mapsto 1$.
 			The corresponding cycle notation for the first picture is $(146837)(2)(5)$ (where each parenthesized group of numbers
@@ -699,6 +700,7 @@ problems}
 \subsection{Geometric computations of commutators}
 We now give some geometric ways to see various commutator subgroups of $S_4$.
 \begin{exercise}[Challenge 1]
+		\todo{Apurva: I do not know what the proof of this is, but this is a great problem. If you can outline a handwave-y proof/idea of this, it would fit the theme of previous section really well. You can ask them to verify instead of prove? Dunno if that's any better.}
 	\label{exercise:}
 	Using that the automorphisms of the tetrahedron can be identified with $S_4$ from \autoref{exercise:tetrahedron-rotations}, 
 	show that the rotations of the tetrahedron can be identified with $A_4$.
@@ -764,22 +766,22 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 	
 	\subsection{Symmetric Polynomials}	
 	
-	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ \zeta_1, \zeta_2, \dots, \zeta_n$.
+	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ r_1, r_2, \dots, r_n$.
 	
 	\begin{exercise}
-		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ \zeta_i$.
+		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ r_i$.
 	\end{exercise}
-	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ \zeta_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
+	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
 	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. 
 	That is, we can ``apply'' $\sigma$ to a polynomial $Q$ to obtain the polynomial $\sigma(Q)$ defined by
 		\begin{align*}
-			(\sigma(Q))(\zeta_1, \zeta_2, \dots, \zeta_n) := Q(\zeta_{\sigma(1)}, \zeta_{\sigma(2)}, \dots, \zeta_{\sigma(n)})
+			(\sigma(Q))(r_1, r_2, \dots, r_n) := Q(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
 		\end{align*}
 		\begin{definition}
 			\label{definition:}
-			A polynomial $Q(\zeta_1, \zeta_2, \dots, \zeta_n)$ is {\bf symmetric} if for all $\sigma \in S_n $, 
+			A polynomial $Q(r_1, r_2, \dots, r_n)$ is {\bf symmetric} if for all $\sigma \in S_n $, 
 	\begin{align*}
-		\sigma(Q) (\zeta_1, \zeta_2, \dots, \zeta_n)= Q(\zeta_1, \zeta_2, \dots, \zeta_n)
+		\sigma(Q) (r_1, r_2, \dots, r_n)= Q(r_1, r_2, \dots, r_n)
 	\end{align*}
 	In other words, the polynomial remains the same after reordering the variables.
 		\end{definition}
@@ -788,40 +790,44 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 		Convince yourself that the elementary symmetric polynomials are symmetric.
 	\end{exercise}
 	
-	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem.
+	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem. 
 	
 	\begin{theorem}
 		\label{theorem:fundamental_theorem_symmetric_polynomials}
-		Any symmetric polynomial $ Q(\zeta_1, \zeta_2, \dots, \zeta_n)$ can be expressed as a polynomial in the coefficients $ a_i$.
+		Any symmetric polynomial can be expressed as a polynomial in the elementary symmetric ones. 
+		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in it's coefficients $ a_i$.
 	\end{theorem}
-	\todo{state as fact?}
-	For example, \begin{align*}
-		\zeta_1^2 + \zeta_2^2 + \dots + \zeta_n^2 
-		&= (\zeta_1 + \zeta_2 + \dots + \zeta_n)^2 - 2.\zeta_1 \zeta_2 \dots \zeta_n \\
-		&= a_{n-1}^2 - 2.(-1)^n a_0
-	\end{align*}
-	\begin{corollary}
-		Any symmetric polynomial $ Q(\zeta_1, \zeta_2, \dots, \zeta_n)$ in the roots $ \zeta_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in the coefficients $ a_i$ of the polynomial of $ P(x)$.
-	\end{corollary}
-	\todo{ask them to prove this corollary as an exercise?}
-	
-	We've already encountered several examples of this:
+	\begin{remark}
+		You can assume this theorem without proof. The proof of this theorem, which is just a careful application of the multinomial theorem and some multi-index induction, gives an algorithm for finding what these polynomials are.
+	\end{remark}
 	\begin{exercise}
-		Verify that for any polynomial $ P(x)$ the discriminant $ \Delta(P)$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$!
+		As an example, show that $ r_1^2 + r_2^2 + \dots + r_n^2  = a_{n-1}^2 - 2 a_{n-2}$.
 	\end{exercise}
 	
-	\begin{exercise} This exercise justifies why the intermediate variables for a cubic satisfy a quadratic polynomial, whose coefficients are polynomials in the original polynomial.
+	We've already encountered several examples of this:
+	\begin{exercise}[\textbf{Discriminant}]
+		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$! (which \emph{justifies} the existence of the formulae $ b^2 - 4c, -4p^3 - 27q^2$.)
+	\end{exercise}
+	
+	\begin{exercise}[\textbf{Cubic}] Recall that if $ P(x)$ is a cubic then the intermediate variables \begin{align*}
+    \mu_1 &= r_1 + r_2 \omega + r_3 \omega^2 \\
+    \mu_2 &= r_1 + r_2 \omega^2 + r_3 \omega
+  \end{align*}
 		\begin{enumerate}
-			\item Verify that if $ P(x)$ is a cubic then $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ as defined in \autoref{equation:intermediate_variables_cubic} are both symmetric. 
-\todo{maybe say they are allowed to assume the theorem, and use the definition of discriminant as products of differences of the roots?}
+			\item Show that $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ are symmetric. 
 			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric. This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
 		\end{enumerate}
 	\end{exercise}
 	
-	\begin{exercise}
-		This exercise justifies why the intermediate variables for a quartic satisfy a cubic polynomial, whose coefficients are polynomials in the original polynomial.		\begin{enumerate}
-			\item Verify that if $ P(x)$ is a quartic then $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ as defined in \autoref{equation:intermediate_variables_quartic} are symmetric in $ \zeta_i$. 
-			\todo{at this point, people haven't seen the $\tau_i, \lambda_i$ in $2$ days, so maybe we should remind them of the definition (instead of a reference to a handout they might have lost?}
+	\begin{exercise}[\textbf{Quartic}]
+		Recall that if $ P(x)$ is a quartic then the intermediate variables
+		\begin{align*}
+				\lambda_1 &= r_1 r_2 + r_3 r_4 \\
+				\lambda_2 &= r_1 r_3 + r_2 r_4 \\
+				\lambda_3 &= r_2 r_3 + r_1 r_4 
+		\end{align*}
+			\begin{enumerate}
+			\item Show that $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ are symmetric in $ r_i$. 
 			\item Conclude that the coefficients of $ (x-\lambda_1)(x-\lambda_2)(x-\lambda_3)$ can be expressed in terms of the coefficients of $ P(x)$.
 		\end{enumerate}
 	\end{exercise}
@@ -834,46 +840,63 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 	
 	
 	\subsection{Fixed points}
-		A set of polynomials $ V = \{ Q_i(\zeta_1, \zeta_2, \dots, \zeta_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
+		A set of polynomials $ \mathscr{S} = \{ Q_i(r_1, r_2, \dots, r_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
 			\begin{align*}
-			(\sigma(Q_i))(\zeta_1, \zeta_2, \dots, \zeta_n) = Q_i(\zeta_{\sigma(1)}, \zeta_{\sigma(2)}, \dots, \zeta_{\sigma(n)})
+			(\sigma(Q_i))(r_1, r_2, \dots, r_n) = Q_i(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
 			\end{align*}
-			\todo{isn't this the definition of the action and not what it means to be fixed? I changed this above, but since you did it twice, maybe I'm wrong?}
-		for every $ Q_i \in V$. By this definition, the set of symmetric polynomials is fixed by the every element of $ S_n$. 
+		for every $ Q_i \in \mathscr{S}$. 
 		
-		\begin{exercise}
-			For a set of polynomials $ V = \{ Q_i(\zeta_1, \zeta_2, \dots, \zeta_n) \}$, prove that the subset of elements of $ S_n$ that fix $ Q$ point-wise, is itself a group (and hence a subgroup of $ S_n$). Such a subgroup is called the \textbf{stabilizer} of $ V$.
-		\end{exercise}
+		\begin{remark}
+			The symmetric polynomials are fixed point-wise by every element of $ S_n$. 
+		\end{remark}
+		
+		\begin{remark}
+			For a set of polynomials $ \mathscr{S}$, the subset of elements of $ S_n$ that fix $ \mathscr{S}$ point-wise is always a subgroup of $ S_n$, called the \textbf{stabilizer} of $ \mathscr{S}$.
+		\end{remark}
 		
 		\begin{exercise} Let $ P(x)$ be a cubic polynomial. 
 			\begin{enumerate}
 
-				\item Compute $ \omega \cdot \mu_1$ and $ \omega^2\cdot \mu_1$. Similarly for $ \mu_2$.
-				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$ \todo{what are these polynomials in terms of? are they in terms of the roots? or p and q?}point-wise. What do the elements not in this subgroup do to it?\hint{Don't forget that $ \omega^3 = 1$.}
+				\item Find $ \omega \cdot \mu_1$ and $ \omega^2\cdot \mu_1$ in terms of the roots $ r_1, r_2, r_3$.
+				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$.
+				 What do the elements not in this subgroup do to it? (Remember that $ \omega^3 = 1$.)
 				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1, \mu_2 \}$ point-wise.
 			\end{enumerate}
 		\end{exercise}
 		
 		\begin{exercise}
-			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \lambda_1,  \lambda_2, \lambda_3 \}$ point-wise. Have you seen this subgroup before?
+			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \lambda_1,  \lambda_2, \lambda_3 \}$ point-wise. Have you seen this subgroup before? What do the elements not in this subgroup do to it?
 		\end{exercise}
+			
+			
+			
 		
-\todo{aaron: I'm a bit confused by the following dialogue. Aren't there basically no possible intermediate variables. I'd remove this, or at least clarify what you mean?}
-		Hopefully now you see some vague pattern:\\
-		Subgroups of $ S_n$ are the stabilizers of the set of intermediate variables. Which begs the question: For higher degree polynomials 
-		\begin{enumerate}
-			\item 
-		What are the possible intermediate variables? 
-	\item Can every subgroup of $ S_n$ be a stabilizer of some set of intermediate variables?
-		\end{enumerate}
 		
-		It turns out we can answer the second question in the language of group theory.
 		
-		\subsection{Optional Problems}
-		Problems about the proof of fundamental theorem of symmetric polynomials.
-		\todo{add}
-
-
+		
+		
+		\subsection{The Correspondence}
+		\todo{Apurva: Please add/ modify/ edit/ expand this. This needs to be very clearly communicated, I'm not sure I'm doing it right.}
+		Let us summarize what we have so far:
+		
+			\textbf{Cubic:} The intermediate variables $ \{\mu_1^3, \mu_2^3 \}$ are fixed by the subgroup $A_3$ which is the commutator $ [S_3, S_3]$, and the commutator $ [A_3, A_3]$ is trivial.
+			
+			\textbf{Quartic:} The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$ which is the commutator $ [A_4, A_4]$ which in turn is the commutator $ [S_4, S_4]$, and the commutator $ [K_4, K_4]$ is trivial.\\
+			
+			Galois' idea is the following:
+			\begin{enumerate}
+				\item If we can solve a general degree $ n$ polynomial by radicals, then we should be able to find a sequence of intermediate variables which satisfy lower degree polynomials. 
+				\emph{This part is not hard if you think about what a solution in terms of radicals means.}
+				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.}
+				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$. \emph{This is proven by explicit computation of the commutators.}
+			\end{enumerate}
+		
+			Combine all this and you get
+			\begin{theorem}
+				A general polynomial of degree $ \ge 5$ cannot be solved using radicals.
+			\end{theorem}
+		
+			
 
 
 
