@@ -517,14 +517,17 @@ how to solve cubic and quartic equations in future days.
 We now generalize from the case of triangles to all polygons.
 \begin{exercise}
 	\label{exercise:}
-	A regular $n$-gon in $\br^2$ has $2n$ automorphisms, what are they? \hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
+	A regular $n$-gon in $\br^2$ has $2n$ automorphisms, what are they? 
+	%\hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} 
+	This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
-	regular $n$-gon.
+	regular $n$-gon by showing the $2n$ elements are $1, s, s^2, \ldots, s^{n-1}, r, rs, \ldots, rs^{n-1}$.
 	\todo{Apurva: May be give them the $ 2n$ elements in terms of $ r,s$ and ask them to check? The reflections are a little hard to express in terms of $ rs$.}
+	\todo{aaron: Sure. I did it. The reflections are all $rs^k$. Is that hard to express?}
 \end{exercise}
 \begin{remark}
 	\label{remark:}
@@ -541,7 +544,7 @@ We now generalize from the case of triangles to all polygons.
 	We define the {\bf symmetric group on $n$ elements,} $S_n$ to be the set of bijections $\left\{ 1,2,\ldots, n \right\} \ra \left\{ 1, 2, \ldots, n \right\}$
 \end{definition}
 Strictly speaking, the symmetric group is a little more than just this set. Given two bijections, you can compose them to get a third bijection.
-\todo{Apurva: Reprase? Since you `defined' a group above?}
+This makes the set of these bijections into a group.
 \begin{exercise}
 	\label{exercise:}
 	Show that $S_n$ (the symmetric group on $n$ elements) has size $n!$.
@@ -564,22 +567,22 @@ Strictly speaking, the symmetric group is a little more than just this set. Give
 
 {\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
 
-\begin{exercise}[Challenge 0]
-	Inside all automorphisms of the cube, there is a subgroup of rotations. 
-	What is the size of this group? Can you identify this group? 
-\end{exercise}
-
 \begin{exercise}[Challenge 1]
 	\label{exercise:cube}
-	Identify the group of automorphims of a cube with $S_4$. What is the subgroup of rotations inside this?
-	Do the same for the octahedron.
-	\todo{Apurva:The rotations of the cube are easy to enumerate, it's a lot of fun to write them down. We can put them as a separate problem before this.}
-%	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
-%	This is known as the {\bf Klein-$4$ group,} denoted $K_4$.
-	\hint{To understand the automorphisms of the cube, look at the long diagonals. For the automorphisms of the octahedron, use that it is ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
+	Inside all automorphisms of the cube, there is a subgroup of rotations. 
+	What is the size of this group? Can you identify this group? 
+	\hint{Look at the long diagonals. }
 \end{exercise}
 
 \begin{exercise}[Challenge 2]
+	\label{exercise:octahedron}
+	Similarly, identify the group of automorphisms of the octahedron with $S_4$.
+%	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
+%	This is known as the {\bf Klein-$4$ group,} denoted $K_4$.
+	\hint{Look at the four diagonals joining opposite sides. Alternatively, use \autoref{exercise:cube} and that the octahedron ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
+\end{exercise}
+
+\begin{exercise}[Challenge 3]
 	\label{exercise:dodecahedron}
 	Determine the number of rotations of the dodecahedron. Do the same for the number of rotations of the icosahedron.
 	Identify these two groups. That is, construct a bijection between these groups respecting composition.
