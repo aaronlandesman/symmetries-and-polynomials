@@ -727,12 +727,10 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 
 \newpage
 \section{The Galois Correspondence}
-	
-	
-	
-	
-	
-	
+\todo{aaron: i think this section should be reworked, because this is the last day so people won't work on it for homework. also, many people
+likely won't get through all the exercises, and so they likely won't reach your description of the galois correspondence,
+Since i think we want everyone to get to the galois correspondence idea, we should streamline what preceeds it as much as possible, and then possibly
+add some exercises after it in case they get through it quickly}
 	
 	\subsection{Symmetric Polynomials}	
 	
@@ -790,6 +788,7 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 	\end{exercise}
 	
 	\begin{exercise}[\textbf{Quartic}]
+		\label{exercise:quartic-lambda}
 		Recall that if $ P(x)$ is a quartic then the intermediate variables
 		\begin{align*}
 				\lambda_1 &= r_1 r_2 + r_3 r_4 \\
@@ -846,31 +845,55 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 		
 		
 		\subsection{The Correspondence}
-		\todo{Apurva: Please add/ modify/ edit/ expand this. This needs to be very clearly communicated, I'm not sure I'm doing it right.}
-		Let us summarize what we have so far:
+		Let us summarize how we solved the cubic and quartic equations:		
+		\begin{enumerate}
+			\item[Cubic:] To solve the cubic, we looked at the action of $S_3$ on the three coefficients $a,b,c$ of the cubic $x^3 + ax^2 + bx+c$. 
+				We looked for variables fixed by $A_3 = \left[ S_3, S_3 \right] \subset S_3$,
+				and found that $\{\mu_1^3, \mu_2^3 \}$ were fixed by $A_3$.
+				Since $\left[ A_3, A_3 \right]= \id$, we were able to solve for $\mu_1^3, \mu_2^3$ in terms of cube roots of unity.
+				Then, since $\left[ S_3, S_3 \right]=A_3$,
+				we were able to solve for the solutions of the original cubic in terms of the $\mu_i^3$ using the quadratic formula.
+			\item[Quartic:]	
+				To solve the quartic, we use that $A_4 = \left[ S_4, S_4 \right]$ and $K_4 = \left[ A_4, A_4 \right]$ and
+				$\left\{ \id \right\}= \left[ K_4, K_4 \right]$.
+				The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$,
+				and 
+				we can solve for the roots $r_i$ in terms of the $\lambda_i$
+				using quadratic equations, since the $\lambda_i$ are quadratic polynomials in terms of the roots.
+				The fact that we can solve for the $\lambda_i$ corresponds to the fact that $\left[ K_4, K_4 \right] = \id$.
+
+				So, to solve the quartic, we want to solve for the roots in terms of the coefficients.
+				We have shown we can solve for the roots in terms of the $\lambda_i$, so we only need to solve
+				for the $\lambda_i$ in terms of the coefficients.
+				We know the $\lambda_i$ can be expressed as solutions to a cubic equation, by \autoref{exercise:quartic-lambda}.
+				Hence, we know we can solve for them in terms of the coefficients because we can solve the cubic equation.
+
+				But how does this connect to commutators?
+				The answer is that in order to solve the cubic equation, we really had $2$ steps.
+				First, we solved for intermediate variables
+				$\mu_1^3$ and $\mu_2^3$, and then for the roots $\lambda_i$.
+				Solving for the intermediate variables corresponds to the fact that $\left[ S_4, S_4 \right] = A_4$,
+				and then solving for the $\lambda_i$ in terms of the $\mu_j^3$ corresponds to the fact that
+				$\left[ A_4, A_4 \right] = K_4$.
+		\end{enumerate}
 		
-			\textbf{Cubic:} The intermediate variables $ \{\mu_1^3, \mu_2^3 \}$ are fixed by the subgroup $A_3$ which is the commutator $ [S_3, S_3]$, and the commutator $ [A_3, A_3]$ is trivial.
-			
-			\textbf{Quartic:} The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$ which is the commutator $ [A_4, A_4]$ which in turn is the commutator $ [S_4, S_4]$, and the commutator $ [K_4, K_4]$ is trivial.\\
-			
-			Galois' idea is the following:
+			The idea of the Galois correspondence is the following:
 			\begin{enumerate}
 				\item If we can solve a general degree $ n$ polynomial by radicals, then we should be able to find a sequence of intermediate variables which satisfy lower degree polynomials. 
 				\emph{This part is not hard if you think about what a solution in terms of radicals means.}
-				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.} [For those who of you who know what Galois theory is about, this is the Galois correspondence for the field extension of the function fields $ \mathbb{C}(a_0,a_1,\dots, a_{n-1}) \subseteq \mathbb{C}(r_0,r_1,\dots, r_{n-1})$ where the $ r_i$ are free variables and the $ a_i$ are the elementary symmetric polynomials in the $ r_i$.]
-				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$. \emph{This is proven by explicit computation of the commutators.}
+				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.} 
+%					[For those who of you who know what Galois theory is about, this is the Galois correspondence for the field extension of the function fields $ \mathbb{C}(a_0,a_1,\dots, a_{n-1}) \subseteq \mathbb{C}(r_0,r_1,\dots, r_{n-1})$ where the $ r_i$ are free variables and the $ a_i$ are the elementary symmetric polynomials in the $ r_i$.]
+				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$.We do not explain the proof here, but it can be calculated by an explicit computation of the commutators.
 			\end{enumerate}
       
-      The sequence of successive commutators for the Symmetric groups looks as such
+      The sequence of successive commutators for the Symmetric groups looks like
       \begin{align*}
-        \mathbf{S_3}: & S_3 \supset [S_3, S_3] = A_3 \supset [A_3, A_3] = \{ e \} \\
-				\mathbf{S_4}: & S_4 \supset [S_4, S_4] = A_4 \supset [A_4, A_4] = K_4 \supset [K_4, K_4] = \{ e \} \\
-				\mathbf{S_5}: & S_5 \supset [S_5, S_5] = A_5 \supset [A_5, A_5] = A_5
-      \end{align*}
-      
-      
-		
-			Combine all this and you get
+	      S_3 &\supset [S_3, S_3] = A_3 \supset [A_3, A_3] = \{ \id \}  &\\
+		S_4 &\supset [S_4, S_4] = A_4 \supset [A_4, A_4] = K_4 \supset [K_4, K_4] = \{ \id \} & \\
+		S_n &\supset [S_n, S_n] = A_n \supset [A_n, A_n] = A_n      & \text{ if } n \geq 5
+\end{align*}
+	Since taking iterated comutators of $S_n$ for $n \geq 5$ does not eventually shrink to the identity,
+	one can show:
 			\begin{theorem}
 				A general polynomial of degree $ \ge 5$ cannot be solved using radicals.
 			\end{theorem}
@@ -878,7 +901,7 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 \newpage
 \appendix
 \section{Commutators of $S_4$}
-\autoref{appendix:commutators-s4}
+\label{appendix:commutators-s4}
 In this appendix, we outline some exercises to compute commutators of $S_4$.
 To this end, it will be useful to have cycle notation.
 
