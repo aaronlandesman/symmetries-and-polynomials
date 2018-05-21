@@ -526,8 +526,8 @@ We now generalize from the case of triangles to all polygons.
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
 	regular $n$-gon by showing the $2n$ elements are $1, s, s^2, \ldots, s^{n-1}, r, rs, \ldots, rs^{n-1}$.
-	\todo{Apurva: May be give them the $ 2n$ elements in terms of $ r,s$ and ask them to check? The reflections are a little hard to express in terms of $ rs$.}
 	\todo{aaron: Sure. I did it. The reflections are all $rs^k$. Is that hard to express?}
+	\todo{Apurva: It's a little hard to see that guess that every reflection is of the form $rs^k$. }
 \end{exercise}
 \begin{remark}
 	\label{remark:}
@@ -742,17 +742,23 @@ Since i think we want everyone to get to the galois correspondence idea, we shou
 add some exercises after it in case they get through it quickly,
 maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	
-	\subsection{Symmetric Polynomials}	
+	\subsection{Symmetries \& Polynomials}	
 	
 	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ r_1, r_2, \dots, r_n$.
 	
 	\begin{exercise}
 		\label{exercise:elementary-symmetric-functions}
-		Express the coefficients $a_i$ of $ P(x)$ in terms of $ r_i$. That is, expand $a_i$ as a function $a_i(r_1, \ldots, r_n)$.
-		\todo{maybe we should give them the answer as a hint here? I'm not sure if this is confusing?}
+		For $ n=3$, by comparing coefficients of $ x_i$ $$x^3 + a_2 x^2 + a_1 x + a_0 = P(x) = (x-r_1)(x-r_2)(x-r_3)$$ find $ a_i$ in as a function of the $ r_i$.
+		Similar identities hold for all $ n$. 
+		\todo{Apurva: How about now?}
 	\end{exercise}
-	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
-	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. 
+	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}. They are called `symmetric' because they remain unchanged upon permuting the roots $ r_i$.
+	
+	\begin{exercise}
+		Check this for $ n=3$.
+	\end{exercise}
+	
+	In group theoretic terminology, we say that the symmetric group $ S_n$ \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. 
 	That is, we can ``apply'' $\sigma$ to a polynomial $Q$ to obtain the polynomial $\sigma(Q)$ defined by
 		\begin{align*}
 			(\sigma(Q))(r_1, r_2, \dots, r_n) := Q(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
@@ -765,13 +771,6 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	\end{align*}
 	In other words, the polynomial remains the same after reordering the variables.
 		\end{definition}
-		
-	\begin{exercise}
-		Convince yourself that the elementary symmetric polynomials, $a_i(r_1, \ldots, r_n)$ from \autoref{exercise:elementary-symmetric-functions}
-		are symmetric.
-	\end{exercise}
-	
-	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem. 
 	
 	\begin{theorem}
 		\label{theorem:fundamental_theorem_symmetric_polynomials}
@@ -779,7 +778,7 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in it's coefficients $ a_i$.
 	\end{theorem}
 	\begin{remark}
-		You can assume this theorem without proof. The proof of this theorem, which is just a careful application of the multinomial theorem and some multi-index induction, gives an algorithm for finding what these polynomials are.
+		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and some multi-index induction, also gives an algorithm for finding what these polynomials are.
 	\end{remark}
 	\begin{exercise}
 		As an example, show that $ r_1^2 + r_2^2 + \dots + r_n^2  = a_{n-1}^2 - 2 a_{n-2}$.
@@ -790,20 +789,16 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$! This justifies the existence of the formulae $ b^2 - 4c, -4p^3 - 27q^2$.
 	\end{exercise}
 	
-	\begin{exercise}[\textbf{Cubic}] Recall that if $ P(x)$ is a cubic then we defined the intermediate variables \begin{align*}
-    \mu_1 &:= r_1 + r_2 \omega + r_3 \omega^2 \\
-    \mu_2 &:= r_1 + r_2 \omega^2 + r_3 \omega
+	\begin{remark}[\textbf{Cubic}] Recall that for a cubic $ P(x)=x^3 + px + q$ we defined the intermediate variables \begin{align*}
+    \mu_1 &= r_1 + r_2 \omega + r_3 \omega^2 \\
+    \mu_2 &= r_1 + r_2 \omega^2 + r_3 \omega
   \end{align*}
-		\begin{enumerate}
-			\item Show that $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ are symmetric when viewed as functions in the variables $r_1, r_2, r_3$.
-			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric in the variables $r_1, r_2, r_3$. 
-				This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
-		\end{enumerate}
-	\end{exercise}
+	We've already seen that $ \mu_1^3 + \mu_2^3 = -27q$ and $ \mu_1^3 \mu_2^3 = -27p$, both are symmetric in the variables $ r_1, r_2, r_3$.
+	\end{remark}
 	
 	\begin{exercise}[\textbf{Quartic}]
 		\label{exercise:quartic-lambda}
-		Recall that if $ P(x)$ is a quartic we defined the intermediate variables
+		Recall that for a quartic $ P(x)$ we defined the intermediate variables
 		\begin{align*}
 				\lambda_1 &:= r_1 r_2 + r_3 r_4 \\
 				\lambda_2 &:= r_1 r_3 + r_2 r_4 \\
@@ -815,41 +810,44 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		\end{enumerate}
 	\end{exercise}
 	
-	Hopefully now you're convinced that there was some reason behind choosing these intermediate variables. Which brings us to the question: Do such variables exist for all degrees?
+	Hopefully now you're convinced that there was some reason behind choosing these intermediate variables. Which brings us to the question: Do such variables exist for all degrees? \todo{Apurva: Needs rephrasing.}
 	
-	
-	
-	
-	
-	
-	\subsection{Fixed points}
-	\todo{i think it might be a bit much to include this since people probably then wont get to the galois correpsondence. maybe we can include it after the galois correspondence, or else as an appendix, or as challenge questions?}
-		A set of polynomials $ \mathscr{S} = \{ Q_i(r_1, r_2, \dots, r_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
-			\begin{align*}
-			(\sigma(Q_i))(r_1, r_2, \dots, r_n) = Q_i(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
-			\end{align*}
-		for every $ Q_i \in \mathscr{S}$. 
-		
-		\begin{remark}
-			The symmetric polynomials are fixed point-wise by every element of $ S_n$. 
-		\end{remark}
-		
-		\begin{remark}
-			For a set of polynomials $ \mathscr{S}$, the subset of elements of $ S_n$ that fix $ \mathscr{S}$ point-wise is always a subgroup of $ S_n$, called the \textbf{stabilizer} of $ \mathscr{S}$.
-		\end{remark}
-		
-		\begin{exercise} Let $ P(x)$ be a cubic polynomial. 
+  \todo{Apurva: Simplifying section 5.2. How about this?}
+		% A set of polynomials $ \mathscr{S} = \{ Q_i(r_1, r_2, \dots, r_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
+		% 	\begin{align*}
+		% 	(\sigma(Q_i))(r_1, r_2, \dots, r_n) = Q_i(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
+		% 	\end{align*}
+		% for every $ Q_i \in \mathscr{S}$. 
+    % 
+		% \begin{remark}
+		% 	The symmetric polynomials are fixed point-wise by every element of $ S_n$. 
+		% \end{remark}
+    % 
+		% \begin{remark}
+		% 	For a set of polynomials $ \mathscr{S}$, the subset of elements of $ S_n$ that fix $ \mathscr{S}$ point-wise is always a subgroup of $ S_n$, called the \textbf{stabilizer} of $ \mathscr{S}$.
+		% \end{remark}
+		\begin{exercise} 
+			Let $ P(x)$ be a cubic polynomial. 
 			\begin{enumerate}
-
-				\item Find $ \omega \cdot \mu_1$ and $ \omega^2\cdot \mu_1$ in terms of the roots $ r_1, r_2, r_3$.
-				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$.
-				 What do the elements not in this subgroup do to it? (Remember that $ \omega^3 = 1$.)
-				\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1, \mu_2 \}$ point-wise.
+				\item Show that $ \omega \mu_1 = r_3 + r_1 \omega + r_2 \omega^2$ and hence $ \mu_1^3$ (similarly $ \mu_2^3$) remains unchanged if we cyclically permute $ r_1, r_2, r_3$.
+				\item Show that $ \mu_1^3$ and $ \mu_2^3$ get interchanged if we swap $ r_2$ and $ r_3$. (The same is in fact true if we swap any two of the $ r_i$.)
 			\end{enumerate}
+			We say that $ \mu_1^3, \mu_2^3$ are \textbf{fixed} by $ A_3$ (because $ A_3$ consists of the cyclic permutations and $ id$).
+			% \begin{enumerate}
+			% 
+			% 	\item Find $ \omega \cdot \mu_1$ and $ \omega^2\cdot \mu_1$ in terms of the roots $ r_1, r_2, r_3$.
+			% 	\item Find the subgroup of $ S_3$ which fixes the set $\{ \mu_1^3, \mu_2^3 \}$.
+			% 	 What do the elements not in this subgroup do to it? (Remember that $ \omega^3 = 1$.)
+			% \end{enumerate}
 		\end{exercise}
 		
 		\begin{exercise}
-			Let $ P(x)$ be a quartic polynomial. Find the subgroup of $ S_4$ which fixes the set $ \{ \lambda_1,  \lambda_2, \lambda_3 \}$ point-wise. Have you seen this subgroup before? What do the elements not in this subgroup do to it?
+			Let $ P(x)$ be a quartic polynomial. 
+			\begin{enumerate}
+				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. Similarly for the other pairs of pairs.
+				\item Convince yourself that these and $ id$ are the only permutations in $ S_4$ that leave each of the the $ \lambda_i$ unchanged.
+			\end{enumerate}
+			We say that the $ \lambda_i$ are \textbf{fixed} by $K_4$.
 		\end{exercise}
 			
 			
@@ -858,7 +856,7 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		
 		
 		
-		
+		\newpage
 		\subsection{The Correspondence}
 		Let us summarize how we solved the cubic and quartic equations:		
 		\begin{enumerate}
