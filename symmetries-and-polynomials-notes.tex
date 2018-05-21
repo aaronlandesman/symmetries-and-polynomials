@@ -556,7 +556,7 @@ This makes the set of these bijections into a group.
 \end{exercise}
 
 \begin{exercise}
-	\label{exercise:}
+	\label{exercise:tetrahedron-automorphisms}
 	Show that the automorphisms of the tetrahedron in $\br^3$ are identified with $S_4$. \footnote{{\it Hint:} Consider the action of the automorphisms of the $4$ vertices.}
 \end{exercise}
 \begin{exercise}
@@ -665,15 +665,24 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 	show that the rotations of the tetrahedron can be identified with $A_4$. For this problem, you may assume that $A_4$ has size $12$, and
 		it is the only subgroup of $S_4$ of size $12$.
 \end{exercise}
+
+
 \begin{exercise}[Challenge 2]
 	\label{exercise:}
 	The Klein-$4$ group (introduced in \autoref{exercise:klein-4})
 	can be viewed as a subgroup of $S_4$. Specifically, the three non-identity elements are
 	given by the three ways of swapping two pairs of disjoint elements. (For example, one of them would be $1 \mapsto 2, 2 \mapsto 1, 3\mapsto 4, 4 \mapsto 3$.)
-	Using the identification of automorphisms of the tetrahedron with $S_4$ from \autoref{exercise:tetrahedron-rotations},
-	describe the $4$ automorphisms of $S_4$ lying in the Klein-$4$ subgroup.
-	Show these are all given by rotations, so $K_4 \subset A_4$.
-	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$?
+	\begin{enumerate}
+		\item Using the identification of automorphisms of the tetrahedron with $S_4$ from \autoref{exercise:tetrahedron-automorphisms},
+	(by the action of
+	$S_4$ on the $4$ vertices of the tetrahedron,) 
+	describe the $4$ automorphisms of $S_4$ lying in the Klein-$4$ subgroup. 
+\item Show these are all given by rotations, so $K_4 \subset A_4$ using \autoref{exercise:tetrahedron-rotations}. (Technically speaking, we did
+	not verify that the group of rotations was $A_4 = \left[ S_4, S_4 \right]$. Feel free to assume this, or prove it as an extra challenge.
+	If you want help proving it, and for understanding $A_4$, ask for \autoref{appendix:commutators-s4}.)
+\item 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
+prove this algebraically.)
+	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenge 3]
@@ -862,6 +871,7 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 			\item[Quartic:]	
 				To solve the quartic, we use that $A_4 = \left[ S_4, S_4 \right]$ and $K_4 = \left[ A_4, A_4 \right]$ and
 				$\left\{ \id \right\}= \left[ K_4, K_4 \right]$.
+				(As is outlined in \autoref{appendix:commutators-s4}.)
 				The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$,
 				and 
 				we can solve for the roots $r_i$ in terms of the $\lambda_i$
