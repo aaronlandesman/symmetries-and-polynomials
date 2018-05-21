@@ -738,7 +738,9 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ r_1, r_2, \dots, r_n$.
 	
 	\begin{exercise}
-		Express the coefficients $ a_i$ of $ P(x)$ in terms of $ r_i$.
+		\label{exercise:elementary-symmetric-functions}
+		Express the coefficients $a_i$ of $ P(x)$ in terms of $ r_i$. That is, expand $a_i$ as a function $a_i(r_1, \ldots, r_n)$.
+		\todo{maybe we should give them the answer as a hint here? I'm not sure if this is confusing?}
 	\end{exercise}
 	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}.
 	The symmetric group $ S_n$ naturally \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. 
@@ -756,8 +758,8 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		\end{definition}
 		
 	\begin{exercise}
-		\todo{I think we should be very precise by what variables they are symmetric in}
-		Convince yourself that the elementary symmetric polynomials are symmetric.
+		Convince yourself that the elementary symmetric polynomials, $a_i(r_1, \ldots, r_n)$ from \autoref{exercise:elementary-symmetric-functions}
+		are symmetric.
 	\end{exercise}
 	
 	Hence the `symmetric' in elementary symmetric. The reason for the `elementary' is the following theorem. 
@@ -784,9 +786,9 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
     \mu_2 &:= r_1 + r_2 \omega^2 + r_3 \omega
   \end{align*}
 		\begin{enumerate}
-			\item Show that $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ are symmetric. 
-				\todo{symmetric in which variables?}
-			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric. \todo{in which variables?} This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
+			\item Show that $ \mu_1^3 + \mu_2^3 $ and $ \mu_1^3  \mu_2^3$ are symmetric when viewed as functions in the variables $r_1, r_2, r_3$.
+			\item Also show that $ \mu_1 + \mu_2$ is \emph{not} symmetric in the variables $r_1, r_2, r_3$. 
+				This was the reason we could not use $ \mu_1, \mu_2$ as our intermediate variables.
 		\end{enumerate}
 	\end{exercise}
 	
