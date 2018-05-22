@@ -209,7 +209,7 @@
 
 
 
-\title{Symmetries and Polynomials Notes}
+\title{Symmetries and Polynomials}
 \author{Aaron Landesman and Apurva Nakade}
 
 \usepackage{microtype}
@@ -217,8 +217,16 @@
 
 \maketitle
 
-\section{The Discriminant}
 
+\section*{Introduction}
+In this class we'll learn how to solve a cubic and to some extent a quartic. We'll explore the connections between these solutions and group theory and towards the end hint towards the deep connection between polynomials and groups via Galois Theory. This connection allows one to convert a classical question of whether a general quintic can be solved by radicals to a group theory problem, which can be relatively easily answered. 
+
+The 5 day outline is as follows: First two days are dedicated to studying polynomials. For fun, we'll start with an interesting invariant of polynomials called the discriminant and move on to solving the cubic. The next two days are an introduction to group theory. We'll learn about groups as symmetries of geometric objects and then learn about their commutator subgroups. Finally, on the last day we'll connect the two theories and explain the Galois correspondence for the cubic and the quartic. There are plenty of optional problems along the way for those who wish to explore more.
+\todo{Apurva: Please feel free to edit this.}
+
+
+\section{The Discriminant}
+\todo{Apurva: Some introduction here.}
 \subsection{Quadratic Polynomials}
 \begin{definition}[Quadratic discriminant]
 	\label{definition:quadratic-discriminant}
@@ -285,7 +293,7 @@ the roots of a polynomial are.
 
 {\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
 
-\begin{exercise}[Challenge 1]
+\begin{exercise}[Optional 1]
 	\label{exercise:cubic-discriminant}
 	An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
 	\begin{align*}
@@ -306,7 +314,7 @@ Assume that not all three roots are the same.
 
 \subsection{Counting polynomials of discriminant $0$}
 The following questions are quite tricky, but fun. Only attempt them if you've already solved \autoref{exercise:cubic-discriminant}.
-\begin{exercise}[Challenge 2]
+\begin{exercise}[Optional 2]*
 	\label{exercise:repeated-roots}
 	Let $P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
 	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
@@ -320,7 +328,7 @@ The following questions are quite tricky, but fun. Only attempt them if you've a
 of such polynomials for the degree of $f$ fixed inductively.}
 \end{exercise}
 
-\begin{exercise}[Challenge 3]
+\begin{exercise}[Optional 3]*
 	\label{exercise:common-roots}
 	Using a similar method to that of \autoref{exercise:repeated-roots},
 	count the number of pairs of degree $n$ polynomials $(P,Q)$ for 
@@ -416,7 +424,7 @@ In some sense (which we do not explain) this map explains why the counts from
 		\end{enumerate}
 	\end{mdframed}
 		\begin{exercise}
-			Use this method to find the roots of $x^3 - 3x + 2$ and $x^3 - 3x + 1$.
+			Use this method to find the roots of $x^3 - 3x + 2$.
 		\end{exercise}
 		
 	\begin{exercise}
@@ -440,7 +448,7 @@ In some sense (which we do not explain) this map explains why the counts from
 			
 		{\it Your homework is to complete up through \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following challenge questions.}
 			
-		\begin{exercise}[Challenge 1]
+		\begin{exercise}[Optional 1]
 			Here's how you recover the $ r_i$ from the $ \lambda_i$.
 			\begin{enumerate}
 				\item Convice yourself that $ r_1 r_2$ and $r_3 r_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ r_i r_j$.
@@ -458,7 +466,7 @@ In some sense (which we do not explain) this map explains why the counts from
 	\subsection{Roots of Unity}
 		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
 	
-	\begin{exercise}[Challenge 2] $ $
+	\begin{exercise}[Optional 2] $ $
 		\begin{enumerate}
 			\item Show that the $ n^{th}$ roots of unity are $ e^{2 \pi i k / n}$ where $ 0 \le k < n$ is a positive integer. Plot them on the complex plane. 
 			\item Show that there are exactly $ \phi(n)$ primitive $ n^{th}$ roots of unity, where $ \phi(n)$ is the number of positive integers less than $ n$ relatively prime to it.
@@ -468,6 +476,7 @@ In some sense (which we do not explain) this map explains why the counts from
 			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
 			\item Find the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
 			\item Factor $ x^n - 1$ as a product of cyclotomic polynomials.
+			\item ** Show that $ \Phi_n(x)$ have integer coefficients and are irreducible over the integers.
 		\end{enumerate}
 	\end{exercise}
 	
@@ -526,8 +535,6 @@ We now generalize from the case of triangles to all polygons.
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
 	regular $n$-gon by showing the $2n$ elements are $1, s, s^2, \ldots, s^{n-1}, r, rs, \ldots, rs^{n-1}$.
-	\todo{aaron: Sure. I did it. The reflections are all $rs^k$. Is that hard to express?}
-	\todo{Apurva: It's a little hard to see that guess that every reflection is of the form $rs^k$. }
 \end{exercise}
 \begin{remark}
 	\label{remark:}
@@ -567,14 +574,14 @@ This makes the set of these bijections into a group.
 
 {\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
 
-\begin{exercise}[Challenge 1]
+\begin{exercise}[Optional 1]
 	\label{exercise:cube}
 	Inside all automorphisms of the cube, there is a subgroup of rotations. 
 	What is the size of this group? Can you identify this group? 
 	\hint{Look at the long diagonals. }
 \end{exercise}
 
-\begin{exercise}[Challenge 2]
+\begin{exercise}[Optional 2]
 	\label{exercise:octahedron}
 	Similarly, identify the group of automorphisms of the octahedron with $S_4$.
 %	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
@@ -582,7 +589,7 @@ This makes the set of these bijections into a group.
 	\hint{Look at the four diagonals joining opposite sides. Alternatively, use \autoref{exercise:cube} and that the octahedron ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
 \end{exercise}
 
-\begin{exercise}[Challenge 3]
+\begin{exercise}[Optional 3]
 	\label{exercise:dodecahedron}
 	Determine the number of rotations of the dodecahedron. Do the same for the number of rotations of the icosahedron.
 	Identify these two groups. That is, construct a bijection between these groups respecting composition.
@@ -658,7 +665,7 @@ problems}
 
 \subsection{Geometric computations of commutators}
 We now give some geometric ways to see various commutator subgroups of $S_4$.
-\begin{exercise}[Challenge 1]
+\begin{exercise}[Optional 1]
 	\label{exercise:}
 	Using that the automorphisms of the tetrahedron can be identified with $S_4$ from \autoref{exercise:tetrahedron-rotations} (by the action of
 	$S_4$ on the $4$ vertices of the tetrahedron), 
@@ -667,7 +674,7 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 \end{exercise}
 
 
-\begin{exercise}[Challenge 2]
+\begin{exercise}[Optional 2]
 	\label{exercise:}
 	The Klein-$4$ group (introduced in \autoref{exercise:klein-4})
 	can be viewed as a subgroup of $S_4$. Specifically, the three non-identity elements are
@@ -680,19 +687,19 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 \item Show these are all given by rotations, so $K_4 \subset A_4$ using \autoref{exercise:tetrahedron-rotations}. (Technically speaking, we did
 	not verify that the group of rotations was $A_4 = \left[ S_4, S_4 \right]$. Feel free to assume this, or prove it as an extra challenge.
 	If you want help proving it, and for understanding $A_4$, ask for \autoref{appendix:commutators-s4}.)
-\item 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
+\item** 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
 prove this algebraically.)
 	\end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenge 3]
+\begin{exercise}[Optional 3]*
 	\label{exercise:}
 	Recall that in \autoref{exercise:cube}, we identified the rotations of the cube with $S_4$.
 	Geometrically describe which rotations lie in the subgroup $A_4 \subset S_4$.
 	Geometrically describe which rotations lie in the subgroup $K_4 \subset S_4$.
 	Can you use these geometric descriptions to verify $A_4 = \left[ S_4, S_4 \right]$ and $K_4 = \left[ A_4, A_4 \right]$?
 \end{exercise}
-\begin{exercise}[Challenge 4]
+\begin{exercise}[Optional 4]
 	\label{exercise:}
 	Given four distinct ordered complex numbers $a,b,c,d$, the {\bf cross ratio} is defined as
 	\begin{align*}
@@ -706,7 +713,7 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 
 
 
-%\begin{exercise}[Challenge]
+%\begin{exercise}[Optional]
 %	\label{exercise:}
 %	Show in general that $|A_n| = |S_n|/2 = n!/2$ in the following steps:
 %	\begin{enumerate}
@@ -736,11 +743,12 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 
 \newpage
 \section{The Galois Correspondence}
-\todo{aaron: i think this section should be reworked, because this is the last day so people won't work on it for homework. also, many people
-likely won't get through all the exercises, and so they likely won't reach your description of the galois correspondence,
-Since i think we want everyone to get to the galois correspondence idea, we should streamline what preceeds it as much as possible, and then possibly
-add some exercises after it in case they get through it quickly,
-maybe we can get them there quicker by moving 5.2 to an appendix or something}
+So far we've talked about solving cubic and quartics and some concepts from Group theory. Today we'll see the connection between these and hint towards the deeper connection called Galois Correspondence.
+% \todo{aaron: i think this section should be reworked, because this is the last day so people won't work on it for homework. also, many people
+% likely won't get through all the exercises, and so they likely won't reach your description of the galois correspondence,
+% Since i think we want everyone to get to the galois correspondence idea, we should streamline what preceeds it as much as possible, and then possibly
+% add some exercises after it in case they get through it quickly,
+% maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	
 	\subsection{Symmetries \& Polynomials}	
 	
@@ -748,11 +756,12 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	
 	\begin{exercise}
 		\label{exercise:elementary-symmetric-functions}
-		For $ n=3$, by comparing coefficients of $ x_i$ $$x^3 + a_2 x^2 + a_1 x + a_0 = P(x) = (x-r_1)(x-r_2)(x-r_3)$$ find $ a_i$ in as a function of the $ r_i$.
+		For $ n=3$, by comparing coefficients of $ x^i$ in $$x^3 + a_2 x^2 + a_1 x + a_0 = P(x) = (x-r_1)(x-r_2)(x-r_3)$$ find $ a_i$ as a function of the $ r_i$.
 		Similar identities hold for all $ n$. 
-		\todo{Apurva: How about now?}
 	\end{exercise}
-	Note that each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}. They are called `symmetric' because they remain unchanged upon permuting the roots $ r_i$.
+	\begin{remark}
+		Each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}. They are called `symmetric' because they remain unchanged upon permuting the roots $ r_i$.
+	\end{remark}
 	
 	\begin{exercise}
 		Check this for $ n=3$.
@@ -771,18 +780,18 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 	\end{align*}
 	In other words, the polynomial remains the same after reordering the variables.
 		\end{definition}
-	
+	The reason for the `elementary' in `elementary symmetric' is the following theorem.
 	\begin{theorem}
 		\label{theorem:fundamental_theorem_symmetric_polynomials}
 		Any symmetric polynomial can be expressed as a polynomial in the elementary symmetric ones. 
 		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in it's coefficients $ a_i$.
 	\end{theorem}
-	\begin{remark}
-		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and some multi-index induction, also gives an algorithm for finding what these polynomials are.
-	\end{remark}
 	\begin{exercise}
 		As an example, show that $ r_1^2 + r_2^2 + \dots + r_n^2  = a_{n-1}^2 - 2 a_{n-2}$.
 	\end{exercise}
+	\begin{remark}
+		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and induction, also gives an algorithm for finding what these polynomials are.
+	\end{remark}
 	
 	We've already encountered several examples of this:
 	\begin{exercise}[\textbf{Discriminant}]
@@ -793,16 +802,16 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
     \mu_1 &= r_1 + r_2 \omega + r_3 \omega^2 \\
     \mu_2 &= r_1 + r_2 \omega^2 + r_3 \omega
   \end{align*}
-	We've already seen that $ \mu_1^3 + \mu_2^3 = -27q$ and $ \mu_1^3 \mu_2^3 = -27p$, both are symmetric in the variables $ r_1, r_2, r_3$.
+	We've already seen that $ \mu_1^3 + \mu_2^3 = -27q$ and $ \mu_1^3 \mu_2^3 = -27p$. Even without explicitly computing them it is easy to show that $ \mu_1^3 + \mu_2^3$ and $\mu_1^3  \mu_2^3$ are symmetric in $ r_1, r_2, r_3$, even if the cubic is not depressed.
 	\end{remark}
 	
 	\begin{exercise}[\textbf{Quartic}]
 		\label{exercise:quartic-lambda}
 		Recall that for a quartic $ P(x)$ we defined the intermediate variables
 		\begin{align*}
-				\lambda_1 &:= r_1 r_2 + r_3 r_4 \\
-				\lambda_2 &:= r_1 r_3 + r_2 r_4 \\
-				\lambda_3 &:= r_2 r_3 + r_1 r_4 
+				\lambda_1 &= r_1 r_2 + r_3 r_4 \\
+				\lambda_2 &= r_1 r_3 + r_2 r_4 \\
+				\lambda_3 &= r_2 r_3 + r_1 r_4 
 		\end{align*}
 			\begin{enumerate}
 			\item Show that $ \lambda_1 + \lambda_2 + \lambda_3$, $ \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3$, and $ \lambda_1 \lambda_2 \lambda_3$ are symmetric in $r_i$. 
@@ -810,9 +819,7 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 		\end{enumerate}
 	\end{exercise}
 	
-	Hopefully now you're convinced that there was some reason behind choosing these intermediate variables. Which brings us to the question: Do such variables exist for all degrees? \todo{Apurva: Needs rephrasing.}
-	
-  \todo{Apurva: Simplifying section 5.2. How about this?}
+	Hopefully now you're convinced that there was some reason behind choosing these intermediate variables. Which brings us to the question: Do such variables exist for all degrees? 
 		% A set of polynomials $ \mathscr{S} = \{ Q_i(r_1, r_2, \dots, r_n) \}_i$ is said to be \textbf{fixed point-wise} by an element $ \sigma \in S_n$ if 
 		% 	\begin{align*}
 		% 	(\sigma(Q_i))(r_1, r_2, \dots, r_n) = Q_i(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
@@ -847,7 +854,7 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. Similarly for the other pairs of pairs.
 				\item Convince yourself that these and $ id$ are the only permutations in $ S_4$ that leave each of the the $ \lambda_i$ unchanged.
 			\end{enumerate}
-			We say that the $ \lambda_i$ are \textbf{fixed} by $K_4$.
+			We say that the $ \lambda_i$ are \textbf{fixed} by the Klein 4 group $K_4$.
 		\end{exercise}
 			
 			
@@ -911,7 +918,33 @@ maybe we can get them there quicker by moving 5.2 to an appendix or something}
 			\begin{theorem}
 				A general polynomial of degree $ \ge 5$ cannot be solved using radicals.
 			\end{theorem}
-		
+
+\newpage 
+{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
+\subsection{Symmetric Polynomials}
+We'll sketch out a proof for the fundamental theory of symmetric polynomials for $ n=2$.
+	\begin{theorem}
+		\label{theorem:fundamental_theorem_symmetric_polynomials}
+		Any symmetric polynomial in $ r_1, r_2$ can be expressed as a polynomial in $ r_1 + r_2$ and $r_1 r_2$. 
+	\end{theorem}
+	\begin{exercise}[Optional 1]
+		\begin{enumerate}
+			\item Show that it suffices to prove the above theorem for polynomials of the form $ r_1^k r_2^l + r_1^l r_2^k$ for some positive integers $l,k$.
+		\end{enumerate}
+		We'll induct on the sum $ l+k$.
+		\begin{enumerate}[resume]
+			\item Prove a few base cases.
+			\item Reduce the problem to polynomials of the form $ r_1^l + r_2^l$.
+			\item* Use the binomial theorem to prove the inductive step.
+		\end{enumerate}
+	\end{exercise}
+	
+	\begin{exercise}[Optional 2] **
+		Try proving the above theorem for $ n=3$. The steps are \emph{almost} the same as above with the binomial theorem being replaced by the multinomial. There is one step which fails, can you spot it? Can you think of a way to fix it?
+	\end{exercise}
+
+
+
 \newpage
 \appendix
 \section{Commutators of $S_4$}
