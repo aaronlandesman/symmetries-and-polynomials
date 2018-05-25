@@ -291,7 +291,9 @@ the roots of a polynomial are.
 	Compare your answer to \autoref{exercise:quadratic-roots}.
 \end{exercise}
 
-{\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following challenge questions.}
+{\it Your homework is to complete up through \autoref{exercise:discriminant-cubic-sign}. If you finish that, and still have time try the following questions.}
+
+\subsection{Further questions on discriminants}
 
 \begin{exercise}[Optional 1]
 	\label{exercise:cubic-discriminant}
@@ -342,8 +344,13 @@ between the two answers. There is in deed a deeper connection, but the answer li
 Loosely speaking, if you take a polynomial $P(x)$ with no repeated roots, you can send it
 to the pair of polynomials $(P(x) + P'(x), P(x))$. Here $P'(x)$ denotes the derivative of $P(x)$.
 If $P(x) = \sum_i a_ix^i$ then $P'(x) = \sum_i  i \cdot a_i x^{i-1}$.
-The diligent reader will check that this is a map from the space of polynomials with no repeated roots to the
+\begin{exercise}
+	\label{exercise:}
+	Verify that the above indeed defines a map
+from the space of polynomials with no repeated roots to the
 space of pairs of polynomials with no repeated roots.
+\end{exercise}
+
 In some sense (which we do not explain) this map explains why the counts from 
 \autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} are so similar.
 \end{remark}
@@ -428,6 +435,7 @@ In some sense (which we do not explain) this map explains why the counts from
 		\end{exercise}
 		
 	\begin{exercise}
+		\label{exercise:no-choice}
 		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
 	\end{exercise}
 	
@@ -446,8 +454,8 @@ In some sense (which we do not explain) this map explains why the counts from
 				\end{split}
 			\end{align}
 			
-		{\it Your homework is to complete up through \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following challenge questions.}
-			
+			{\it Your homework is to complete up through \autoref{exercise:no-choice} and read \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following questions.}
+\subsection{Further questions on the quartic and roots of unity}			
 		\begin{exercise}[Optional 1]
 			Here's how you recover the $ r_i$ from the $ \lambda_i$.
 			\begin{enumerate}
@@ -458,12 +466,6 @@ In some sense (which we do not explain) this map explains why the counts from
 		We'll later see why the $ \lambda_i$ satisfy a cubic with coefficients which can be written in terms of the $ a_i$.
 	\end{remark}
 	
-	
-	
-	
-	
-	
-	\subsection{Roots of Unity}
 		Solutions of the polynomial equation $ x^n = 1$ are called \textbf{$n^{th}$ roots of unity}, where $ n$ is a positive integer. An $ n^{th}$ root of unity is called \textbf{primitive} if it not an $ m^{th}$ root of unity for any $ m < n$.
 	
 	\begin{exercise}[Optional 2] $ $
@@ -572,8 +574,9 @@ This makes the set of these bijections into a group.
 	Show that these rotations form a subgroup of $S_4$. This is known as the {\bf alternating group on $4$ elements}, denoted $A_4$.
 \end{exercise}
 
-{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
+{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following questions.}
 
+\subsection{Further questions on symmetry groups}
 \begin{exercise}[Optional 1]
 	\label{exercise:cube}
 	Inside all automorphisms of the cube, there is a subgroup of rotations. 
@@ -652,7 +655,7 @@ Tomorrow we will explain how these commutators let us solve the cubic and quarti
 \subsection{Alternating Groups}
 
 \begin{definition}
-	\label{definition:}
+	\label{definition:alternating}
 	The $n$th {\bf alternating group}, denoted $A_n$ is by definition $A_n := \left[ S_n, S_n \right]$, the commutator of $S_n$.
 \end{definition}
 \begin{exercise}[Reality check]
@@ -663,7 +666,7 @@ Tomorrow we will explain how these commutators let us solve the cubic and quarti
 {\it Your homework is to complete up to \autoref{exercise:low-alternating-groups}. If you have time, attempt the following challenge
 problems}
 
-\subsection{Geometric computations of commutators}
+\subsection{Further questions on Geometric computations of commutators}
 We now give some geometric ways to see various commutator subgroups of $S_4$.
 \begin{exercise}[Optional 1]
 	\label{exercise:}
@@ -904,7 +907,7 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 				\emph{This part is not hard if you think about what a solution in terms of radicals means.}
 				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.} 
 %					[For those who of you who know what Galois theory is about, this is the Galois correspondence for the field extension of the function fields $ \mathbb{C}(a_0,a_1,\dots, a_{n-1}) \subseteq \mathbb{C}(r_0,r_1,\dots, r_{n-1})$ where the $ r_i$ are free variables and the $ a_i$ are the elementary symmetric polynomials in the $ r_i$.]
-				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$.We do not explain the proof here, but it can be calculated by an explicit computation of the commutators.
+				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$.For a series of exercises proving this, ask for \autoref{appendix:alternating} (which assumes you have completed \autoref{appendix:commutators-s4}). The idea is to define $A_n$ in an alternate way, and then explicitly computate commutators.
 			\end{enumerate}
       
       The sequence of successive commutators for the Symmetric groups looks like
@@ -919,9 +922,8 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 				A general polynomial of degree $ \ge 5$ cannot be solved using radicals.
 			\end{theorem}
 
-\newpage 
-{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following challenge questions.}
-\subsection{Symmetric Polynomials}
+{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following questions.}
+\subsection{Further questions: Symmetric Polynomials}
 We'll sketch out a proof for the fundamental theory of symmetric polynomials for $ n=2$.
 	\begin{theorem}
 		\label{theorem:fundamental_theorem_symmetric_polynomials}
@@ -1001,6 +1003,92 @@ You may prove the following facts, or assume it if you'd like:
 	\label{exercise:klein-4-commutator}
 	Compute the commutator $\left[ A_4, A_4 \right]$. Show it has order $4$ and is explicitly given by the element $\id, (12)(34), (13)(24), (14)(23)$.
 	This is denoted $K_4$ and is called the {\bf Klein-$4$ group} (in an appropriate sense, it is the same as the klein-4 group defined in \autoref{exercise:klein-4}.
+\end{exercise}
+
+\newpage
+\section{Commutators of $S_n$ and $A_n$}
+\label{appendix:alternating}
+
+For this appendix, we assume you have already read \autoref{appendix:commutators-s4}. In particular, we assume you are familiar with cycle notation
+and the notion of transpositions.
+The purpose of this appendix is to show $A_n$ is its own commutator for $n \geq 5$.
+We do this in two subsections. In the first subsection, we give an alternate definition of $A_n$, and show that this agrees with the previous
+definition \autoref{definition:alternating}. In the second section, we show $\left[ A_n, A_n \right] = A_n$ for $n \geq 5$.
+
+\subsection{Equivalence of two definitions of $A_n$}
+
+In this subsection, we give an alternate definition of $A_n$, from which it will be easier to show $\left[ A_n, A_n \right] = A_n$ for $n \geq 5$.
+Recall above we defined the alternating group $A_n$ as the commutator $[S_n, S_n]$. For the purposes of this appendix,
+we make the following alternate definition, and then verify $A_n$ is in fact $[S_n,S_n].$
+
+\begin{definition}[Separate definition for this appendix]
+	\label{definition:alternating-group-2}
+	The {\bf alternating group}, $A_n$, is the subgroup of $S_n$ consisting of all elements $g \in S_n$ that can be written as a product of
+	an even number of transpositions.
+\end{definition}
+\begin{exercise}
+	\label{exercise:}
+	Verify that the definition of $A_n$ \autoref{definition:alternating-group-2} is well defined by showing that $A_n$ is in fact a subgroup.
+\end{exercise}
+\begin{exercise}
+	\label{exercise:}**
+	Show that if $g\in S_n$ can be written as products of transpositions in two ways, say $g = t_1 \cdots t_n$ and $g = r_1 \cdots r_m$ for $t_i, r_j$
+	transpositions, then $n \equiv m \bmod 2$.
+	\hint{This is a bit tricky, and there are many ways to do it. Here is one nice one:
+	Let $\sigma \in S_n$ be some permutation.
+	Draw a picture with $1, 2, \cdots, n$ listed at the top and the bottom. Draw the lines connecting $i$ to $\sigma(i)$ so that
+	the lines always intersect transversely (i.e., no two lines are tangent at an intersection point).
+	Check that the number of intersections of lines is well defined modulo $2$. 
+	Using well definedness, check that
+	the parity of the number of intersections agrees with the parity of the number of transpositions.
+Use this to conclude.}
+\end{exercise}
+\begin{exercise}
+	\label{exercise:}
+	Show that $\# A_n = \# S_n / 2 = n!/2$.
+	\hint{Use \autoref{definition:alternating-group-2} to define a map $S_n \rightarrow C_2$ (where $C_2$ is the cyclic group of order $2$)
+	so that $A_n$ is the set of elements mapping to the identity.}
+\end{exercise}
+
+\begin{exercise}
+	\label{exercise:3-cycles}
+	In this exercise, we show $A_n$ is generated by $3$-cycles.
+	\begin{enumerate}
+\item Show that every $3$ cycle (i.e., a permutation written in cycle notation as $(ijk)$) lies in $A_n$. 
+\item Show that every element in $A_n$ is a product of $3$-cycles. \hint{Show that if $i,j,k,l$ are distinct then $(ij)(kl)$ can be expressed as a product of two $3$-cycles. Then, expand any element as a product of transpositions and express any pair of transpositions as a product of one or two $3$-cycles.}
+\item Conclude $A_n$ is generated by $3$-cycles.
+\end{enumerate}	
+\end{exercise}
+
+\begin{exercise}
+	\label{exercise:}
+	In this exercise, we check $\left[ S_n, S_n \right] = A_n$.
+	\begin{enumerate}
+		\item Show that $\left[ S_n, S_n \right] \subset A_n$.
+		\item Show every $3$-cycle is a commutator. \hint{Consider the commutator of two transpositions.}
+		\item Use \autoref{exercise:3-cycles} to conclude that $\left[ S_n, S_n \right] = A_n$.
+	\end{enumerate}
+\end{exercise}
+
+\subsection{Commutator of $A_n$}
+We now use our new definition of $A_n$, \autoref{definition:alternating-group-2}, to prove $\left[ A_n, A_n \right] = A_n$ when $n \geq 5$.
+The proof is surprisingly easy, given what we have shown so far.
+We start with the following warm-up computation.
+\begin{exercise}[Warm up]
+	\label{exercise:A-5-3-cycles}
+	Show that in $A_5$, the commutator of $(123)$ and $(345)$ is $(235)$. That is, check $(123)(345)(132)(354) = (235)$.
+\end{exercise}
+
+\begin{exercise}
+	\label{exercise:3-cycles-in-commutator}
+	If $n \geq 5$, check that every $3$-cycle can be expressed as a commutator of two $3$-cycles.
+	\hint{Relabel the numbers from \autoref{exercise:A-5-3-cycles}.}
+\end{exercise}
+
+\begin{exercise}
+	\label{exercise:}
+	Show $\left[ A_n, A_n \right] = S_5$.
+	\hint{Recall from \autoref{exercise:3-cycles} that $A_n$ is generated by $3$-cycles. Then use \autoref{exercise:3-cycles}.}
 \end{exercise}
 
 
