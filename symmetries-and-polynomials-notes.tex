@@ -219,14 +219,25 @@
 
 
 \section*{Introduction}
-In this class we'll learn how to solve a cubic and to some extent a quartic. We'll explore the connections between these solutions and group theory and towards the end hint towards the deep connection between polynomials and groups via Galois Theory. This connection allows one to convert a classical question of whether a general quintic can be solved by radicals to a group theory problem, which can be relatively easily answered. 
+In this class we'll learn how to solve a cubic and to some extent a quartic. We'll explore the connections between these solutions and group theory.
+Towards the end, we'll hint towards the deep connection between polynomials and groups via Galois Theory. This connection allows one to convert a classical question of whether a general quintic can be solved by radicals to a group theory problem, which can be relatively easily answered. 
 
-The 5 day outline is as follows: First two days are dedicated to studying polynomials. For fun, we'll start with an interesting invariant of polynomials called the discriminant and move on to solving the cubic. The next two days are an introduction to group theory. We'll learn about groups as symmetries of geometric objects and then learn about their commutator subgroups. Finally, on the last day we'll connect the two theories and explain the Galois correspondence for the cubic and the quartic. There are plenty of optional problems along the way for those who wish to explore more.
-\todo{Apurva: Please feel free to edit this.}
+The 5 day outline is as follows: 
+\begin{enumerate}
+	\item The first two days are dedicated to studying polynomials. On the first day, we'll study the discriminant of a polynomial.
+	\item On the second day, we'll use the discriminant discussed on the first day to solve the cubic equation.
+	\item Days $3$ and $4$ are a ``practical'' introduction to group theory. On day $3$ we'll learn about groups as symmetries of geometric objects.
+	\item On day $4$, we'll learn about the commutator subgroup of a group.
+	\item Finally, on the last day we'll connect the two theories and explain the Galois correspondence for the cubic and the quartic. 
+\end{enumerate}
+There are plenty of optional problems along the way for those who wish to explore more.
+Tricky optional problems are marked with $*$, and especially tricky optional problems are marked with $**$.
 
-
+\newpage
 \section{The Discriminant}
-\todo{Apurva: Some introduction here.}
+Today we'll introduce the discriminant of a polynomial. The discriminant of a polynomial $P$ is another polynomial $Q$ which tells you
+whether $P$ has any repeated roots.
+
 \subsection{Quadratic Polynomials}
 \begin{definition}[Quadratic discriminant]
 	\label{definition:quadratic-discriminant}
@@ -316,7 +327,7 @@ Assume that not all three roots are the same.
 
 \subsection{Counting polynomials of discriminant $0$}
 The following questions are quite tricky, but fun. Only attempt them if you've already solved \autoref{exercise:cubic-discriminant}.
-\begin{exercise}[Optional 2]*
+\begin{exercise}[Optional 2]**
 	\label{exercise:repeated-roots}
 	Let $P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$, where now the coefficients $a_i$ are
 	in $\bz/p$ (i.e., take on values between $0$ and $p-1$), and the discriminant is
@@ -330,7 +341,7 @@ The following questions are quite tricky, but fun. Only attempt them if you've a
 of such polynomials for the degree of $f$ fixed inductively.}
 \end{exercise}
 
-\begin{exercise}[Optional 3]*
+\begin{exercise}[Optional 3]**
 	\label{exercise:common-roots}
 	Using a similar method to that of \autoref{exercise:repeated-roots},
 	count the number of pairs of degree $n$ polynomials $(P,Q)$ for 
@@ -690,7 +701,7 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 \item Show these are all given by rotations, so $K_4 \subset A_4$ using \autoref{exercise:tetrahedron-rotations}. (Technically speaking, we did
 	not verify that the group of rotations was $A_4 = \left[ S_4, S_4 \right]$. Feel free to assume this, or prove it as an extra challenge.
 	If you want help proving it, and for understanding $A_4$, ask for \autoref{appendix:commutators-s4}.)
-\item** 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
+\item* 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
 prove this algebraically.)
 	\end{enumerate}
 \end{exercise}
@@ -715,44 +726,10 @@ Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Sh
 \end{exercise}
 
 
-
-%\begin{exercise}[Optional]
-%	\label{exercise:}
-%	Show in general that $|A_n| = |S_n|/2 = n!/2$ in the following steps:
-%	\begin{enumerate}
-%		\item Define a ``cycle notation'' for elements in $S_n$. See \autoref{figure:cycle-notation} for a pictorial discription.
-%			\begin{figure}[H]
-%				\includegraphics[scale=1.5]{cycle-1.png}	
-%				\includegraphics[scale=1.5]{cycle-2.png}	
-%				\caption{This is a depiction of two elements thought of as elements of $S_8$. The first corresponds the the permutation fixing $2$ and $5$,
-%				and sending $1 \mapsto 4, 4 \mapsto 6, 6 \mapsto 8, 8\mapsto 3, 3 \mapsto 7, 7\mapsto 1$.
-%			The corresponding cycle notation for the first picture is $(146837)(2)(5)$ (where each parenthesized group of numbers
-%			correspond to a cycle in the above diagram. Similarly, the second permutation has cycle notation $(14625837)$.
-%			}
-%				\label{figure:cycle-notation}\end{figure}
-%		\item Show that every element of the symmetric group has a well defined cycle type.
-%		\item Given an element written in cycle notation, define its length to be $n - \text{(the number of cycles)}$. So, for example,
-%			$(146837)(2)(5)$ has length $8-3 = 5$ while $(14625837)$ has length $8-1 = 7$.
-%			Show that elements of the symmetric group can all be written as products of {\bf transpositions}, where a transposition is a bijection swithing two numbers
-%	and fixing the rest. 
-%		\item Show that while an element $g \in S_n$ may be written in many different ways as a product of transpositions,
-%\todo{aaron: I abandoned this exercise because it was too hard}
-%	\end{enumerate}
-%	\hint{}
-%\end{exercise}
-
-
-
-
 \newpage
 \section{The Galois Correspondence}
 So far we've talked about solving cubic and quartics and some concepts from Group theory. Today we'll see the connection between these and hint towards the deeper connection called Galois Correspondence.
-% \todo{aaron: i think this section should be reworked, because this is the last day so people won't work on it for homework. also, many people
-% likely won't get through all the exercises, and so they likely won't reach your description of the galois correspondence,
-% Since i think we want everyone to get to the galois correspondence idea, we should streamline what preceeds it as much as possible, and then possibly
-% add some exercises after it in case they get through it quickly,
-% maybe we can get them there quicker by moving 5.2 to an appendix or something}
-	
+
 	\subsection{Symmetries \& Polynomials}	
 	
 	Let $ P(x) = x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ be a polynomial with roots $ r_1, r_2, \dots, r_n$.
