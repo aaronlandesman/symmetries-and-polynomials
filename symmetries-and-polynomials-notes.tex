@@ -224,8 +224,8 @@ Towards the end, we'll hint towards the deep connection between polynomials and 
 
 The 5 day outline is as follows: 
 \begin{enumerate}
-	\item The first two days are dedicated to studying polynomials. On the first day, we'll study the discriminant of a polynomial.
-	\item On the second day, we'll use the discriminant discussed on the first day to solve the cubic equation.
+	\item The first two days are dedicated to studying polynomials. On the first day, we'll study a simple invariant associated to every polynomial, the discriminant.
+	\item On the second day, we'll solve the cubic equation by a method motivated by Galois theory.
 	\item Days $3$ and $4$ are a ``practical'' introduction to group theory. On day $3$ we'll learn about groups as symmetries of geometric objects.
 	\item On day $4$, we'll learn about the commutator subgroup of a group.
 	\item Finally, on the last day we'll connect the two theories and explain the Galois correspondence for the cubic and the quartic. 
@@ -428,10 +428,11 @@ In some sense (which we do not explain) this map explains why the counts from
 		\begin{enumerate}
 			\item Show that $27r_1  r_2  r_3 = \mu_1^3 + \mu_2^3$. What is this in terms of $ p, q$?
 			\item Show that $ \mu_1 \mu_2 = -3p$.
-			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$. Solve it to find $ \mu_1^3, \mu_2^3$. (Do you recognize anything in the solution?)
+			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$. Solve it to find $ \mu_1^3, \mu_2^3$. 
+      \item Verify that the discriminant of this quadratic is the multiple of the discriminant $\Delta(P) = -4p^3 - 27q^2$ of the original cubic $ P(x)$.
 		\end{enumerate}
 	\end{exercise}
-	
+  
 	\begin{mdframed}
 		With all this work done, here's the algorithm for finding the roots of a depressed cubic $ x^3 + px + q$:
 		\begin{enumerate}
@@ -736,8 +737,7 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 	
 	\begin{exercise}
 		\label{exercise:elementary-symmetric-functions}
-		For $ n=3$, by comparing coefficients of $ x^i$ in $$x^3 + a_2 x^2 + a_1 x + a_0 = P(x) = (x-r_1)(x-r_2)(x-r_3)$$ find $ a_i$ as a function of the $ r_i$.
-		Similar identities hold for all $ n$. 
+		For $ n=3$, find $ a_i$ as a function of the $ r_i$. (We've already done this for the depressed cubic.) Similar identities hold for all $ n$. 
 	\end{exercise}
 	\begin{remark}
 		Each $ a_i$ is a (multi-variable) polynomial in the roots $ r_i$. These polynomials are called the \textbf{elementary symmetric polynomials}. They are called `symmetric' because they remain unchanged upon permuting the roots $ r_i$.
@@ -767,10 +767,10 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in it's coefficients $ a_i$.
 	\end{theorem}
 	\begin{exercise}
-		As an example, show that $ r_1^2 + r_2^2 + \dots + r_n^2  = a_{n-1}^2 - 2 a_{n-2}$.
+		As an example, show that $ r_1^2 + r_2^2 + r_3^2  = a_2^2 - 2 a_1$ for $ n=3$.
 	\end{exercise}
 	\begin{remark}
-		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and induction, also gives an algorithm for finding what these polynomials are.
+		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and induction, also gives an algorithm for finding these polynomials.
 	\end{remark}
 	
 	We've already encountered several examples of this:
@@ -837,7 +837,13 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 			We say that the $ \lambda_i$ are \textbf{fixed} by the Klein 4 group $K_4$.
 		\end{exercise}
 			
-			
+		\begin{exercise}For an arbitrary polynomial $ P(x)$ let $\sqrt{\Delta(P)} := \prod_{1 \leq i < j \leq n} (r_i - r_j)$.
+			\begin{enumerate} 
+				\item Show that $ \sqrt{\Delta(P)}$ changes sign if we swap $ r_1$ with $ r_2$.
+				\item Show that $ \sqrt{\Delta(P)}$ remains unchanged if perform even number of swaps; $ r_i$ with $ r_j$.
+			\end{enumerate}
+		This proves that $ \sqrt{\Delta(P)}$ is \textbf{fixed} by the entire $ A_n$.
+		\end{exercise}	
 			
 		
 		
