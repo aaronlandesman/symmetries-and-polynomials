@@ -219,8 +219,8 @@
 
 
 \section*{Introduction}
-In this class we'll learn how to solve a cubic and to some extent a quartic. We'll explore the connections between these solutions and group theory.
-Towards the end, we'll hint towards the deep connection between polynomials and groups via Galois Theory. This connection allows one to convert a classical question of whether a general quintic can be solved by radicals to a group theory problem, which can be relatively easily answered. 
+In this class we'll learn how to solve a cubic. We'll also sketch how to solve a quartic. We'll explore the connections between these solutions and group theory.
+Towards the end, we'll hint towards the deep connection between polynomials and groups via Galois Theory. This connection allows one to convert the classical question of whether a general quintic can be solved by radicals to a group theory problem, which can be relatively easily answered. 
 
 The 5 day outline is as follows: 
 \begin{enumerate}
@@ -260,7 +260,7 @@ which are not real.}
 \begin{exercise}
 	\label{exercise:quadratic-discriminant-in-roots}
 	Express the discriminant of the polynomial $P(x) = x^2 + bx + c$ in terms of
-	the roots $\alpha, \beta$.
+	the roots $\alpha$ and $\beta$.
 \end{exercise}
 
 \subsection{The discriminant in general}
@@ -276,8 +276,6 @@ which are not real.}
 	that of a quadratic polynomial given in \autoref{definition:quadratic-discriminant}.
 	\footnote{{\it Hint:} Use \autoref{exercise:quadratic-discriminant-in-roots}.}
 \end{exercise}
-The following exercise shows that the discriminant measures, in a precise sense, how far apart
-the roots of a polynomial are.
 \begin{exercise}
 	\label{exercise:discriminant-vanishing}
 	Show that for $P$ a polynomial, $\Delta(P) = 0$ if and only if $P$ has a repeated root.
@@ -285,15 +283,18 @@ the roots of a polynomial are.
 \subsection{Cubic discriminants}
 \begin{exercise}
 	\label{exercise:real-root-cubic}
-	Show that a cubic polynomial with real coefficients $P(x) = x^3 + ax + bx + c$
-	always has a real root.
+	Show that a cubic polynomial $P(x) := x^3 + ax + bx + c$
+ with real coefficients 	always has a real root.
 	\footnote{{\it Hint:} Graph the cubic and show it intersects the line $P(x) = 0$.}
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
 	Using \autoref{exercise:real-root-cubic}, show that a cubic polynomial either has
-	$3$ real roots or $2$ complex conjugates roots (of the form $a + bi, a-bi$ for $a,b$ real numbers) and one real root. 
+	\begin{enumerate}
+		\item $3$ real roots or 
+		\item $2$ complex conjugates roots (of the form $a + bi, a-bi$ for $a,b$ real numbers) and one real root. 
 	\footnote{{\it Hint:} Factor out the real root, and use your understanding of quadratic polynomials.}
+	\end{enumerate}
 \end{exercise}
 \begin{exercise}
 	\label{exercise:discriminant-cubic-sign}
@@ -308,14 +309,16 @@ the roots of a polynomial are.
 
 \begin{exercise}[Optional 1]
 	\label{exercise:cubic-discriminant}
-	An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients, for the quadratic this was \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. coefficient of $ x^2$ is 0). Consider the cubic
+	An amazing fact about the discriminant is that it can always be written as a polynomial in terms of the coefficients. For the quadratic this was shown in \autoref{definition:quadratic-discriminant} and \autoref{exercise:quadratic-discriminant-in-roots}. Now let's see this for a \textbf{depressed cubic} (i.e. a cubic with coefficient of $ x^2$ equal to $0$). Consider the cubic
 	\begin{align*}
-		P(x) &= x^3 + px + q
+		P(x) &= x^3 + px + q.
 	\end{align*}
 Assume that not all three roots are the same. 
 	\begin{enumerate}
-		\item By definition, the {\bf critical points} of $P(x)$ (the points at which $ P(x)$ attains it's local max/min if at all) and are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
-		\item Convince yourself that $ P(x)$ has repeated roots if and only if all the roots are real and one of the roots is a critical point. (Draw a graph.)
+		\item By definition, the {\bf critical points} of $P(x)$ 
+		%	(the points at which $ P(x)$ attains its local max/min if at all) 
+			are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
+		\item Convince yourself that $ P(x)$ has repeated roots if and only if all the roots are real and one of the roots is a critical point. Draw a graph of $P(x)$.
 		\item Argue that $ P(x)$ has a repeated root if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
 		\item Expand $ P(x_1) \cdot P(x_2)$.
 	\end{enumerate}
