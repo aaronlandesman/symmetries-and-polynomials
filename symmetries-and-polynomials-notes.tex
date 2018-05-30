@@ -236,7 +236,7 @@ Tricky optional problems are marked with $*$, and especially tricky optional pro
 \newpage
 \section{The Discriminant}
 Today we'll introduce the discriminant of a polynomial. The discriminant of a polynomial $P$ is another polynomial $Q$ which tells you
-whether $P$ has any repeated roots.
+whether $P$ has any repeated roots over $\bc$.
 
 \subsection{Quadratic Polynomials}
 \begin{definition}[Quadratic discriminant]
@@ -278,7 +278,7 @@ which are not real.}
 \end{exercise}
 \begin{exercise}
 	\label{exercise:discriminant-vanishing}
-	Show that for $P$ a polynomial, $\Delta(P) = 0$ if and only if $P$ has a repeated root.
+	Show that for $P$ a polynomial, $\Delta(P) = 0$ if and only if $P$ has a repeated root over $\bc$.
 \end{exercise}
 \subsection{Cubic discriminants}
 \begin{exercise}
@@ -299,7 +299,7 @@ which are not real.}
 \begin{exercise}
 	\label{exercise:discriminant-cubic-sign}
 	For $P(x) = x^3 + ax^2 + bx + c$ a cubic polynomial with real coefficients, show $\Delta(P) = 0$ if and only 
-	if there is a repeated root, $\Delta(P) > 0$ if and only if $P$ has three distinct real roots, and $\Delta(P) < 0$ if and only if $P$ has two complex conjugate roots and one real root.
+	if there is a repeated root over $\bc$, $\Delta(P) > 0$ if and only if $P$ has three distinct real roots, and $\Delta(P) < 0$ if and only if $P$ has two complex conjugate roots and one real root.
 	Compare your answer to \autoref{exercise:quadratic-roots}.
 \end{exercise}
 
@@ -318,8 +318,8 @@ Assume that not all three roots are the same.
 		\item By definition, the {\bf critical points} of $P(x)$ 
 		%	(the points at which $ P(x)$ attains its local max/min if at all) 
 			are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
-		\item Convince yourself that $ P(x)$ has repeated roots if and only if all the roots are real and one of the roots is a critical point. Draw a graph of $P(x)$.
-		\item Argue that $ P(x)$ has a repeated root if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
+		\item Convince yourself that $ P(x)$ has repeated roots over $\bc$ if and only if all the roots are real and one of the roots is a critical point. Draw a graph of $P(x)$.
+		\item Argue that $ P(x)$ has a repeated root over $\bc$ if and only if $ P(x_1) \cdot P(x_2) = 0$. (Compare this with \autoref{exercise:discriminant-vanishing}.)
 		\item Expand $ P(x_1) \cdot P(x_2)$.
 	\end{enumerate}
 	Here's a fact we won't prove. It's quite easy but tedious to show this by simply expanding out the definition of the discriminant from yesterday.
@@ -351,20 +351,20 @@ The following questions are quite tricky, but fun. Only attempt them if you've a
 	Using a similar method to that of \autoref{exercise:repeated-roots},
 	count the number of pairs of degree $n$ polynomials $(P,Q)$ for 
 	$P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $Q(x) = x^n + b_{n-1}x^{n-1} + \cdots + b_0$
-	with $a_i \in \bz/p, b_i \in \bz_p$ so that $P$ and $Q$ have no common root $\bmod p$.
+	with $a_i \in \bz/p, b_i \in \bz/p$ so that $P$ and $Q$ have no common irreducible factor.
 \end{exercise}
 \begin{remark}
 	\label{remark:}
 	If you did the two prior exercises \autoref{exercise:repeated-roots} and \autoref{exercise:common-roots} correctly, you may notice a striking similarity
-between the two answers. There is in deed a deeper connection, but the answer lies deep.
-Loosely speaking, if you take a polynomial $P(x)$ with no repeated roots, you can send it
+between the two answers. There is indeed a deeper connection, but the answer lies deep.
+Loosely speaking, if you take a polynomial $P(x)$ with no repeated factors, you can send it
 to the pair of polynomials $(P(x) + P'(x), P(x))$. Here $P'(x)$ denotes the derivative of $P(x)$.
 If $P(x) = \sum_i a_ix^i$ then $P'(x) = \sum_i  i \cdot a_i x^{i-1}$.
 \begin{exercise}
 	\label{exercise:}
 	Verify that the above indeed defines a map
-from the space of polynomials with no repeated roots to the
-space of pairs of polynomials with no repeated roots.
+from the space of polynomials with no repeated factors to the
+space of pairs of polynomials with no common factors.
 \end{exercise}
 
 In some sense (which we do not explain) this map explains why the counts from 
