@@ -428,12 +428,12 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 
 
-	\begin{exercise}
+	\begin{exercise}\todo{Apurva: This problem is correct.}
 		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Show that $27r_1  r_2  r_3 = \mu_1^3 + \mu_2^3$. Express this in terms of $p$ and $q$. \todo{when I multiply this out I get $\mu_1^3 + \mu_1^2 \mu_2 + \mu_1 \mu_2^2 + \mu_2^3$}
-			\item Show that $ \mu_1 \mu_2 = -3p$. \todo{Aaron: I think you get $-2p$ instead of $-3p$}
+			\item Show that $27r_1  (r_2  r_3) = \mu_1^3 + \mu_2^3$. Express this in terms of $p$ and $q$. \todo{when I multiply this out I get $\mu_1^3 + \mu_1^2 \mu_2 + \mu_1 \mu_2^2 + \mu_2^3$}
+			\item Show that $ \mu_1 \mu_2 = -3p$.\hint{Don't forget that $ (r_1 + r_2 + r_3)^2 = 0$.}  \todo{Aaron: I think you get $-2p$ instead of $-3p$}
 			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$ \todo{I don't see how to do this, given that the previous two parts seem wrong}. Solve it to find $ \mu_1^3, \mu_2^3$. 
       \item Verify that the discriminant of this quadratic is the multiple of the discriminant $\Delta(P) = -4p^3 - 27q^2$ of the original cubic $ P(x)$.
 		\end{enumerate}
@@ -454,7 +454,7 @@ In some sense (which we do not explain) this map explains why the counts from
 		
 	\begin{exercise}
 		\label{exercise:no-choice}
-		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
+		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What roots do we get if we pick a different \emph{cube root} of $ \mu_1^3$?
 		\todo{aaron: what are you looking for as an answer here? Can you make this question more precise?}
 	\end{exercise}
 	
@@ -501,15 +501,15 @@ In some sense (which we do not explain) this map explains why the counts from
 		\begin{align*}
 		\Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)
 		\end{align*}
-		is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
+		is called the $ n^{th}$ \textbf{cyclotomic polynomial}. 
 		\begin{enumerate}[resume]
 			\item Compute the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
 			\item Compute the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
-			\item Factor $ x^n - 1$ as a product of cyclotomic polynomials.
-			\item ** Show that $ \Phi_n(x)$ have integer coefficients and are irreducible over the integers.
-				\todo{aaron: I would do this last part by showing the coefficients live in both the ring of integers and $\bq$ (the latter using galois invariance)
-				and then conclude they live in $\mathscr O_K \cap \bq = \bz$. But this is surely not the way you intended. Can you give a hint outlining your intended proof?}
+			\item Express $ x^n - 1$ as a product of cyclotomic polynomials.
+			\item** Use the previous part to show that $ \Phi_n(x)$ has integer coefficients.\hint{Induction on $ n$.}
+			\item* Find a formula for $ \Phi_n(x)$ in terms of $ x^n - 1$. \hint{Mobius inversion!}
 		\end{enumerate}
+		It is also the case that the $ \Phi_n(x)$ are all irreducible over integers. However, this fact has no easy proof.
 	\end{exercise}
 
 \newpage
@@ -846,7 +846,7 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 			% \end{enumerate}
 		\end{exercise}
 		
-		\begin{exercise}
+		\begin{exercise}\todo{Apurva: In all these fixed point exercises we're working with free variables. These are all false if the roots are instead complex numbers.}
 			Let $ P(x)$ be a quartic polynomial. 
 			\begin{enumerate}
 				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. 
