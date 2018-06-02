@@ -338,11 +338,11 @@ The following questions are quite tricky, but fun. Only attempt them if you've a
 	every such polynomial factors uniquely as a product of irreducible polynomials with coefficients in $\bz/p$.
 	Show there are $p^n$ such polynomials, and exactly
 	$p^{n-1}$ of them have discriminant $0$.
-	Conclude that the number of squarefree polynomials of degree $n$ over $\bz/p$ is $p^n - p^{n-1}$.
+	Conclude that the number of square-free polynomials of degree $n$ over $\bz/p$ is $p^n - p^{n-1}$.
 	\footnote{{\it Hint:} 
 	You may assume that every such polynomial $p(x)$ can be written uniquely
 		as $f(x)g(x)^2$, 
-		where $f(x)$ is squarefree. (Here, $f$ and $g$ are polynomials with $\bz/p$ coefficients.)
+		where $f(x)$ is square-free. (Here, $f$ and $g$ are polynomials with $\bz/p$ coefficients.)
 		Then count the number of such polynomials with $\deg f = k$ by induction on $k$.}
 \end{exercise}
 
@@ -422,7 +422,8 @@ In some sense (which we do not explain) this map explains why the counts from
 			\mbox { , } r_2 = \dfrac{\omega^2 \mu_1 + \omega \mu_2}{3}
 			\mbox { , } r_3 = \dfrac{\omega \mu_1 + \omega^2 \mu_2}{3}
 		\end{align*}
-		are the solutions to \autoref{equation:intermediate_variables_cubic} and $ r_1 + r_2 + r_3 = 0$. (These are in fact unique solutions.)
+		are the solutions to \autoref{equation:intermediate_variables_cubic} and $ r_1 + r_2 + r_3 = 0$.
+		%(These are in fact unique solutions.)
 	\end{exercise}
 	
 
@@ -431,9 +432,9 @@ In some sense (which we do not explain) this map explains why the counts from
 		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Show that $27r_1  r_2  r_3 = \mu_1^3 + \mu_2^3$. What is this in terms of $ p, q$?
-			\item Show that $ \mu_1 \mu_2 = -3p$.
-			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$. Solve it to find $ \mu_1^3, \mu_2^3$. 
+			\item Show that $27r_1  r_2  r_3 = \mu_1^3 + \mu_2^3$. Express this in terms of $p$ and $q$. \todo{when I multiply this out I get $\mu_1^3 + \mu_1^2 \mu_2 + \mu_1 \mu_2^2 + \mu_2^3$}
+			\item Show that $ \mu_1 \mu_2 = -3p$. \todo{Aaron: I think you get $-2p$ instead of $-3p$}
+			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$ \todo{I don't see how to do this, given that the previous two parts seem wrong}. Solve it to find $ \mu_1^3, \mu_2^3$. 
       \item Verify that the discriminant of this quadratic is the multiple of the discriminant $\Delta(P) = -4p^3 - 27q^2$ of the original cubic $ P(x)$.
 		\end{enumerate}
 	\end{exercise}
@@ -454,6 +455,7 @@ In some sense (which we do not explain) this map explains why the counts from
 	\begin{exercise}
 		\label{exercise:no-choice}
 		We had to make a \emph{choice} while finding $ \mu_1$. Why does this choice not matter? Or does it? What if we had picked a different \emph{cube root} of $ \mu_1^3$?
+		\todo{aaron: what are you looking for as an answer here? Can you make this question more precise?}
 	\end{exercise}
 	
 	\begin{remark}[The idea for solving the quartic]
@@ -461,22 +463,27 @@ In some sense (which we do not explain) this map explains why the counts from
 		A similar inductive technique works for the quartic, however the method is too tedious to do by hand. Suppose we're trying to find the roots $ r_1, r_2, r_3, r_4$ of a quartic \begin{align*}
 			P(x) &= x^4 + a_3x^3 + a_2x^2 + a_1x + a_0
 		\end{align*}
-		then the strategy is to find 3 \emph{intermediate variable} $ \lambda_1, \lambda_2, \lambda_3$ such that 1) they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 2) the $r_i's$ can recovered from the $ \lambda_i's$ ``easily''. Such variables indeed exist:
+		then the strategy is to find 3 \emph{intermediate variables} $ \lambda_1, \lambda_2, \lambda_3$ such that 
+		\begin{enumerate}
+			\item they satisfy a cubic polynomial whose coefficients can be obtained from the original coefficients and 
+			\item the $r_i's$ can recovered from the $ \lambda_i's$ ``easily.''		\end{enumerate}
+ Such variables indeed exist:
 			\begin{align}
 				\label{equation:intermediate_variables_quartic}
 				\begin{split}
 					\lambda_1 &:= r_1 r_2 + r_3 r_4 \\
 					\lambda_2 &:= r_1 r_3 + r_2 r_4 \\
-					\lambda_3 &:= r_2 r_3 + r_1 r_4 
+					\lambda_3 &:= r_2 r_3 + r_1 r_4.
 				\end{split}
 			\end{align}
 			
 			{\it Your homework is to complete up through \autoref{exercise:no-choice} and read \autoref{remark:solving_the_quartic}. If you finish that, and still have time try the following questions.}
 \subsection{Further optional questions on the quartic and roots of unity}			
 		\begin{exercise}[Optional 1]
+			Retain the notation from \autoref{remark:solving_the_quartic}.
 			Here's how you recover the $ r_i$ from the $ \lambda_i$.
 			\begin{enumerate}
-				\item Convice yourself that $ r_1 r_2$ and $r_3 r_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ r_i r_j$.
+				\item Convince yourself that $ r_1 r_2$ and $r_3 r_4$ are the roots of $ x^2 - \lambda_1 x + a_0$. This gives us all the $ r_i r_j$.
 				\item Figure out a way to recover $ r_i$ if you know all the $ r_i r_j$.
 			\end{enumerate}
 		\end{exercise}
@@ -488,17 +495,22 @@ In some sense (which we do not explain) this map explains why the counts from
 	\begin{exercise}[Optional 2] $ $
 		\begin{enumerate}
 			\item Show that the $ n^{th}$ roots of unity are $ e^{2 \pi i k / n}$ where $ 0 \le k < n$ is a positive integer. Plot them on the complex plane. 
-			\item Show that there are exactly $ \phi(n)$ primitive $ n^{th}$ roots of unity, where $ \phi(n)$ is the number of positive integers less than $ n$ relatively prime to it.
+			\item Show that there are exactly $ \phi(n)$ primitive $ n^{th}$ roots of unity, where $ \phi(n)$ is the number of positive integers less than $ n$ relatively prime to $n$.
 		\end{enumerate}
-		If $ \zeta_1, \dots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial $ \Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)$ is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
+		If $ \zeta_1, \dots, \zeta_k$ are all the primitive $ n^{th}$ roots of unity then the polynomial 
+		\begin{align*}
+		\Phi_n(x) := \prod _{i=1}^k (x - \zeta_i)
+		\end{align*}
+		is called the $ n^{th}$ \textbf{cyclotomic polynomial}. Miraculously, all the coefficients of $ \Phi_n(x)$ are integers!
 		\begin{enumerate}[resume]
-			\item Find the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
-			\item Find the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
+			\item Compute the cyclotomic polynomials $ \Phi_2(x), \Phi_3(x), \Phi_4(x)$, $ \Phi_5(x)$.
+			\item Compute the cyclotomic polynomials $ \Phi_p(x)$ where $ p$ is prime.
 			\item Factor $ x^n - 1$ as a product of cyclotomic polynomials.
 			\item ** Show that $ \Phi_n(x)$ have integer coefficients and are irreducible over the integers.
+				\todo{aaron: I would do this last part by showing the coefficients live in both the ring of integers and $\bq$ (the latter using galois invariance)
+				and then conclude they live in $\mathscr O_K \cap \bq = \bz$. But this is surely not the way you intended. Can you give a hint outlining your intended proof?}
 		\end{enumerate}
 	\end{exercise}
-	
 
 \newpage
 \section{Symmetry Groups}
@@ -523,7 +535,7 @@ how to solve cubic and quartic equations in future days.
 \begin{remark}
 	\label{remark:aut-is-group}
 	Note that the composition of two automorphisms is again an automorphism.
-	Also, automorphism has an inverse, because you can simply ``undo'' the rotation or reflection.
+	Also, automorphism has an inverse because you can simply ``undo'' the rotation or reflection.
 	This makes the set of automorphisms into what is called a {\bf group}. That is,
 	a group is a set with a composition operation (that is associative), which has an identity and inverses.
 \end{remark}
@@ -531,7 +543,7 @@ how to solve cubic and quartic equations in future days.
 	\label{exercise:r-s}
 	Let $s$ denote the automorphism of the equilateral triangle which is rotation by $120\degree$
 	and let $r$ denote a reflection interchanging two vertices of the equilateral triangle.
-	Show that $r^2= \id,$ (where $r^2$ means $r \circ r$) $s^3 = \id$, and $rs = s^2r$ (here $rs$ means you first apply $r$, then apply $s$).
+	Show that $r^2= \id,$ (where $r^2$ means $r \circ r$) $s^3 = \id$, and $rs = s^2r$ (here $rs$ means you first apply $s$, then apply $r$).
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
@@ -545,15 +557,15 @@ how to solve cubic and quartic equations in future days.
 We now generalize from the case of triangles to all polygons.
 \begin{exercise}
 	\label{exercise:}
-	A regular $n$-gon in $\br^2$ has $2n$ automorphisms, what are they? 
+	A regular $n$-gon in $\br^2$ has $2n$ automorphisms. What are they? 
 	%\hint{There are $n$ rotations by $(k * 360/n)\degree$ for $0 \leq k \leq n-1$ and $n$ reflections.} 
-	This set of automorphims is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
+	This set of automorphisms is called the {\bf dihedral group of size $2n$}, denote $D_{2n}$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
 	Let $s$ denote the rotation of a regular $n$-gon by $(360/n) \degree$ about its center and $r$ denote an automorphism of a regular $n$-gon
 	which is a reflection. Show that $r^2 = \id$, $s^n = \id$, and $rs = s^{n-1} r$. Show that $r$ and $s$ generate all automorphisms of the
-	regular $n$-gon by showing the $2n$ elements are $1, s, s^2, \ldots, s^{n-1}, r, rs, \ldots, rs^{n-1}$.
+	regular $n$-gon by showing the $2n$ automorphisms are $1, s, s^2, \ldots, s^{n-1}, r, rs, \ldots, rs^{n-1}$.
 \end{exercise}
 \begin{remark}
 	\label{remark:}
@@ -598,15 +610,16 @@ This makes the set of these bijections into a group.
 	\label{exercise:cube}
 	Inside all automorphisms of the cube, there is a subgroup of rotations. 
 	What is the size of this group? Can you identify this group? 
-	\hint{Look at the long diagonals. }
+	\hint{Look at the long diagonals.}
 \end{exercise}
 
 \begin{exercise}[Optional 2]
 	\label{exercise:octahedron}
-	Similarly, identify the group of automorphisms of the octahedron with $S_4$.
+	Let $G$ be the group from \autoref{exercise:cube}, which you found was the group of rotations of the cube.
+	Identify the group of rotations of the octahedron with the same group $G$.
 %	Show that inside the automorphisms of the cube, there is a subgroup of order $4$, whose $3$ non-identity elements consist of $180 \degree$ rotations.
 %	This is known as the {\bf Klein-$4$ group,} denoted $K_4$.
-	\hint{Look at the four diagonals joining opposite sides. Alternatively, use \autoref{exercise:cube} and that the octahedron ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
+	\hint{Look at the four diagonals joining opposite sides. Alternatively, use \autoref{exercise:cube} and that the octahedron is ``dual'' to the cube (the faces of the cube correspond to the vertices of the octahedron and the faces of the octahedron correspond to the vertices of the cube).}
 \end{exercise}
 
 \begin{exercise}[Optional 3]
@@ -614,8 +627,8 @@ This makes the set of these bijections into a group.
 	Determine the number of rotations of the dodecahedron. Do the same for the number of rotations of the icosahedron.
 	Identify these two groups. That is, construct a bijection between these groups respecting composition.
 	Show that these are subgroups of $S_5$. 
-	{\it Possible hint:} For identifying this as a subgroup of $S_5$,
-	one can show there are $5$ cubes which can be inscribed in a dodecahedron, and the rotations permute these cubes.
+	\hint{For identifying this as a subgroup of $S_5$,
+	one can show there are $5$ cubes which can be inscribed in a dodecahedron, and the rotations permute these cubes.}
 \end{exercise}
 
 \newpage
@@ -624,28 +637,28 @@ Today we discuss commutators of groups in order to apply it to solving the cubic
 Tomorrow we will explain how these commutators let us solve the cubic and quartic equations.
 \begin{definition}
 	\label{definition:}
-	Let $G$ be a group. The {\bf commutator subgroup} of $G$, denoted $\left[ G,G \right] \subset G$ is the subgroup of $G$ generated
+	Let $G$ be a group. The {\bf commutator subgroup} of $G$, denoted $\left[ G,G \right]$ is the subgroup of $G$ generated
 	by elements of the form $ghg^{-1}h^{-1}$ for $g, h$ elements of $G$.
 	Here $g^{-1}$ denotes the inverse of $g$.
 \end{definition}
 \begin{remark}
 	\label{remark:}
 	We will mostly be concerned with the case that $G$ is the symmetric group, or some group of automorphisms of a subset $X \subset \br^n$.
-	In the case of $X \subset \br^n$, if $g$ and $h$ are two automorphisms of $G$, $ghg^{-1}h^{-1}$ means that you first apply $g$, then apply $h$, then
-	``undo'' $g$ and then ``undo'' $h$.
+	In the case of $X \subset \br^n$, if $g$ and $h$ are two automorphisms of $X$, $ghg^{-1}h^{-1}$ means that you first apply $h^{-1}$, then apply $g^{-1}$, then
+	apply $h$, then apply $g$.
 \end{remark}
 \begin{exercise}
 	\label{exercise:}
 	Let $G = S_3$ (it may help to think about this as automorphisms of an equilateral triangle).
 	Let $r$ denote the reflection (in terms of $S_3$ this sends $1 \mapsto 2, 2 \mapsto 1, 3\mapsto 3$)
 	and $s$ denote rotation by $120 \degree$ (in $S_3$ this sends $1 \mapsto 2, 2 \mapsto 3, 3 \mapsto 1$).
-	Show that $rsr^{-1}s^{-1} = s^2$.
-	Show that the commutator $\left[ S_3, S_3 \right]$ is generated by $s^2 = rsr^{-1}s^{-1}$, and hence is exactly the subgroup
+	Show that $rsr^{-1}s^{-1} = s$.
+	Show that the commutator $\left[ S_3, S_3 \right]$ is generated by $s = rsr^{-1}s^{-1}$, and hence is exactly the subgroup
 	with elements $\left\{ \id, s, s^2 \right\}$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}
-	Let $G = C_3$ (the group of rotations of the triangle). Show that the commutator just the identity automorphism, $\left[ C_n, C_n \right] = \left\{ \id \right\}$.
+	Let $G = C_3$ (the group of rotations of the triangle). Show that the commutator is just the identity automorphism, $\left[ C_n, C_n \right] = \left\{ \id \right\}$.
 	In other words, show that for any $g, h \in C_3$, $ghg^{-1}h^{-1} = \id$.
 	More generally, show that if $G = C_n$, $\left[ C_n, C_n \right] = \left\{ \id \right\}$.
 \end{exercise}
@@ -700,13 +713,13 @@ We now give some geometric ways to see various commutator subgroups of $S_4$.
 	can be viewed as a subgroup of $S_4$. Specifically, the three non-identity elements are
 	given by the three ways of swapping two pairs of disjoint elements. (For example, one of them would be $1 \mapsto 2, 2 \mapsto 1, 3\mapsto 4, 4 \mapsto 3$.)
 	\begin{enumerate}
-		\item Using the identification of automorphisms of the tetrahedron with $S_4$ from \autoref{exercise:tetrahedron-automorphisms},
+		\item Using the identification of automorphisms of the tetrahedron with $S_4$ from \autoref{exercise:tetrahedron-automorphisms}
 	(by the action of
-	$S_4$ on the $4$ vertices of the tetrahedron,) 
+	$S_4$ on the $4$ vertices of the tetrahedron), 
 	describe the $4$ automorphisms of $S_4$ lying in the Klein-$4$ subgroup. 
 \item Show these are all given by rotations, so $K_4 \subset A_4$ using \autoref{exercise:tetrahedron-rotations}. (Technically speaking, we did
 	not verify that the group of rotations was $A_4 = \left[ S_4, S_4 \right]$. Feel free to assume this, or prove it as an extra challenge.
-	If you want help proving it, and for understanding $A_4$, ask for \autoref{appendix:commutators-s4}.)
+	If you want help proving it or would like to develop a better understanding $A_4$, ask for \autoref{appendix:commutators-s4}.)
 \item* 	Can you use this description to show $K_4 = \left[ A_4, A_4 \right]$? (Again, ask for \autoref{appendix:commutators-s4} if you would like to
 prove this algebraically.)
 	\end{enumerate}
@@ -720,21 +733,21 @@ prove this algebraically.)
 	Can you use these geometric descriptions to verify $A_4 = \left[ S_4, S_4 \right]$ and $K_4 = \left[ A_4, A_4 \right]$?
 \end{exercise}
 \begin{exercise}[Optional 4]
-	\label{exercise:}
+	\label{exercise:cross-ratio}
 	Given four distinct ordered complex numbers $a,b,c,d$, the {\bf cross ratio} is defined as
 	\begin{align*}
 		\mathrm{r}(a,b;c,d) := \frac{(c-a)(d-b)}{(c-b)(d-a)}.
 	\end{align*}
-Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting them. Show that $K_4 \subset S_4$ preserves the cross ratio.
+Note that $S_4$ acts on the set $\left\{ a,b,c,d \right\}$ by permuting the elements of this set. Show that $K_4 \subset S_4$ preserves the cross ratio.
 	That is, if $\sigma \in K_4$ then then $\mathrm{r}(a,b;c,d) = \mathrm{r}(\sigma(a),\sigma(b);\sigma(c),\sigma(d))$.
-	Find an example of some set of four complex numbers $(a,b,c,d)$ for which $K_4$ is exactly the subgroup that preserves
+	Find an example of some set of four complex numbers $(a,b,c,d)$ for which $K_4$ is exactly the subgroup of $S_4$ that preserves
 	the cross ratio.
 \end{exercise}
 
 
 \newpage
 \section{The Galois Correspondence}
-So far we've talked about solving cubic and quartics and some concepts from Group theory. Today we'll see the connection between these and hint towards the deeper connection called Galois Correspondence.
+So far we've talked about solving cubic and quartics and some concepts from Group theory. Today we'll see the connection between these and hint towards the deeper connection called the Galois Correspondence.
 
 	\subsection{Symmetries \& Polynomials}	
 	
@@ -749,13 +762,13 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 	\end{remark}
 	
 	\begin{exercise}
-		Check this for $ n=3$.
+		Check that the $a_i$ remain unchanged upon permuting the roots $r_i$ in the case $ n=3$.
 	\end{exercise}
 	
 	In group theoretic terminology, we say that the symmetric group $ S_n$ \textbf{acts} on the set of polynomials in $ n$ variables by permuting the variables. 
 	That is, we can ``apply'' $\sigma$ to a polynomial $Q$ to obtain the polynomial $\sigma(Q)$ defined by
 		\begin{align*}
-			(\sigma(Q))(r_1, r_2, \dots, r_n) := Q(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)})
+			(\sigma(Q))(r_1, r_2, \dots, r_n) := Q(r_{\sigma(1)}, r_{\sigma(2)}, \dots, r_{\sigma(n)}).
 		\end{align*}
 		\begin{definition}
 			\label{definition:}
@@ -765,34 +778,34 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 	\end{align*}
 	In other words, the polynomial remains the same after reordering the variables.
 		\end{definition}
-	The reason for the `elementary' in `elementary symmetric' is the following theorem.
+		The reason for the `elementary' in `elementary symmetric' is the following theorem, which we do not prove:
 	\begin{theorem}
 		\label{theorem:fundamental_theorem_symmetric_polynomials}
-		Any symmetric polynomial can be expressed as a polynomial in the elementary symmetric ones. 
-		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in it's coefficients $ a_i$.
+		Any symmetric polynomial can be expressed as a polynomial in the elementary symmetric polynomials. 
+		Hence, any symmetric polynomial $ Q(r_1, r_2, \dots, r_n)$ in the roots $ r_i$ of a polynomial $ P(x)$ can be expressed as a polynomial in its coefficients $ a_i$.
 	\end{theorem}
 	\begin{exercise}
 		As an example, show that $ r_1^2 + r_2^2 + r_3^2  = a_2^2 - 2 a_1$ for $ n=3$.
 	\end{exercise}
 	\begin{remark}
-		You can assume this theorem without proof. The proof of this theorem, which is a careful application of the multinomial theorem and induction, also gives an algorithm for finding these polynomials.
+		You can assume \autoref{theorem:fundamental_theorem_symmetric_polynomials} without proof. The proof of this theorem, which is a careful application of the multinomial theorem and induction, also gives an algorithm for finding these polynomials.
 	\end{remark}
 	
 	We've already encountered several examples of this:
 	\begin{exercise}[\textbf{Discriminant}]
-		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric, and hence by \autoref{theorem:fundamental_theorem_symmetric_polynomials} can be expressed as in terms of the coefficients of $ P(x)$! This justifies the existence of the formulae $ b^2 - 4c, -4p^3 - 27q^2$.
+		Verify that for any polynomial $ P(x)$ the discriminant $\Delta(P) = \prod_{1 \leq i < j \leq n} (r_i - r_j)^2$ is symmetric. Conclude that $\Delta(P)$ can be expressed in terms of the coefficients of $ P(x)$! This explains the formulae $\Delta = b^2 - 4c$ and $-4p^3 - 27q^2$ in quadratic and cubic cases.
 	\end{exercise}
 	
-	\begin{remark}[\textbf{Cubic}] Recall that for a cubic $ P(x)=x^3 + px + q$ we defined the intermediate variables \begin{align*}
+	\begin{remark}[\textbf{Cubic}] Recall that for a cubic $ P(x)=x^3 + px + q$, we defined the intermediate variables \begin{align*}
     \mu_1 &= r_1 + r_2 \omega + r_3 \omega^2 \\
     \mu_2 &= r_1 + r_2 \omega^2 + r_3 \omega
   \end{align*}
-	We've already seen that $ \mu_1^3 + \mu_2^3 = -27q$ and $ \mu_1^3 \mu_2^3 = -27p$. Even without explicitly computing them it is easy to show that $ \mu_1^3 + \mu_2^3$ and $\mu_1^3  \mu_2^3$ are symmetric in $ r_1, r_2, r_3$, even if the cubic is not depressed.
+	We've already seen that $ \mu_1^3 + \mu_2^3 = -27q$ and $ \mu_1^3 \mu_2^3 = -27p$. Even without explicitly computing them it is easy to show that $ \mu_1^3 + \mu_2^3$ and $\mu_1^3  \mu_2^3$ are symmetric in $ r_1, r_2, r_3$. It is also easy to see this if the cubic is not depressed.
 	\end{remark}
 	
 	\begin{exercise}[\textbf{Quartic}]
 		\label{exercise:quartic-lambda}
-		Recall that for a quartic $ P(x)$ we defined the intermediate variables
+		Recall that for a quartic $ P(x)$, we defined the intermediate variables
 		\begin{align*}
 				\lambda_1 &= r_1 r_2 + r_3 r_4 \\
 				\lambda_2 &= r_1 r_3 + r_2 r_4 \\
@@ -821,7 +834,7 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 		\begin{exercise} 
 			Let $ P(x)$ be a cubic polynomial. 
 			\begin{enumerate}
-				\item Show that $ \omega \mu_1 = r_3 + r_1 \omega + r_2 \omega^2$ and hence $ \mu_1^3$ (similarly $ \mu_2^3$) remains unchanged if we cyclically permute $ r_1, r_2, r_3$.
+				\item Show that $ \omega \mu_1 = r_3 + r_1 \omega + r_2 \omega^2$ and hence $ \mu_1^3$ (and similarly $ \mu_2^3$) remains unchanged if we cyclically permute $ r_1, r_2, r_3$.
 				\item Show that $ \mu_1^3$ and $ \mu_2^3$ get interchanged if we swap $ r_2$ and $ r_3$. (The same is in fact true if we swap any two of the $ r_i$.)
 			\end{enumerate}
 			We say that $ \mu_1^3, \mu_2^3$ are \textbf{fixed} by $ A_3$ (because $ A_3$ consists of the cyclic permutations and $ id$).
@@ -836,8 +849,14 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 		\begin{exercise}
 			Let $ P(x)$ be a quartic polynomial. 
 			\begin{enumerate}
-				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. Similarly for the other pairs of pairs.
+				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. 
+					Similarly for the other pairs of pairs.
+					More precisely, show that
+					$K_4 \subset S_4$ fixes all of the $\lambda_i$.				
 				\item Convince yourself that these and $ id$ are the only permutations in $ S_4$ that leave each of the the $ \lambda_i$ unchanged.
+					In other words, show $K_4 \subset S_4$ is precisely the subset of permutations fixing the $\lambda_i$.
+					\todo{this exercise is false as stated, since there are some polynomials fixed by bigger subgroups. for example, this will fail if you take
+					all roots to be equal. did you want them to give an example of a polynomial where it is exactly the fixed set? this is closely related to the \autoref{exercise:cross-ratio}}
 			\end{enumerate}
 			We say that the $ \lambda_i$ are \textbf{fixed} by the Klein 4 group $K_4$.
 		\end{exercise}
@@ -847,14 +866,10 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 				\item Show that $ \sqrt{\Delta(P)}$ changes sign if we swap $ r_1$ with $ r_2$.
 				\item Show that $ \sqrt{\Delta(P)}$ remains unchanged if perform even number of swaps; $ r_i$ with $ r_j$.
 			\end{enumerate}
-		This proves that $ \sqrt{\Delta(P)}$ is \textbf{fixed} by the entire $ A_n$.
+			This proves that $ \sqrt{\Delta(P)}$ is \textbf{fixed} by the entire $ A_n$. For a justification of this, ask for \autoref{appendix:alternating}.
 		\end{exercise}	
 			
 		
-		
-		
-		
-		\newpage
 		\subsection{The Correspondence}
 		Let us summarize how we solved the cubic and quartic equations:		
 		\begin{enumerate}
@@ -868,13 +883,12 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 				To solve the quartic, we use that $A_4 = \left[ S_4, S_4 \right]$ and $K_4 = \left[ A_4, A_4 \right]$ and
 				$\left\{ \id \right\}= \left[ K_4, K_4 \right]$.
 				(As is outlined in \autoref{appendix:commutators-s4}.)
-				The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$,
-				and 
-				we can solve for the roots $r_i$ in terms of the $\lambda_i$
+				The intermediate variables $ \{\lambda_1, \lambda_2, \lambda_3 \}$ are fixed by the subgroup $K_4$.
+				We can solve for the roots $r_i$ in terms of the $\lambda_i$
 				using quadratic equations, since the $\lambda_i$ are quadratic polynomials in terms of the roots.
 				The fact that we can solve for the $\lambda_i$ corresponds to the fact that $\left[ K_4, K_4 \right] = \id$.
 
-				So, to solve the quartic, we want to solve for the roots in terms of the coefficients.
+				Summarizing our progress thus far, to solve the quartic, we want to solve for the roots in terms of the coefficients.
 				We have shown we can solve for the roots in terms of the $\lambda_i$, so we only need to solve
 				for the $\lambda_i$ in terms of the coefficients.
 				We know the $\lambda_i$ can be expressed as solutions to a cubic equation, by \autoref{exercise:quartic-lambda}.
@@ -893,24 +907,26 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 			\begin{enumerate}
 				\item If we can solve a general degree $ n$ polynomial by radicals, then we should be able to find a sequence of intermediate variables which satisfy lower degree polynomials. 
 				\emph{This part is not hard if you think about what a solution in terms of radicals means.}
-				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. \emph{This is Galois' great discovery.} 
+				\item Such intermediate variables should be fixed by subgroups of $ S_n$ which can be obtained by successively taking commutators of $ S_n$. 
+					%\emph{This is Galois' great discovery.} 
 %					[For those who of you who know what Galois theory is about, this is the Galois correspondence for the field extension of the function fields $ \mathbb{C}(a_0,a_1,\dots, a_{n-1}) \subseteq \mathbb{C}(r_0,r_1,\dots, r_{n-1})$ where the $ r_i$ are free variables and the $ a_i$ are the elementary symmetric polynomials in the $ r_i$.]
-				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$.For a series of exercises proving this, ask for \autoref{appendix:alternating} (which assumes you have completed \autoref{appendix:commutators-s4}). The idea is to define $A_n$ in an alternate way, and then explicitly computate commutators.
+				\item For $ n \ge 5$ no such subgroups exist because for $ n \ge 5$ the commutators stabilize: $[S_n, S_n] = A_n$ and $ [A_n, A_n] = A_n$. For a series of exercises proving this, ask for \autoref{appendix:alternating} (which assumes you have completed \autoref{appendix:commutators-s4}). The idea is to define $A_n$ in an alternate way, and then explicitly compute commutators.
 			\end{enumerate}
       
-      The sequence of successive commutators for the Symmetric groups looks like
+      The sequence of successive commutators for symmetric groups looks like
       \begin{align*}
 	      S_3 &\supset [S_3, S_3] = A_3 \supset [A_3, A_3] = \{ \id \}  &\\
 		S_4 &\supset [S_4, S_4] = A_4 \supset [A_4, A_4] = K_4 \supset [K_4, K_4] = \{ \id \} & \\
 		S_n &\supset [S_n, S_n] = A_n \supset [A_n, A_n] = A_n      & \text{ if } n \geq 5
 \end{align*}
-	Since taking iterated comutators of $S_n$ for $n \geq 5$ does not eventually shrink to the identity,
+	Since taking iterated commutators of $S_n$ for $n \geq 5$ does not eventually shrink to the identity,
 	one can show:
 			\begin{theorem}
 				A general polynomial of degree $ \ge 5$ cannot be solved using radicals.
 			\end{theorem}
 
-{\it Your homework is to complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that, and still have time try the following questions.}
+{\it Your homework is to read up through this point and complete up through \autoref{exercise:tetrahedron-rotations}. If you finish that try the following questions.}
+
 \subsection{Further optional questions: Symmetric Polynomials}
 We'll sketch out a proof for the fundamental theory of symmetric polynomials for $ n=2$.
 	\begin{theorem}
@@ -930,7 +946,7 @@ We'll sketch out a proof for the fundamental theory of symmetric polynomials for
 	\end{exercise}
 	
 	\begin{exercise}[Optional 2] **
-		Try proving the above theorem for $ n=3$. The steps are \emph{almost} the same as above with the binomial theorem being replaced by the multinomial. There is one step which fails, can you spot it? Can you think of a way to fix it?
+		Try proving the above theorem for $ n=3$. The steps are \emph{almost} the same as above with the binomial theorem being replaced by the multinomial theorem. There is one step which fails. Can you spot it? Can you think of a way to fix it?
 	\end{exercise}
 
 
@@ -944,15 +960,15 @@ To this end, it will be useful to have cycle notation.
 
 \begin{exercise}
 	\label{exercise:}
-	Define a ``cycle notation'' for elements in $S_n$. See \autoref{figure:cycle-notation} on the next page for a pictorial discription.
+	Define a ``cycle notation'' for elements in $S_n$. See \autoref{figure:cycle-notation} for a pictorial description.
 			\begin{figure}[h!]
 				 \includegraphics[scale=1.5]{cycle-1.png}	
 				 \includegraphics[scale=1.5]{cycle-2.png}	
 				\caption{This is a depiction of two elements thought of as elements of $S_8$. The first corresponds the the permutation fixing $2$ and $5$,
 				and sending $1 \mapsto 4, 4 \mapsto 6, 6 \mapsto 8, 8\mapsto 3, 3 \mapsto 7, 7\mapsto 1$.
 			The corresponding cycle notation for the first picture is $(146837)(2)(5)$ (where each parenthesized group of numbers
-			correspond to a cycle in the above diagram. Similarly, the second permutation has cycle notation $(14625837)$.
-			}
+		correspond to a cycle in the above diagram). Similarly, the second permutation has cycle notation $(14625837)$.}
+			
 \label{figure:cycle-notation}\end{figure}
 \end{exercise}
 \begin{remark}
@@ -961,7 +977,7 @@ To this end, it will be useful to have cycle notation.
 	So, for example, we denote the element of $S_8$ with cycle notation $(146837)(2)(5)$ simply as $(146837)$.
 \end{remark}
 
-You may prove the following facts, or assume it if you'd like:
+You may prove the following facts, or assume them if you'd like:
 \begin{fact}
 	\label{fact:transpositions}
 	\begin{enumerate}
@@ -989,8 +1005,8 @@ You may prove the following facts, or assume it if you'd like:
 \end{exercise}
 \begin{exercise}
 	\label{exercise:klein-4-commutator}
-	Compute the commutator $\left[ A_4, A_4 \right]$. Show it has order $4$ and is explicitly given by the element $\id, (12)(34), (13)(24), (14)(23)$.
-	This is denoted $K_4$ and is called the {\bf Klein-$4$ group} (in an appropriate sense, it is the same as the klein-4 group defined in \autoref{exercise:klein-4}.
+	Compute the commutator $\left[ A_4, A_4 \right]$. Show it has order $4$ and is explicitly given by the elements $\id, (12)(34), (13)(24), (14)(23)$.
+	This is the Klein-$4$ group.
 \end{exercise}
 
 \newpage
@@ -1016,18 +1032,18 @@ we make the following alternate definition, and then verify $A_n$ is in fact $[S
 \end{definition}
 \begin{exercise}
 	\label{exercise:}
-	Verify that the definition of $A_n$ \autoref{definition:alternating-group-2} is well defined by showing that $A_n$ is in fact a subgroup.
+	Verify that the definition of $A_n$, \autoref{definition:alternating-group-2}, is well defined by showing that $A_n$ is in fact a subgroup.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:}**
-	Show that if $g\in S_n$ can be written as products of transpositions in two ways, say $g = t_1 \cdots t_n$ and $g = r_1 \cdots r_m$ for $t_i, r_j$
-	transpositions, then $n \equiv m \bmod 2$.
+	Suppose $g\in S_n$ can be written as products of transpositions in two ways, say $g = t_1 \cdots t_n$ and $g = r_1 \cdots r_m$ for $t_i, r_j$
+	transpositions. Show $n \equiv m \bmod 2$.
 	\hint{This is a bit tricky, and there are many ways to do it. Here is one nice one:
 	Let $\sigma \in S_n$ be some permutation.
-	Draw a picture with $1, 2, \cdots, n$ listed at the top and the bottom. Draw the lines connecting $i$ to $\sigma(i)$ so that
-	the lines always intersect transversely (i.e., no two lines are tangent at an intersection point).
+	Draw a picture with $1, 2, \cdots, n$ listed at the top and the bottom. Draw curves connecting $i$ to $\sigma(i)$ so that
+	the lines always intersect transversely (i.e., no two curves are tangent at an intersection point).
 	Check that the number of intersections of lines is well defined modulo $2$. 
-	Using well definedness, check that
+	Using that this number of intersections is well defined $\bmod 2$, check that
 	the parity of the number of intersections agrees with the parity of the number of transpositions.
 Use this to conclude.}
 \end{exercise}
@@ -1052,7 +1068,7 @@ Use this to conclude.}
 	\label{exercise:}
 	In this exercise, we check $\left[ S_n, S_n \right] = A_n$.
 	\begin{enumerate}
-		\item Show that $\left[ S_n, S_n \right] \subset A_n$.
+		\item Show that $\left[ S_n, S_n \right] \subset A_n$. \hint{Expand commutators as products of transpositions and count their parity.}
 		\item Show every $3$-cycle is a commutator. \hint{Consider the commutator of two transpositions.}
 		\item Use \autoref{exercise:3-cycles} to conclude that $\left[ S_n, S_n \right] = A_n$.
 	\end{enumerate}
