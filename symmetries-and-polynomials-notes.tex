@@ -428,13 +428,13 @@ In some sense (which we do not explain) this map explains why the counts from
 	
 
 
-	\begin{exercise}\todo{Apurva: This problem is correct.}
+	\begin{exercise}
 		\label{exercise:intermediate_variables_cubic_2}
 		$ $ 
 		\begin{enumerate}
-			\item Show that $27r_1  (r_2  r_3) = \mu_1^3 + \mu_2^3$. Express this in terms of $p$ and $q$. \todo{when I multiply this out I get $\mu_1^3 + \mu_1^2 \mu_2 + \mu_1 \mu_2^2 + \mu_2^3$}
-			\item Show that $ \mu_1 \mu_2 = -3p$.\hint{Don't forget that $ (r_1 + r_2 + r_3)^2 = 0$.}  \todo{Aaron: I think you get $-2p$ instead of $-3p$}
-			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p$ \todo{I don't see how to do this, given that the previous two parts seem wrong}. Solve it to find $ \mu_1^3, \mu_2^3$. 
+			\item Show that $27r_1  (r_2  r_3) = \mu_1^3 + \mu_2^3$. Express this in terms of $p$ and $q$. 
+			\item Show that $ \mu_1 \mu_2 = -3p$.\hint{Don't forget that $ (r_1 + r_2 + r_3)^2 = 0$.}  
+			\item Conclude that $ \mu_1^3, \mu_2^3$ are the roots of the quadratic $ x^2 + 27qx - 27p^3$. Solve it to find $ \mu_1^3, \mu_2^3$. 
       \item Verify that the discriminant of this quadratic is the multiple of the discriminant $\Delta(P) = -4p^3 - 27q^2$ of the original cubic $ P(x)$.
 		\end{enumerate}
 	\end{exercise}
@@ -847,6 +847,7 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 		\end{exercise}
 		
 		\begin{exercise}\todo{Apurva: In all these fixed point exercises we're working with free variables. These are all false if the roots are instead complex numbers.}
+			\todo{aaron: ok, maybe we should clarify that, then, since I was confused?}
 			Let $ P(x)$ be a quartic polynomial. 
 			\begin{enumerate}
 				\item Show that each of the $ \lambda_i$ remains unchanged if we swap $ r_1$ with $r_2$ and $ r_3$ with $ r_4$. 
@@ -855,8 +856,6 @@ So far we've talked about solving cubic and quartics and some concepts from Grou
 					$K_4 \subset S_4$ fixes all of the $\lambda_i$.				
 				\item Convince yourself that these and $ id$ are the only permutations in $ S_4$ that leave each of the the $ \lambda_i$ unchanged.
 					In other words, show $K_4 \subset S_4$ is precisely the subset of permutations fixing the $\lambda_i$.
-					\todo{this exercise is false as stated, since there are some polynomials fixed by bigger subgroups. for example, this will fail if you take
-					all roots to be equal. did you want them to give an example of a polynomial where it is exactly the fixed set? this is closely related to the \autoref{exercise:cross-ratio}}
 			\end{enumerate}
 			We say that the $ \lambda_i$ are \textbf{fixed} by the Klein 4 group $K_4$.
 		\end{exercise}
