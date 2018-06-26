@@ -237,6 +237,7 @@ Tricky optional problems are marked with $*$, and especially tricky optional pro
 \section{The Discriminant}
 Today we'll introduce the discriminant of a polynomial. The discriminant of a polynomial $P$ is another polynomial $Q$ which tells you
 whether $P$ has any repeated roots over $\bc$.
+Here, $\bc$ denotes the complex numbers.
 
 \subsection{Quadratic Polynomials}
 \begin{definition}[Quadratic discriminant]
@@ -251,7 +252,8 @@ whether $P$ has any repeated roots over $\bc$.
 \end{exercise}
 \begin{exercise}
 	\label{exercise:quadratic-roots}
-	What does the sign of the discriminant (i.e., whether $\Delta(P) > 0, < 0$ or $=0$)
+	Still assuming the polynomial $P$ has real coefficients,
+	what does the sign of the discriminant (i.e., whether $\Delta(P) > 0, < 0$ or $=0$)
 	tell you about the roots $\alpha$ and $\beta$?
 	\footnote{{\it Hint:} If the discriminant is $>0$ show that the roots are real, if it is equal
 		to $0$, show they are the same, if it is less than $0$, show they are complex numbers
@@ -318,7 +320,7 @@ whether $P$ has any repeated roots over $\bc$.
 		\item By definition, the {\bf critical points} of $P(x)$
 		      %	(the points at which $ P(x)$ attains its local max/min if at all)
 		      are roots of $P'(x) = 3x^2 + p$. Find the critical points of $ P(x)$, and call them $ x_1, x_2$.
-		\item Show that $ P(x_1) \cdot P(x_2) = 4(p/3)^3 - q^2$.
+		\item Show that $ P(x_1) \cdot P(x_2) = 4(p/3)^3 + q^2$.
 		\item Argue that $ P(x)$ has a repeated root over $\bc$ if and only if $ P(x_1) \cdot P(x_2) = 0$.
 	\end{enumerate}
 	\begin{remark}
